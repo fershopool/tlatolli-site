@@ -1,12 +1,16 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
+const mobileNavQuery = window.matchMedia('(max-width: 760px), (pointer: coarse) and (hover: none)');
+const isMobileNav = () => mobileNavQuery.matches;
 
 menuToggle?.addEventListener('click', () => {
+  if (isMobileNav()) return;
   const open = nav.classList.toggle('is-open');
   menuToggle.setAttribute('aria-expanded', String(open));
 });
 
 nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+  if (isMobileNav()) return;
   nav.classList.remove('is-open');
   menuToggle?.setAttribute('aria-expanded', 'false');
 }));
