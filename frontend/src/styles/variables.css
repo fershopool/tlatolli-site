@@ -1,0 +1,4 @@
+/* Responsabilidad: tokens visuales compartidos por las pantallas. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600;1,700&display=swap');
+
+:root { --ivory:#f7f5ef; --white:#fff; --forest:#234536; --olive:#6f7d4f; --terracotta:#a8463f; --charcoal:#1d2521; --copper:#b4864a; --line:rgba(35,69,54,.17); --shadow:0 18px 50px rgba(35,69,54,.09); --sans:'DM Sans',Arial,sans-serif; --mono:'DM Mono',monospace; --serif:'Playfair Display',Georgia,serif; }

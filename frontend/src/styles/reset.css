@@ -1,0 +1,3 @@
+/* Responsabilidad: normalización mínima compartida del documento. */
+*{box-sizing:border-box}
+html { scroll-behavior: smooth; }
