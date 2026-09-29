@@ -2,16 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600;1,700&display=swap');
 
 :root {
-  --ivory: #f5f3ec;
-  --white: #fff;
-  --forest: #173d2e;
-  --ink: #10261d;
-  --terracotta: #b44d43;
-  --copper: #c3944f;
-  --charcoal: #203129;
-  --line: rgba(23, 61, 46, .16);
-  --dark-line: rgba(245, 243, 236, .18);
-  --shadow: 0 24px 70px rgba(16, 38, 29, .12);
+  --ivory: #F7F5EF;
+  --white: #FFFFFF;
+  --forest: #234536;
+  --olive: #6F7D4F;
+  --ink: #1D2521;
+  --terracotta: #A8463F;
+  --copper: #B4864A;
+  --charcoal: #1D2521;
+  --line: rgba(35, 69, 54, .16);
+  --dark-line: rgba(247, 245, 239, .18);
+  --shadow: 0 24px 70px rgba(29, 37, 33, .12);
   --sans: 'DM Sans', Arial, sans-serif;
   --mono: 'DM Mono', monospace;
   --serif: 'Playfair Display', Georgia, serif;

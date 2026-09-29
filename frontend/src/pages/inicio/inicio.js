@@ -80,7 +80,16 @@ document.querySelector('.reset-diagnostic')?.addEventListener('click', () => {
 document.querySelector('#contact-form')?.addEventListener('submit', (event) => {
   event.preventDefault();
   const form = event.currentTarget;
+  const data = new FormData(form);
+  const message = [
+    'Hola Tlatolli, quiero conocer sus servicios.',
+    `Nombre: ${data.get('name')}`,
+    `Empresa: ${data.get('company') || 'No indicada'}`,
+    `Correo: ${data.get('email')}`,
+    `Proyecto: ${data.get('project') || 'No indicado'}`,
+    `Necesidad: ${data.get('message') || 'No indicada'}`,
+  ].join('\n');
+  window.open(`https://wa.me/525539761846?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
   const status = form.querySelector('.form-status');
-  if (status) status.textContent = 'Demo local: no se envió información.';
-  form.reset();
+  if (status) status.textContent = 'WhatsApp abierto con tu solicitud.';
 });
