@@ -54,6 +54,21 @@ const diagnosticResult = document.querySelector('.diagnostic-result');
 const progress = [...document.querySelectorAll('.progress span')];
 let diagnosticStep = 0;
 
+diagnosticSteps.forEach((step, stepIndex) => {
+  if (!stepIndex) return;
+  const nextButton = step.querySelector('.next-step, [type="submit"]');
+  const backButton = document.createElement('button');
+  backButton.className = 'button previous-step';
+  backButton.type = 'button';
+  backButton.textContent = 'Atrás';
+  backButton.addEventListener('click', () => {
+    diagnosticStep = Math.max(diagnosticStep - 1, 0);
+    showDiagnosticStep(diagnosticStep);
+    step.querySelector('input:checked')?.focus();
+  });
+  nextButton?.parentElement?.insertBefore(backButton, nextButton);
+});
+
 function showDiagnosticStep(index) {
   diagnosticSteps.forEach((step, stepIndex) => step.classList.toggle('is-active', stepIndex === index));
   progress.forEach((item, itemIndex) => { item.style.background = itemIndex <= index ? 'var(--copper)' : 'rgba(255,255,255,.2)'; });
@@ -61,7 +76,13 @@ function showDiagnosticStep(index) {
 
 document.querySelectorAll('.next-step').forEach((button) => button.addEventListener('click', () => {
   const activeStep = diagnosticSteps[diagnosticStep];
-  if (!activeStep?.querySelector('input:checked')) return;
+  const selected = activeStep?.querySelector('input:checked');
+  if (!selected) {
+    activeStep?.querySelectorAll('input').forEach((input) => input.setAttribute('aria-invalid', 'true'));
+    activeStep?.querySelector('input')?.focus();
+    return;
+  }
+  activeStep.querySelectorAll('input').forEach((input) => input.removeAttribute('aria-invalid'));
   diagnosticStep = Math.min(diagnosticStep + 1, diagnosticSteps.length - 1);
   showDiagnosticStep(diagnosticStep);
 }));
@@ -97,5 +118,20 @@ document.querySelector('#contact-form')?.addEventListener('submit', (event) => {
     `Proyecto: ${data.get('project') || 'No indicado'}`,
     `Necesidad: ${data.get('message') || 'No indicada'}`,
   ].join('\n');
-  window.location.href = `https://wa.me/525539761846?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/525539761846?text=${encodeURIComponent(message)}`;
+  const formStatus = event.currentTarget.querySelector('.form-status');
+  const whatsappWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  if (whatsappWindow) {
+    if (formStatus) formStatus.textContent = 'WhatsApp se abrió en una pestaña nueva.';
+    return;
+  }
+  if (formStatus) {
+    formStatus.textContent = 'El navegador bloqueó la apertura automática. ';
+    const fallback = document.createElement('a');
+    fallback.href = whatsappUrl;
+    fallback.target = '_blank';
+    fallback.rel = 'noopener noreferrer';
+    fallback.textContent = 'Abrir WhatsApp';
+    formStatus.append(fallback);
+  }
 });
