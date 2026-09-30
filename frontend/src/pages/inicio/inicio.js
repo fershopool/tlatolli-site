@@ -7,6 +7,15 @@ menuToggle?.addEventListener('click', () => {
   const open = nav?.classList.toggle('is-open') ?? false;
   menuToggle.setAttribute('aria-expanded', String(open));
   menuToggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  if (open) nav?.querySelector('a')?.focus();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Escape' || !nav?.classList.contains('is-open')) return;
+  nav.classList.remove('is-open');
+  menuToggle?.setAttribute('aria-expanded', 'false');
+  menuToggle?.setAttribute('aria-label', 'Abrir menú');
+  menuToggle?.focus();
 });
 
 nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
