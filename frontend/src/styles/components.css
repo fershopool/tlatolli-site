@@ -1,0 +1,10 @@
+.phone { width: min(100%, 280px); padding: 10px; border: 1px solid var(--line); border-radius: 30px; background: var(--ink); box-shadow: var(--shadow); }
+.phone__screen { min-height: 420px; overflow: hidden; border-radius: 22px; background: var(--paper); }
+.browser { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); box-shadow: var(--shadow); }
+.browser__bar { display: flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 12px; border-bottom: 1px solid var(--line); color: var(--olive); font: .65rem var(--mono); }
+.browser__bar::before { content: '•••'; color: var(--terra); letter-spacing: 3px; }
+.browser__body { padding: clamp(18px, 3vw, 34px); }
+.tabs { display: flex; gap: 4px; overflow-x: auto; border-bottom: 1px solid var(--line); }
+.tabs button, .tabs a { flex: 0 0 auto; padding: .7rem .8rem; border: 0; border-bottom: 2px solid transparent; color: inherit; background: transparent; font: 700 .7rem var(--mono); }
+.tabs .is-active, .tabs button:hover, .tabs a:hover { border-bottom-color: var(--terra); color: var(--terra); }
+@media (max-width: 700px) { .phone__screen { min-height: 360px; } }

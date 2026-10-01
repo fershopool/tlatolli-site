@@ -1,0 +1,37 @@
+.s-diagnostico { padding: clamp(78px, 10vw, 136px) 0; background: var(--paper, #eeece4); }
+.s-diagnostico__inner { max-width: 1120px; }
+.s-diagnostico__intro { display: flex; justify-content: space-between; gap: 40px; align-items: end; margin: 14px 0 42px; }
+.s-diagnostico h2 { margin: 0; color: var(--forest, #234536); font-size: clamp(42px, 6vw, 76px); line-height: .95; letter-spacing: -.06em; }
+.s-diagnostico h2 em { color: var(--terracotta, #A8463F); font-family: var(--serif, Georgia, serif); font-weight: 600; }
+.s-diagnostico__intro > p { max-width: 300px; margin: 0 0 4px; color: rgba(29,37,33,.68); }
+.s-diagnostico__form { padding: clamp(24px, 5vw, 52px); border-radius: 20px; background: var(--forest, #234536); color: var(--ivory, #F7F5EF); }
+.s-diagnostico__step { display: none; margin: 0; padding: 0; border: 0; }
+.s-diagnostico__step.is-active { display: block; }
+.s-diagnostico legend { display: block; width: 100%; margin-bottom: 10px; color: var(--ivory, #F7F5EF); font-size: clamp(25px, 4vw, 40px); font-weight: 700; letter-spacing: -.04em; line-height: 1.05; }
+.s-diagnostico legend span { display: block; margin-bottom: 16px; color: #E5C17A; font: 11px var(--mono, monospace); letter-spacing: .1em; }
+.s-diagnostico__hint { margin: 0 0 26px; color: rgba(247,245,239,.66); font-size: 14px; }
+.s-diagnostico__choices { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 9px; }
+.s-diagnostico__choices label { position: relative; display: flex; cursor: pointer; }
+.s-diagnostico__choices input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.s-diagnostico__choices span { width: 100%; padding: 15px 16px; border: 1px solid rgba(247,245,239,.25); border-radius: 9px; color: rgba(247,245,239,.76); font-size: 13px; transition: background .2s, border-color .2s; }
+.s-diagnostico__choices label:hover span, .s-diagnostico__choices input:checked + span, .s-diagnostico__choices input:focus-visible + span { border-color: var(--copper, #B4864A); background: rgba(180,134,74,.16); color: var(--ivory, #F7F5EF); }
+.s-diagnostico__error { min-height: 18px; margin: 13px 0 0; color: #f0b2a9; font-size: 12px; }
+.s-diagnostico__actions, .s-diagnostico__result-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 17px; margin-top: 28px; }
+.s-diagnostico__progress { color: rgba(247,245,239,.78); font: 11px var(--mono, monospace); }
+.s-diagnostico .btn { cursor: pointer; }
+.s-diagnostico__result { display: grid; grid-template-columns: minmax(0,1fr) minmax(280px,.75fr); gap: 44px; margin-top: 18px; padding: clamp(26px,5vw,52px); border: 1px solid var(--line, rgba(35,69,54,.16)); border-radius: 20px; background: var(--ivory, #F7F5EF); }
+.s-diagnostico__result[hidden] { display: none; }
+.s-diagnostico__result h3 { margin: 22px 0 12px; color: var(--forest, #234536); font-size: clamp(28px,4vw,48px); line-height: 1; letter-spacing: -.05em; }
+.s-diagnostico__result p { color: rgba(29,37,33,.76); line-height: 1.65; }
+.s-diagnostico__lever { display: grid; gap: 5px; margin-top: 28px; padding-top: 17px; border-top: 1px solid var(--line, rgba(35,69,54,.16)); }
+.s-diagnostico__lever strong { color: var(--terracotta, #A8463F); font: 11px var(--mono, monospace); text-transform: uppercase; }
+.s-diagnostico__modules { padding: 22px; border-radius: 14px; background: var(--forest, #234536); color: var(--ivory, #F7F5EF); }
+.s-diagnostico__modules h4 { margin: 0 0 15px; font-size: 14px; }
+.s-diagnostico__module { padding: 13px 0; border-top: 1px solid rgba(247,245,239,.2); }
+.s-diagnostico__module strong { display: block; color: #E5C17A; font-size: 14px; }
+.s-diagnostico__module span { display: block; margin-top: 4px; color: rgba(247,245,239,.8); font-size: 12px; line-height: 1.4; }
+.s-diagnostico__result-actions { grid-column: 1 / -1; margin-top: 0; }
+.s-diagnostico .btn--ghost { border: 1px solid var(--forest, #234536); background: transparent; color: var(--forest, #234536); }
+.s-diagnostico__fallback { color: var(--terracotta, #A8463F); font-size: 12px; }
+.s-diagnostico__fallback a { text-decoration: underline; }
+@media (max-width: 700px) { .s-diagnostico__intro { display: block; } .s-diagnostico__intro > p { margin-top: 18px; } .s-diagnostico__choices, .s-diagnostico__result { grid-template-columns: 1fr; } .s-diagnostico__result-actions { grid-column: auto; } }

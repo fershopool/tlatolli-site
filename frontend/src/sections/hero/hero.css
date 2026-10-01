@@ -1,0 +1,44 @@
+.s-hero { overflow:hidden; position:relative; background:var(--forest,#234536); color:var(--ivory,#F7F5EF); min-height:calc(100svh - var(--shell-header-height,0px)); padding:0; display:flex; flex-direction:column; }
+.s-hero::before { content:""; position:absolute; inset:0; opacity:.28; pointer-events:none; background-image:radial-gradient(rgba(247,245,239,.2) .7px,transparent .8px); background-size:17px 17px; mask-image:linear-gradient(130deg,rgba(0,0,0,.75),transparent 68%); }
+.s-hero__inner { min-width:0; min-height:calc(100svh - var(--shell-header-height,0px)); box-sizing:border-box; flex:1; display:grid; grid-template-columns:minmax(280px,.87fr) minmax(440px,1.13fr); gap:4vw; align-items:center; position:relative; z-index:1; padding:clamp(70px,10vh,120px) 20px 42px; }
+.s-hero__copy { max-width:590px; }
+.s-hero__eyebrow { text-transform:uppercase; letter-spacing:.13em; font:500 11px/1.2 var(--mono,monospace); color:#d9a64c; display:flex; align-items:center; gap:10px; margin:0 0 30px; }
+.s-hero__dot { width:7px; height:7px; border-radius:50%; background:#d9a64c; box-shadow:0 0 0 5px rgba(217,166,76,.13); }
+.s-hero h1 { font:500 clamp(52px,6.25vw,94px)/.96 var(--display,var(--sans,Arial,sans-serif)); letter-spacing:-.065em; margin:0; max-width:670px; }
+.s-hero h1 em { font-family:var(--serif,Georgia,serif); font-weight:600; color:#d9a64c; letter-spacing:-.045em; }
+.s-hero__intro { color:rgba(247,245,239,.74); font-size:clamp(16px,1.35vw,20px); line-height:1.45; max-width:450px; margin:29px 0 34px; }
+.s-hero__actions { display:flex; flex-wrap:wrap; gap:12px; }
+.s-hero .btn { border:1px solid rgba(247,245,239,.35); min-height:48px; display:inline-flex; align-items:center; gap:13px; padding:0 20px; }
+.s-hero .btn--primary { background:#d9a64c; color:#1d2521; border-color:#d9a64c; }
+.s-hero .btn--ghost { color:var(--ivory,#F7F5EF); background:transparent; }
+.s-hero .btn--ghost:hover { background:rgba(247,245,239,.1); }
+.s-hero__visual { height:min(570px,46vw); min-height:440px; position:relative; transform:translate3d(calc(var(--hero-x,0) * 1px),calc(var(--hero-y,0) * 1px),0); transition:transform .3s ease-out; }
+.s-hero__halo { position:absolute; width:52%; aspect-ratio:1; border-radius:50%; left:24%; top:17%; background:radial-gradient(circle,rgba(216,166,76,.18),transparent 67%); filter:blur(20px); }
+.s-hero__orbit { display:block; height:100%; width:100%; overflow:visible; }
+.s-hero__route { stroke-dashoffset:0; animation:s-hero-draw 7s ease-in-out infinite alternate; }
+.s-hero__visual:not(.in-view) .s-hero__route, .s-hero__visual:not(.in-view) .s-hero__node, .s-hero__visual:not(.in-view) .s-hero__pulse, .s-hero__visual:not(.in-view) .s-hero__traveler, .s-hero__visual:not(.in-view) .s-hero__card { animation-play-state: paused; }
+.s-hero__route--inner { animation-delay:-3s; opacity:.55; }
+.s-hero__node { animation:s-hero-node 6s ease-in-out infinite; }
+.s-hero__node:nth-of-type(2n) { animation-delay:-2s; }
+.s-hero__node:nth-of-type(3n) { animation-delay:-4s; }
+.s-hero__node text { pointer-events:none; }
+.s-hero__pulse { animation:s-hero-pulse 2.8s ease-out infinite; opacity:0; }
+.s-hero__traveler { animation:s-hero-travel 8s linear infinite; offset-path:path("M321 93C443 85 561 159 556 277c-5 120-105 196-228 194C205 468 85 394 86 273 87 160 184 95 321 93Z"); offset-rotate:0deg; }
+.s-hero__cards { position:absolute; inset:0; pointer-events:none; }
+.s-hero__card { position:absolute; background:rgba(247,245,239,.96); color:#1d2521; padding:12px 15px; border-radius:3px; box-shadow:0 16px 35px rgba(0,0,0,.16); display:grid; gap:3px; width:148px; transform:rotate(-4deg); animation:s-hero-card 5s ease-in-out infinite; }
+.s-hero__card b { font-size:14px; }
+.s-hero__card small { font-size:11px; color:#56605a; }
+.s-hero__card .badge { width:max-content; font-size:9px; }
+.s-hero.section--dark .s-hero__card .badge { color:#234536; }
+.s-hero__card--one { left:3%; top:27%; }
+.s-hero__card--two { right:2%; top:14%; transform:rotate(5deg); animation-delay:-2s; }
+.s-hero__card--three { right:7%; bottom:16%; transform:rotate(-2deg); animation-delay:-3.4s; }
+.s-hero__spark { color:#a8463f; font-size:16px; }
+.s-hero__bars { display:flex; height:17px; align-items:end; gap:3px; }
+.s-hero__bars i { width:4px; background:#6f7d4f; display:block; height:10px; }.s-hero__bars i:nth-child(2){height:16px}.s-hero__bars i:nth-child(3){height:13px}
+.s-hero__marquee { border-top:1px solid rgba(247,245,239,.18); min-height:68px; display:flex; align-items:center; justify-content:center; gap:24px; text-transform:uppercase; letter-spacing:.12em; color:rgba(247,245,239,.68); font:500 11px var(--mono,monospace); position:relative; z-index:1; }
+.s-hero__marquee i { color:#d9a64c; font-style:normal; }
+@keyframes s-hero-draw { from{stroke-dashoffset:.32} to{stroke-dashoffset:-.2} } @keyframes s-hero-node { 0%,100%{opacity:1}50%{opacity:.78} } @keyframes s-hero-pulse { 0%{opacity:.7;transform:scale(.8)}100%{opacity:0;transform:scale(1.5)} } @keyframes s-hero-travel { to{offset-distance:100%} } @keyframes s-hero-card { 0%,100%{translate:0 0}50%{translate:0 -7px} }
+@media (max-width:900px) { .s-hero__inner { grid-template-columns:1fr; padding-top:110px; gap:12px; }.s-hero__copy { max-width:700px; }.s-hero h1{max-width:650px}.s-hero__visual{height:min(550px,70vw);min-height:390px;max-width:680px;width:100%;margin:auto}.s-hero__card--one{left:4%}.s-hero__marquee{overflow:hidden;white-space:nowrap;justify-content:flex-start;padding-left:7vw}.s-hero__marquee span:nth-of-type(n+5),.s-hero__marquee i:nth-of-type(n+5){display:none} }
+@media (max-width:520px) { .s-hero__inner{padding-top:94px;padding-bottom:24px}.s-hero h1{font-size:clamp(46px,14vw,66px)}.s-hero__intro{font-size:15px;margin:23px 0 26px}.s-hero__visual{height:98vw;min-height:320px;margin-top:4px}.s-hero__card{scale:.82}.s-hero__card--one{left:-5%;top:20%}.s-hero__card--two{right:-6%;top:11%}.s-hero__card--three{right:-5%;bottom:9%}.s-hero__marquee{min-height:56px;gap:17px} }
+@media (prefers-reduced-motion:reduce){.s-hero__visual{transform:none!important}.s-hero__route,.s-hero__node,.s-hero__pulse,.s-hero__traveler,.s-hero__card{animation:none}.s-hero__traveler{display:none}}

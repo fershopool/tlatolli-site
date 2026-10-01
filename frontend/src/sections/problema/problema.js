@@ -1,0 +1,1 @@
+(function () { const root=(window.TL&&window.TL.$?window.TL.$('#problema'):document.querySelector('#problema')); if(!root)return; const board=root.querySelector('[data-problem-board]'),connect=root.querySelector('[data-connect]'); connect?.addEventListener('click',()=>{const on=board.classList.toggle('is-connected');connect.setAttribute('aria-pressed',String(on));}); }());

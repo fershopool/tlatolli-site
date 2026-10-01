@@ -1,187 +1,398 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-MX">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Tlatolli conecta marketing, tecnología y datos para construir crecimiento digital con visión de negocio." />
-    <title>Tlatolli — Marketing, tecnología y datos</title>
-    <link rel="icon" type="image/png" href="./frontend/src/assets/images/logo.png" />
-    <link rel="stylesheet" href="./frontend/src/styles/reset.css" />
-    <link rel="stylesheet" href="./frontend/src/styles/variables.css" />
-    <link rel="stylesheet" href="./frontend/src/styles/global.css" />
-    <link rel="stylesheet" href="./frontend/src/pages/inicio/inicio.css" />
-    <script type="module" src="./frontend/src/pages/inicio/inicio.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Tlatolli construye ecosistemas digitales para atraer clientes, conocerlos, fidelizarlos, analizar su comportamiento y convertir los datos en mejores decisiones de marketing." />
+    <link rel="preload" href="./frontend/src/assets/fonts/3y9H6as8bTXq_nANBjzKo3IeZx8z6up5BeSl5jBNz_19PpbpMXuECpwUxJBOm_OJWiawA1XphjhQYg.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="canonical" href="https://fershopool.github.io/tlatolli-site/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fershopool.github.io/tlatolli-site/" />
+    <meta property="og:title" content="Tlatolli | Marketing que aprende de tu negocio" />
+    <meta property="og:description" content="Tlatolli construye ecosistemas digitales para atraer clientes, conocerlos, fidelizarlos, analizar su comportamiento y convertir los datos en mejores decisiones de marketing." />
+    <meta property="og:image" content="https://fershopool.github.io/tlatolli-site/frontend/src/assets/brand/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_MX" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tlatolli | Marketing que aprende de tu negocio" />
+    <meta name="twitter:description" content="Tlatolli construye ecosistemas digitales para atraer clientes, conocerlos, fidelizarlos, analizar su comportamiento y convertir los datos en mejores decisiones de marketing." />
+    <meta name="twitter:image" content="https://fershopool.github.io/tlatolli-site/frontend/src/assets/brand/og.png" />
+    <link rel="icon" type="image/svg+xml" href="./frontend/src/assets/brand/favicon.svg" />
+    <title>Tlatolli | Marketing que aprende de tu negocio</title>
+    <link rel="stylesheet" href="./dist/tlatolli.css" />
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <div class="site-shell">
-      <header class="topbar" id="inicio">
-        <a class="brand" href="#inicio" aria-label="Tlatolli, inicio">
-          <img src="./frontend/src/assets/images/logo.png" alt="Tlatolli" />
-        </a>
-        <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menú">
-          <span></span><span></span>
-        </button>
-        <nav class="nav" id="primary-nav" aria-label="Navegación principal">
-          <a href="#nosotros" data-short="Nos">Nosotros</a>
-          <a href="#servicios" data-short="Serv">Servicios</a>
-          <a href="#ecosistema" data-short="Eco">Ecosistema</a>
-          <a href="#proyectos" data-short="Proy">Proyectos</a>
-          <a href="#proyectos" data-short="Casos">Casos reales</a>
-          <a href="#contacto" data-short="Cont">Contacto</a>
-          <a class="button button-small button-dark" href="#contacto">Hablemos <span>↗</span></a>
-        </nav>
-      </header>
-
-      <nav class="mobile-bottom-nav" aria-label="Navegación móvil">
-        <a href="#inicio"><span>Inicio</span></a>
-        <a href="#servicios"><span>Servicios</span></a>
-        <a href="#proyectos"><span>Proyectos</span></a>
-        <a href="#proyectos"><span>Casos</span></a>
-        <a href="#contacto"><span>Contacto</span></a>
-      </nav>
+      <header class="site-header" data-stage="atraer" data-nav-theme="dark">
+  <div class="header-main container">
+    <a class="brand" href="#inicio" aria-label="Tlatolli, inicio">
+      <img class="brand-logo brand-logo--dark" src="./frontend/src/assets/brand/logo.svg" alt="" width="40" height="40" />
+      <img class="brand-logo brand-logo--light" src="./frontend/src/assets/brand/logo-light.svg" alt="" width="40" height="40" />
+      <span>Tlatolli</span>
+    </a>
+    <nav class="site-nav" id="primary-nav" aria-label="Navegación principal">
+      <a href="#sistema">Sistema</a>
+      <a href="#proyectos">Casos reales</a>
+      <a class="btn btn--primary btn--small" href="#diagnostico">Analizar mi negocio</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menú">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+  <nav class="stage-rail container" aria-label="Etapas del sistema">
+    <a class="is-current" data-stage-link="inicio" href="#inicio"><span>01</span>Atraer</a>
+    <a data-stage-link="presencia" href="#presencia"><span>02</span>Convertir</a>
+    <a data-stage-link="fidelizacion" href="#fidelizacion"><span>03</span>Identificar</a>
+    <a data-stage-link="analitica" href="#analitica"><span>04</span>Conocer</a>
+    <a data-stage-link="fidelizacion" href="#fidelizacion"><span>05</span>Fidelizar</a>
+    <a data-stage-link="panel" href="#panel"><span>06</span>Medir</a>
+    <a data-stage-link="marketing" href="#marketing"><span>07</span>Aprender</a>
+    <a data-stage-link="inicio" href="#inicio"><span>08</span>Volver a atraer</a>
+  </nav>
+</header>
 
       <main id="contenido">
-        <section class="hero section-pad">
-          <div class="hero-copy reveal">
-            <p class="eyebrow"><span class="eyebrow-dot"></span> Estrategia digital con raíz mexicana</p>
-            <h1>Convierte atención en <em>clientes recurrentes.</em></h1>
-            <p class="hero-text">Tlatolli diseña infraestructura digital de crecimiento: tecnología, contenido y datos que conectan cada punto de contacto con tu negocio.</p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#contacto">Diseñar mi ecosistema <span>↗</span></a>
-              <a class="text-link" href="#servicios">Explorar capacidades <span>↗</span></a>
-            </div>
-            <div class="hero-note"><span class="avatar-stack"><i></i><i></i><i></i></span><span>Socios para marcas que quieren avanzar</span></div>
-          </div>
-
-          <div class="hero-art reveal reveal-delay-1" aria-label="Panel visual de crecimiento digital">
-            <div class="orbit orbit-one"></div>
-            <div class="orbit orbit-two"></div>
-            <div class="hero-glow"></div>
-            <div class="hero-core" aria-hidden="true">
-              <span class="core-ring"></span>
-              <img src="./frontend/src/assets/images/glifo.png" alt="" />
-              <strong>Tlatolli</strong>
-              <small>señales conectadas</small>
-            </div>
-            <div class="hero-node hero-node-one" aria-hidden="true"><i></i><span>Contenido</span></div>
-            <div class="hero-node hero-node-two" aria-hidden="true"><i></i><span>Datos</span></div>
-            <div class="hero-node hero-node-three" aria-hidden="true"><i></i><span>Retorno</span></div>
-            <div class="dashboard-card dashboard-main">
-              <div class="card-topline"><span>Panel de demostración</span><span class="demo-label">Ejemplo</span></div>
-              <div class="metric-row"><strong>Atención conectada</strong><span>lectura conceptual</span></div>
-              <div class="chart" aria-hidden="true">
-                <div class="chart-grid"></div>
-                <svg viewBox="0 0 420 130" role="img" aria-label="Gráfica ascendente">
-                  <defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#a8463f" stop-opacity=".32"/><stop offset="1" stop-color="#a8463f" stop-opacity="0"/></linearGradient></defs>
-                  <path class="chart-area" d="M0,110 C38,100 45,84 82,89 S128,76 155,80 S208,55 239,62 S290,42 318,48 S369,21 420,12 V130 H0Z"/>
-                  <path class="chart-line" d="M0,110 C38,100 45,84 82,89 S128,76 155,80 S208,55 239,62 S290,42 318,48 S369,21 420,12"/>
-                  <circle cx="318" cy="48" r="5"/><circle cx="420" cy="12" r="5"/>
-                </svg>
-              </div>
-              <div class="chart-labels"><span>ENE</span><span>FEB</span><span>MAR</span><span>ABR</span><span>MAY</span><span>JUN</span></div>
-            </div>
-            <div class="dashboard-card dashboard-side card-social"><div class="social-icon">◒</div><div><strong>Contenido</strong><span>planificado por canal</span></div><b>↗</b></div>
-            <div class="dashboard-card dashboard-side card-sales"><span class="sales-mark">⌁</span><div><strong>Clientes</strong><span>recorridos activos</span></div><small>CRM</small></div>
-            <div class="dashboard-card dashboard-map"><div class="map-copy"><span>Operación</span><strong>Señales conectadas</strong></div><div class="mini-map"></div></div>
-            <div class="floating-qr"><div class="qr-grid" aria-hidden="true"></div><span>Conecta<br />tu marca</span></div>
-          </div>
-        </section>
-
-        <section class="signal-band" aria-label="Fortalezas de Tlatolli">
-          <div><span class="signal-number">01</span><span>Estrategia personalizada</span></div>
-          <div><span class="signal-number">02</span><span>Tecnología escalable</span></div>
-          <div><span class="signal-number">03</span><span>Datos para decidir</span></div>
-          <div><span class="signal-number">04</span><span>Acompañamiento continuo</span></div>
-        </section>
-
-        <section class="problem-section" aria-labelledby="problemas-title">
-          <div class="section-intro reveal"><p class="eyebrow">Problemas que resolvemos</p><h2 id="problemas-title">Cuando todo está separado, el crecimiento <em>se vuelve frágil.</em></h2></div>
-          <div class="problem-grid">
-            <article class="problem-card reveal"><span>01</span><h3>Clientes dispersos</h3><p>Tu audiencia vive en distintos canales y no existe un recorrido claro para reconocerla, atenderla y hacerla volver.</p></article>
-            <article class="problem-card reveal reveal-delay-1"><span>02</span><h3>Campañas desconectadas</h3><p>Contenido, promociones y seguimiento avanzan por separado, sin una lógica común que los convierta en experiencia.</p></article>
-            <article class="problem-card reveal reveal-delay-2"><span>03</span><h3>Decisiones sin datos</h3><p>Hay actividad, pero falta una lectura confiable para saber qué funciona por momento, producto, frecuencia y retención.</p></article>
-          </div>
-        </section>
-
-        <section class="section-pad value-section" id="nosotros">
-          <div class="section-intro reveal"><p class="eyebrow">Lo que hacemos posible</p><h2>Ideas con dirección.<br /><em>Resultados con sentido.</em></h2><p>Tu negocio no necesita más ruido. Necesita claridad para saber dónde crecer y un equipo capaz de hacerlo realidad.</p></div>
-          <div class="value-grid">
-            <article class="value-card value-card-dark reveal"><span class="card-index">01</span><span class="line-icon">✦</span><h3>Atrae más<br />clientes</h3><p>Estrategias digitales para aumentar el alcance y generar oportunidades comerciales.</p><a href="#contacto">Conocer más <span>↗</span></a></article>
-            <article class="value-card reveal reveal-delay-1"><span class="card-index">02</span><span class="line-icon">⌁</span><h3>Vende<br />mejor</h3><p>Analizamos el comportamiento de tus clientes para optimizar campañas y productos.</p><a href="#contacto">Conocer más <span>↗</span></a></article>
-            <article class="value-card reveal reveal-delay-2"><span class="card-index">03</span><span class="line-icon">◎</span><h3>Fideliza a<br />tus clientes</h3><p>Diseñamos experiencias y sistemas de recompensas que hacen que vuelvan.</p><a href="#ecosistema">Conocer más <span>↗</span></a></article>
-            <article class="value-card reveal reveal-delay-3"><span class="card-index">04</span><span class="line-icon">⊙</span><h3>Controla tu<br />negocio</h3><p>Integramos ventas, clientes, productos y campañas en un mismo ecosistema.</p><a href="#ecosistema">Conocer más <span>↗</span></a></article>
-          </div>
-        </section>
-
-        <section class="story-section section-pad">
-          <div class="story-visual reveal"><div class="story-ring"></div><div class="story-glyph"><img src="./frontend/src/assets/images/glifo.png" alt="Glifo oficial de Tlatolli" /></div><div class="story-caption"><span>TLATOLLI</span><small>Del náhuatl: palabra, relato, mensaje.</small></div></div>
-          <div class="story-copy reveal reveal-delay-1"><p class="eyebrow">Una agencia, muchas posibilidades</p><h2>Construimos soluciones digitales con <em>visión de negocio.</em></h2><p>Creemos que la tecnología tiene más valor cuando ayuda a las personas a hacer mejor su trabajo. Por eso unimos creatividad, estrategia y desarrollo para resolver lo que de verdad importa.</p><div class="values-list"><span>Innovación útil</span><span>Creatividad con estrategia</span><span>Transparencia</span><span>Resultados medibles</span></div><a class="text-link" href="#servicios">Conoce nuestra forma de trabajar <span>↗</span></a></div>
-        </section>
-
-        <section class="services-section section-pad" id="servicios">
-          <div class="section-intro section-intro-wide reveal"><div><p class="eyebrow">Capacidades</p><h2>Servicios agrupados por <em>resultado.</em></h2></div><p>Diseñamos piezas que trabajan juntas. Cada capacidad puede vivir sola o formar parte de un ecosistema completo.</p></div>
-          <div class="services-list">
-            <div class="service-group"><h3><span>01</span> Atraer y conectar</h3><div class="service-grid">
-              <article class="service-card reveal"><span>✦</span><h3>Marketing digital</h3><p>Calendario, fechas relevantes, captación y presencia en Instagram, Facebook, TikTok y YouTube.</p></article>
-              <article class="service-card reveal reveal-delay-1"><span>◌</span><h3>Contenido</h3><p>Reels, carruseles, video corto, fotografía, guiones y piezas educativas para cada canal.</p></article>
-              <article class="service-card reveal reveal-delay-2"><span>◎</span><h3>Lives</h3><p>Integración web y redes, analizador de chat, encuestas, preguntas y participación.</p></article>
-            </div></div>
-            <div class="service-group"><h3><span>02</span> Convertir y fidelizar</h3><div class="service-grid">
-              <article class="service-card reveal"><span>⌗</span><h3>Ecosistema web</h3><p>Web responsiva con apariencia de app, perfiles y recorridos de conversión.</p></article>
-              <article class="service-card reveal reveal-delay-1"><span>◎</span><h3>Fidelización</h3><p>Registro, historial, recompensas, seguimiento médico o comercial, descuentos programados y segmentación.</p></article>
-              <article class="service-card reveal reveal-delay-2"><span>⌁</span><h3>Wallet</h3><p>Apple Wallet y Google Wallet con QR dinámico, beneficios y actualizaciones.</p></article>
-            </div></div>
-            <div class="service-group"><h3><span>03</span> Medir y crecer</h3><div class="service-grid">
-              <article class="service-card reveal"><span>◫</span><h3>Analítica</h3><p>Lecturas por día, semana, mes, temporada, producto, horario, frecuencia, retención y conversión.</p></article>
-              <article class="service-card reveal reveal-delay-1"><span>↗</span><h3>Automatización</h3><p>Recordatorios, campañas, recompensas, post-compra y reactivación.</p></article>
-              <article class="service-card reveal reveal-delay-2"><span>⌘</span><h3>Panel administrativo</h3><p>Clientes, compras, campañas, conversión, segmentos y actividad en una sola vista.</p></article>
-            </div></div>
-            <div class="service-group"><h3><span>04</span> Dar contexto</h3><div class="service-grid">
-              <article class="service-card reveal"><span>⌖</span><h3>Mapa personalizado</h3><p>Sucursales, puntos de venta, eventos, servicios y rutas en una experiencia clara.</p></article>
-            </div></div>
-          </div>
-        </section>
-
-        <section class="ecosystem-section" id="ecosistema">
-          <div class="section-pad ecosystem-head reveal"><div><p class="eyebrow">El ecosistema Tlatolli</p><h2>Una forma más inteligente de <em>hacer que todo conecte.</em></h2></div><p>Visualiza, organiza y activa tu operación digital desde una misma lógica.</p></div>
-          <div class="ecosystem-board section-pad reveal"><div class="board-center"><span class="board-core-ring"></span><img src="./frontend/src/assets/images/glifo.png" alt="" /><strong>Tu negocio</strong><span>conectado</span></div><div class="board-node node-attract"><i></i><strong>Atraer</strong><small>Contenido y campañas</small></div><div class="board-node node-connect"><i></i><strong>Conectar</strong><small>Perfiles y recorridos</small></div><div class="board-node node-measure"><i></i><strong>Medir</strong><small>Datos accionables</small></div><div class="board-node node-grow"><i></i><strong>Crecer</strong><small>Fidelización y retorno</small></div><div class="board-line line-one"></div><div class="board-line line-two"></div><div class="board-line line-three"></div><div class="board-line line-four"></div></div>
-          <div class="feature-grid section-pad"><article class="feature-card reveal"><span>01</span><div class="feature-ui ui-calendar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><h3>Planeación de contenido</h3><p>Calendarios, campañas y publicaciones organizadas para cada canal.</p><a href="#contacto">Ver solución ↗</a></article><article class="feature-card reveal reveal-delay-1"><span>02</span><div class="feature-ui ui-channels" aria-hidden="true"><b>IG</b><b>WA</b><b>WEB</b><i></i></div><h3>Publicación multicanal</h3><p>Una idea, muchas formas de conectar con tu audiencia.</p><a href="#contacto">Ver solución ↗</a></article><article class="feature-card reveal reveal-delay-2"><span>03</span><div class="feature-ui ui-wallet" aria-hidden="true"><b>TLT / WALLET</b><i></i><small>beneficio activo</small></div><h3>Tlatolli Wallet</h3><p>Una experiencia de fidelización para convertir compras en relaciones.</p><a href="#contacto">Ver solución ↗</a></article><article class="feature-card reveal reveal-delay-3"><span>04</span><div class="feature-ui ui-software" aria-hidden="true"><i></i><i></i><i></i><b>+</b></div><h3>Software personalizado</h3><p>Herramientas que se adaptan a la manera en que tu negocio funciona.</p><a href="#contacto">Ver solución ↗</a></article></div>
-        </section>
-
-        <section class="case-study-section section-pad" id="proyectos">
-          <div class="section-intro section-intro-wide reveal"><div><p class="eyebrow">Portafolio real</p><h2>Proyectos publicados, <em>experiencias visitables.</em></h2></div><p>Casos reales con enlaces directos. Sin métricas inventadas: revisa cada sitio y repositorio por tu cuenta.</p></div>
-          <div class="filter-bar" role="group" aria-label="Filtrar casos"><button class="filter-button is-active" data-filter="all">Todos</button><button class="filter-button" data-filter="web">Web</button><button class="filter-button" data-filter="comunidad">Comunidad</button></div>
-          <div class="case-grid">
-            <article class="case-card reveal" data-category="web"><div class="case-top case-ollin"><span>OLLIN</span><small>01</small></div><div class="case-body"><span class="project-tag">Sitio publicado · Web</span><h3>Ollin</h3><p>Experiencia digital para una marca con movimiento, claridad y presencia propia.</p><div class="case-links"><a href="https://fershopool.github.io/ollin-site/" target="_blank" rel="noreferrer">Visitar sitio ↗</a><a href="https://github.com/fershopool/ollin-site" target="_blank" rel="noreferrer">Ver repositorio ↗</a></div></div></article>
-            <article class="case-card reveal reveal-delay-1" data-category="web"><div class="case-top case-cuicoyan"><span>CUICOYAN</span><small>02</small></div><div class="case-body"><span class="project-tag">Sitio publicado · Web</span><h3>Cuicoyan</h3><p>Presencia digital que conecta identidad, cultura y una navegación cercana.</p><div class="case-links"><a href="https://fershopool.github.io/cuicoyan-site/" target="_blank" rel="noreferrer">Visitar sitio ↗</a><a href="https://github.com/fershopool/cuicoyan-site" target="_blank" rel="noreferrer">Ver repositorio ↗</a></div></div></article>
-            <article class="case-card reveal reveal-delay-2" data-category="comunidad"><div class="case-top case-upiicsa"><span>UPIICSA<br />CALPULLI</span><small>03</small></div><div class="case-body"><span class="project-tag">Sitio publicado · Comunidad</span><h3>UPIICSA Calpulli</h3><p>Espacio digital para comunicar comunidad, actividades y pertenencia.</p><div class="case-links"><a href="https://fershopool.github.io/upiicsa-calpulli-site/" target="_blank" rel="noreferrer">Visitar sitio ↗</a><a href="https://github.com/fershopool/upiicsa-calpulli-site" target="_blank" rel="noreferrer">Ver repositorio ↗</a></div></div></article>
-          </div>
-          <div class="case-result reveal"><div><p class="eyebrow">Portafolio vivo</p><h3>Tres sitios publicados para explorar.</h3></div><p>Los enlaces anteriores son la referencia verificable de este portafolio.</p></div>
-        </section>
-
-        <section class="process-section section-pad" id="proceso">
-          <div class="section-intro reveal"><p class="eyebrow">Proceso de trabajo</p><h2>De la señal dispersa a un sistema que <em>aprende.</em></h2><p>No empezamos por una herramienta. Empezamos por entender el recorrido, elegir la primera palanca y medir lo que importa.</p></div>
-          <div class="process-grid">
-            <article class="process-card reveal"><span>01</span><h3>Entender</h3><p>Mapeamos negocio, audiencias, canales, operación y puntos de fricción.</p></article>
-            <article class="process-card reveal reveal-delay-1"><span>02</span><h3>Diseñar</h3><p>Convertimos hallazgos en recorridos, contenido y componentes digitales.</p></article>
-            <article class="process-card reveal reveal-delay-2"><span>03</span><h3>Activar</h3><p>Construimos la primera versión y conectamos las piezas que ya existen.</p></article>
-            <article class="process-card reveal reveal-delay-3"><span>04</span><h3>Aprender</h3><p>Observamos señales, ajustamos decisiones y definimos el siguiente paso.</p></article>
-          </div>
-        </section>
-
-        <section class="diagnostic-section section-pad" id="diagnostico">
-          <div class="diagnostic-intro reveal"><p class="eyebrow">Diagnóstico digital</p><h2>¿Dónde está tu próxima oportunidad?</h2><p>Responde tres preguntas y recibe una primera lectura de lo que tu negocio puede activar.</p></div>
-          <form class="diagnostic-card reveal reveal-delay-1" id="diagnostic-form"><div class="diagnostic-step is-active" data-step="1"><span class="step-label">01 / 03</span><h3>¿Qué quieres mover primero?</h3><div class="choice-grid"><label><input type="radio" name="goal" value="Atraer más clientes" required /><span>Atraer más clientes</span></label><label><input type="radio" name="goal" value="Vender mejor" /><span>Vender mejor</span></label><label><input type="radio" name="goal" value="Ordenar mi operación" /><span>Ordenar mi operación</span></label><label><input type="radio" name="goal" value="Fidelizar clientes" /><span>Fidelizar clientes</span></label></div><button class="button button-light next-step" type="button">Siguiente <span>↗</span></button></div><div class="diagnostic-step" data-step="2"><span class="step-label">02 / 03</span><h3>¿Qué tan conectado está hoy?</h3><div class="choice-grid"><label><input type="radio" name="status" value="Estoy empezando" required /><span>Estoy empezando</span></label><label><input type="radio" name="status" value="Ya tengo presencia digital" /><span>Ya tengo presencia digital</span></label><label><input type="radio" name="status" value="Tengo varias herramientas" /><span>Tengo varias herramientas</span></label><label><input type="radio" name="status" value="Necesito una visión integral" /><span>Necesito una visión integral</span></label></div><button class="button button-light next-step" type="button">Siguiente <span>↗</span></button></div><div class="diagnostic-step" data-step="3"><span class="step-label">03 / 03</span><h3>¿Qué te gustaría construir?</h3><div class="choice-grid"><label><input type="radio" name="build" value="Una marca más relevante" required /><span>Una marca más relevante</span></label><label><input type="radio" name="build" value="Una experiencia web" /><span>Una experiencia web</span></label><label><input type="radio" name="build" value="Un sistema a mi medida" /><span>Un sistema a mi medida</span></label><label><input type="radio" name="build" value="Un equipo estratégico" /><span>Un equipo estratégico</span></label></div><button class="button button-light" type="submit">Ver mi recomendación <span>↗</span></button></div><div class="diagnostic-result" aria-live="polite"><span class="result-symbol">✦</span><p class="step-label">Tu primera lectura</p><h3>Tu siguiente paso empieza con claridad.</h3><p class="result-text"></p><a class="button button-primary" href="#contacto">Solicitar diagnóstico personalizado <span>↗</span></a><button class="reset-diagnostic" type="button">Volver a empezar</button></div><div class="progress"><span></span><span></span><span></span></div></form>
-        </section>
-
-        <section class="contact-section section-pad" id="contacto">
-          <div class="contact-copy reveal"><p class="eyebrow">Contacto</p><h2>Cuéntanos qué quieres <em>construir.</em></h2><p>Una buena conversación puede ser el primer paso de algo grande. Cuéntanos sobre tu negocio, tu reto y hacia dónde quieres llevarlo.</p><div class="contact-details"><strong>Hablemos por WhatsApp</strong><span>Al enviar, se abrirá WhatsApp con tu solicitud lista para enviarse.</span><a href="https://wa.me/525539761846" target="_blank" rel="noreferrer">+52 55 3976 1846 <span>↗</span></a></div></div>
-          <form class="contact-form reveal reveal-delay-1" id="contact-form"><div class="form-row"><label>Tu nombre<input type="text" name="name" placeholder="¿Cómo te llamas?" required /></label><label>Tu empresa<input type="text" name="company" placeholder="Nombre de empresa" /></label></div><div class="form-row"><label>Correo electrónico<input type="email" name="email" placeholder="tu@empresa.com" required /></label><label>Tipo de proyecto<select name="project"><option value="">Selecciona una opción</option><option>Marketing digital</option><option>Página web</option><option>Software personalizado</option><option>Fidelización de clientes</option><option>Analítica de datos</option></select></label></div><label>Cuéntanos un poco más<textarea name="message" rows="4" placeholder="¿Qué te gustaría lograr?"></textarea></label><div class="form-actions"><button class="button button-primary" type="submit">Enviar por WhatsApp <span>↗</span></button><span class="form-status" aria-live="polite"></span></div></form>
-        </section>
-      </main>
-
-      <footer class="footer section-pad"><div class="footer-top"><div class="footer-brand"><img src="./frontend/src/assets/images/logo.png" alt="Tlatolli" /><p>Marketing, tecnología y datos para construir lo que sigue.</p></div><div class="footer-nav"><div><span>Explora</span><a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#proyectos">Portafolio real</a><a href="#proceso">Proceso</a></div><div><span>Sitios publicados</span><a href="https://fershopool.github.io/ollin-site/" target="_blank" rel="noreferrer">Ollin ↗</a><a href="https://fershopool.github.io/cuicoyan-site/" target="_blank" rel="noreferrer">Cuicoyan ↗</a><a href="https://fershopool.github.io/upiicsa-calpulli-site/" target="_blank" rel="noreferrer">UPIICSA Calpulli ↗</a></div><div><span>Conecta</span><a href="#contacto">Contacto</a><a href="#diagnostico">Diagnóstico digital</a></div></div></div><div class="footer-bottom"><span>© 2026 Tlatolli. Todos los derechos reservados.</span><span>Hecho con intención en México.</span></div></footer>
+        <section id="inicio" class="section section--dark s-hero" data-nav-theme="dark" data-stage="atraer">
+  <div class="container s-hero__inner">
+    <div class="s-hero__copy">
+      <p class="s-hero__eyebrow"><span class="s-hero__dot"></span> ecosistemas digitales para negocios vivos</p>
+      <h1>Marketing que <em>aprende</em> de tu negocio.</h1>
+      <p class="s-hero__intro">Conectamos clientes, datos y marketing para que cada acción te ayude a conocer mejor lo que haces.</p>
+      <div class="s-hero__actions">
+        <a class="btn btn--primary" href="#diagnostico">Analizar mi negocio <span aria-hidden="true">↗</span></a>
+        <a class="btn btn--ghost" href="#sistema">Explorar Tlatolli <span aria-hidden="true">↓</span></a>
+      </div>
     </div>
+    <div class="s-hero__visual" data-hero-visual>
+      <div class="s-hero__halo" aria-hidden="true"></div>
+      <svg class="s-hero__orbit" viewBox="0 0 640 540" role="img" aria-label="Ciclo ilustrativo entre clientes, compras, datos y campañas">
+        <defs>
+          <linearGradient id="hero-route" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B4864A"/><stop offset=".5" stop-color="#D9A64C"/><stop offset="1" stop-color="#8EAC69"/></linearGradient>
+          <filter id="hero-glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <path class="s-hero__route" d="M321 93C443 85 561 159 556 277c-5 120-105 196-228 194C205 468 85 394 86 273 87 160 184 95 321 93Z" fill="none" stroke="url(#hero-route)" stroke-width="2" stroke-dasharray="9 10" pathLength="1"/>
+        <path class="s-hero__route s-hero__route--inner" d="M321 126c103 0 179 60 179 148s-75 153-179 153-178-61-178-153 76-148 178-148Z" fill="none" stroke="rgba(247,245,239,.2)" stroke-width="1"/>
+        <g class="s-hero__core" transform="translate(321 270)"><circle r="80" fill="#234536" stroke="#B4864A" stroke-width="1.5"/><circle r="63" fill="none" stroke="rgba(247,245,239,.14)"/><image href="./frontend/src/assets/brand/favicon.svg" x="-43" y="-43" width="86" height="86"/><text x="0" y="57" fill="#D9A64C" text-anchor="middle" font-size="9" font-family="DM Mono, monospace">conecta</text></g>
+        <g class="s-hero__node" data-node="cliente" transform="translate(319 70)"><circle r="31" fill="#52613D"/><circle r="31" fill="none" stroke="#D9A64C" stroke-width="2"/><text y="4" fill="#F7F5EF" text-anchor="middle" font-size="12" font-family="DM Sans, sans-serif">cliente</text><circle class="s-hero__pulse" r="39" fill="none" stroke="#D9A64C" stroke-width="1"/></g>
+        <g class="s-hero__node" data-node="compra" transform="translate(558 179)"><circle r="31" fill="#A8463F"/><circle r="31" fill="none" stroke="#D9A64C" stroke-width="2"/><text y="4" fill="#F7F5EF" text-anchor="middle" font-size="12" font-family="DM Sans, sans-serif">compra</text></g>
+        <g class="s-hero__node" data-node="datos" transform="translate(543 376)"><circle r="31" fill="#234536" stroke="#8EAC69" stroke-width="2"/><text y="4" fill="#F7F5EF" text-anchor="middle" font-size="12" font-family="DM Sans, sans-serif">datos</text></g>
+        <g class="s-hero__node" data-node="campaña" transform="translate(321 478)"><circle r="31" fill="#B4864A"/><circle r="31" fill="none" stroke="#F7F5EF" stroke-opacity=".5"/><text y="4" fill="#1D2521" text-anchor="middle" font-size="12" font-family="DM Sans, sans-serif">campaña</text></g>
+        <g class="s-hero__node" data-node="retorno" transform="translate(95 376)"><circle r="31" fill="#52613D"/><circle r="31" fill="none" stroke="#D9A64C" stroke-width="2"/><text y="4" fill="#F7F5EF" text-anchor="middle" font-size="12" font-family="DM Sans, sans-serif">retorno</text></g>
+        <g class="s-hero__node" data-node="contenido" transform="translate(82 178)"><circle r="31" fill="#234536" stroke="#8EAC69" stroke-width="2"/><text y="4" fill="#F7F5EF" text-anchor="middle" font-size="12" font-family="DM Sans, sans-serif">contenido</text></g>
+        <circle class="s-hero__traveler" cx="321" cy="70" r="5" fill="#F7F5EF" filter="url(#hero-glow)"/>
+      </svg>
+      <div class="s-hero__cards" aria-label="Ejemplos de señales conectadas">
+        <div class="s-hero__card s-hero__card--one"><span class="badge badge--ejemplo">Ejemplo</span><b>Una compra</b><small>se vuelve una señal</small></div>
+        <div class="s-hero__card s-hero__card--two"><span class="s-hero__spark">✦</span><b>Una idea</b><small>encuentra a su cliente</small></div>
+        <div class="s-hero__card s-hero__card--three"><span class="s-hero__bars"><i></i><i></i><i></i></span><b>Un dato</b><small>orienta tu siguiente paso</small></div>
+      </div>
+    </div>
+  </div>
+  <div class="s-hero__marquee" aria-label="Capacidades de Tlatolli"><span>atraer</span><i>✦</i><span>conocer</span><i>✦</i><span>fidelizar</span><i>✦</i><span>medir</span><i>✦</i><span>aprender</span><i>✦</i><span>atraer</span></div>
+</section>
+
+        <section id="problema" class="section section--ivory s-problema" data-stage="atraer">
+  <div class="container">
+    <div class="s-problema__heading"><div><p class="s-problema__eyebrow">el punto de partida</p><h2>Todo funciona.<br><em>Pero separado.</em></h2></div><p class="s-problema__lead">Tu negocio ya tiene piezas valiosas. Cuando no conversan entre sí, cada esfuerzo empieza de cero.</p></div>
+    <div class="s-problema__board" data-problem-board>
+      <div class="s-problema__threads" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="s-problema__pieces" role="list" aria-label="Piezas de un negocio digital">
+        <button type="button" class="s-problema__piece" role="listitem"><b>Página web</b><small>presencia</small></button><button type="button" class="s-problema__piece" role="listitem"><b>Instagram</b><small>contenido</small></button><button type="button" class="s-problema__piece" role="listitem"><b>Facebook</b><small>comunidad</small></button><button type="button" class="s-problema__piece" role="listitem"><b>Ventas</b><small>acción</small></button><button type="button" class="s-problema__piece" role="listitem"><b>Clientes</b><small>relación</small></button><button type="button" class="s-problema__piece" role="listitem"><b>Promociones</b><small>activación</small></button><button type="button" class="s-problema__piece" role="listitem"><b>Base de datos</b><small>memoria</small></button><button type="button" class="s-problema__piece" role="listitem"><b>Campañas</b><small>dirección</small></button><button type="button" class="s-problema__piece" role="listitem"><b>Estadísticas</b><small>aprendizaje</small></button>
+      </div>
+      <button type="button" class="s-problema__connect" data-connect aria-pressed="false"><span class="s-problema__connect-icon">+</span><span class="s-problema__connect-label">Conectar las piezas</span></button><p class="s-problema__board-note">Una vista completa empieza por escuchar todas las señales.</p>
+    </div>
+    <div class="s-problema__questions" aria-label="Preguntas para tu negocio"><p>¿Tus clientes no regresan?</p><p>¿Publicas, pero no sabes si funciona?</p><p>¿Tus herramientas están desconectadas?</p><p>¿Vendes y no sabes qué lo provocó?</p><p>¿Tu conocimiento vive en la cabeza de alguien?</p><p>¿No sabes qué horarios concentran tu actividad?</p><p>¿Tus transmisiones terminan cuando apagas la cámara?</p><p>¿Tus ubicaciones aparecen donde te necesitan?</p><p>¿Sabes qué días realmente compra tu cliente?</p></div>
+    <div class="s-problema__close"><p>Conectar no es agregar otra herramienta.<br><strong>Tlatolli conecta estas piezas.</strong></p><a class="btn btn--dark" href="#sistema">Ver el sistema <span aria-hidden="true">↗</span></a></div>
+  </div>
+</section>
+
+        <section id="sistema" class="section section--dark s-ciclo" data-stage="atraer convertir identificar conocer fidelizar medir aprender">
+  <div class="s-ciclo__pin" data-cycle-pin>
+    <div class="container s-ciclo__layout">
+      <div class="s-ciclo__intro"><p class="s-ciclo__eyebrow">un ecosistema, ocho movimientos</p><h2>Tu negocio<br><em>en movimiento.</em></h2><p>El ciclo no termina con una venta: cada señal abre una conversación nueva.</p><div class="s-ciclo__legend"><span><i></i> dolor</span><span><i></i> oportunidad</span></div></div>
+      <div class="s-ciclo__diagram" aria-hidden="true"><svg viewBox="0 0 420 420"><circle class="s-ciclo__ring-base" cx="210" cy="210" r="166"/><circle class="s-ciclo__ring-progress" data-cycle-ring cx="210" cy="210" r="166"/><path d="M210 42l-8 14h16z" fill="#D9A64C" transform="rotate(0 210 210)"/><circle class="s-ciclo__ring-dot" data-cycle-dot cx="210" cy="44" r="7"/><g class="s-ciclo__center"><circle cx="210" cy="210" r="70" fill="#234536" stroke="#B4864A"/><text x="210" y="205" fill="#F7F5EF" text-anchor="middle" font-size="18" font-family="DM Sans,sans-serif">Tlatolli</text><text x="210" y="225" fill="#D9A64C" text-anchor="middle" font-size="10" font-family="DM Mono,monospace">aprende contigo</text></g></svg><span class="s-ciclo__diagram-label s-ciclo__diagram-label--top">atraer</span><span class="s-ciclo__diagram-label s-ciclo__diagram-label--right">convertir</span><span class="s-ciclo__diagram-label s-ciclo__diagram-label--bottom">aprender</span><span class="s-ciclo__diagram-label s-ciclo__diagram-label--left">conocer</span></div>
+      <div class="s-ciclo__steps" data-cycle-steps role="list" aria-label="Etapas del ecosistema Tlatolli">
+        <article class="s-ciclo__step is-active" data-step="0" role="listitem"><span class="s-ciclo__number">01</span><div><h3>Atraer</h3><p>Publicas, pero tu mensaje se pierde entre tantos canales.</p><strong>→ Encuentra a las personas que ya buscan lo que haces.</strong><a href="#marketing">Ver marketing <span>↗</span></a></div></article>
+        <article class="s-ciclo__step" data-step="1" role="listitem"><span class="s-ciclo__number">02</span><div><h3>Convertir</h3><p>Tu presencia informa, pero no da el siguiente paso.</p><strong>→ Diseña una puerta clara para comenzar la relación.</strong><a href="#presencia">Ver presencia <span>↗</span></a></div></article>
+        <article class="s-ciclo__step" data-step="2" role="listitem"><span class="s-ciclo__number">03</span><div><h3>Identificar</h3><p>Las interacciones suceden, pero nadie las reconoce juntas.</p><strong>→ Mira a la persona detrás de cada señal.</strong><a href="#panel">Ver panel <span>↗</span></a></div></article>
+        <article class="s-ciclo__step" data-step="3" role="listitem"><span class="s-ciclo__number">04</span><div><h3>Conocer</h3><p>Tienes datos, pero no siempre sabes qué te están diciendo.</p><strong>→ Convierte preguntas en patrones que puedas usar.</strong><a href="#analitica">Ver analítica <span>↗</span></a></div></article>
+        <article class="s-ciclo__step" data-step="4" role="listitem"><span class="s-ciclo__number">05</span><div><h3>Fidelizar</h3><p>Una compra termina y la conversación se enfría.</p><strong>→ Dale a cada cliente una razón para volver.</strong><a href="#fidelizacion">Ver fidelización <span>↗</span></a></div></article>
+        <article class="s-ciclo__step" data-step="5" role="listitem"><span class="s-ciclo__number">06</span><div><h3>Medir</h3><p>Hay actividad por todos lados, pero cuesta leerla.</p><strong>→ Observa lo que ocurre sin perderte en números.</strong><a href="#analitica">Ver analítica <span>↗</span></a></div></article>
+        <article class="s-ciclo__step" data-step="6" role="listitem"><span class="s-ciclo__number">07</span><div><h3>Aprender</h3><p>Repites esfuerzos sin saber qué vale la pena conservar.</p><strong>→ Elige tu siguiente movimiento con contexto.</strong><a href="#analitica">Ver decisiones <span>↗</span></a></div></article>
+        <article class="s-ciclo__step" data-step="7" role="listitem"><span class="s-ciclo__number">08</span><div><h3>Volver a atraer</h3><p>El aprendizaje se queda guardado y el ciclo se detiene.</p><strong>→ Regresa al mercado con una idea más precisa.</strong><a href="#marketing">Volver a atraer <span>↗</span></a></div></article>
+      </div>
+      <nav class="s-ciclo__nav" aria-label="Navegar etapas del ciclo"><button type="button" data-cycle-prev aria-label="Etapa anterior">←</button><span><b data-cycle-current>01</b> / 08</span><button type="button" data-cycle-next aria-label="Etapa siguiente">→</button></nav>
+    </div>
+  </div>
+</section>
+
+        <section id="presencia" class="section section--ivory s-presencia" data-stage="convertir">
+  <div class="container">
+    <header class="section__intro s-presencia__intro">
+      <p class="eyebrow">Presencia · convertir</p>
+      <h2>Tu página muestra información, pero no capta ni vende.</h2>
+      <p>Una presencia clara ayuda a que la siguiente acción sea obvia. Aquí puedes ver cómo se vería una entrada conectada con tu negocio.</p>
+    </header>
+
+    <div class="s-presencia__workspace">
+      <div class="s-presencia__devices">
+        <div class="tabs s-presencia__tabs" role="tablist" aria-label="Estudio de dispositivos">
+          <button type="button" role="tab" aria-selected="true" aria-controls="presencia-escritorio" data-device-tab="escritorio">Escritorio</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="presencia-movil" data-device-tab="movil">Móvil</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="presencia-app" data-device-tab="app">Tipo app</button>
+        </div>
+        <div id="presencia-escritorio" class="s-presencia__panel" role="tabpanel" data-device-panel="escritorio">
+          <div class="browser s-presencia__browser">
+            <div class="browser__bar">tlatolli.local / conoce / agenda</div>
+            <div class="s-presencia__site">
+              <div class="s-presencia__site-nav"><strong>Casa Nopal</strong><span>Negocio ficticio · Ejemplo</span><span>Menú</span><span>Visítanos</span></div>
+              <div class="s-presencia__site-hero"><p class="eyebrow">Comida que te hace volver</p><h3>Una mesa lista para tu próxima pausa.</h3><p>Elige una fecha, descubre el menú y llega con todo claro.</p><button type="button" class="btn btn--primary" data-integration="citas">Ver disponibilidad <span aria-hidden="true">↗</span></button></div>
+              <div class="s-presencia__site-cards"><span>Menú de temporada</span><span>Reserva en tres pasos</span><span>Recuerda tu mesa</span></div>
+            </div>
+          </div>
+        </div>
+        <div id="presencia-movil" class="s-presencia__panel" role="tabpanel" data-device-panel="movil" hidden>
+          <div class="phone s-presencia__phone">
+            <div class="phone__screen"><div class="s-presencia__mobile-head"><strong>Casa Nopal</strong><small>Negocio ficticio · Ejemplo</small><span>☰</span></div><div class="s-presencia__mobile-art"><span>Tu mesa, a tu ritmo.</span></div><div class="s-presencia__mobile-copy"><p>Menú, horarios y una forma sencilla de reservar.</p><button type="button" class="btn btn--primary btn--small" data-integration="citas">Reservar</button></div></div>
+          </div>
+        </div>
+        <div id="presencia-app" class="s-presencia__panel" role="tabpanel" data-device-panel="app" hidden>
+          <div class="s-presencia__app-frame"><div class="s-presencia__app-top"><span class="s-presencia__app-dot"></span><strong>Hoy</strong><span>⌕</span></div><span class="s-presencia__app-example">Negocio ficticio · Ejemplo</span><p class="eyebrow">Tu siguiente señal</p><h3>Relaciones que puedes conocer.</h3><div class="s-presencia__app-stat"><strong>Señales</strong><span>para entender qué merece volver</span></div><button type="button" class="btn btn--secondary" data-integration="cliente">Entender la señal <span aria-hidden="true">→</span></button></div>
+        </div>
+      </div>
+
+      <aside class="s-presencia__integrations" aria-label="Puntos de conexión">
+        <p class="eyebrow">Puntos de conexión</p>
+        <h3>Una entrada que ya sabe qué puede pasar después.</h3>
+        <div class="s-presencia__integration-list">
+          <button type="button" class="s-presencia__integration is-active" data-integration="whatsapp"><span><b>WhatsApp</b><small>conversación inmediata</small></span><span class="badge badge--ejemplo">Ejemplo</span></button>
+          <button type="button" class="s-presencia__integration" data-integration="citas"><span><b>Citas</b><small>agenda y disponibilidad</small></span><span class="badge badge--capacidad">Capacidad</span></button>
+          <button type="button" class="s-presencia__integration" data-integration="catalogo"><span><b>Catálogo</b><small>producto y decisión</small></span><span class="badge badge--disponible">Disponible</span></button>
+          <button type="button" class="s-presencia__integration" data-integration="cliente"><span><b>Cliente / datos</b><small>memoria para volver</small></span><span class="badge badge--capacidad">Capacidad</span></button>
+        </div>
+        <div class="s-presencia__detail" data-integration-detail aria-live="polite"><strong>WhatsApp puede recibir la pregunta que nace en la página.</strong><p>El botón puede abrir una conversación con contexto: qué busca la persona, cuándo quiere ir y qué necesita resolver.</p></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+        <section id="fidelizacion" class="section section--dark s-fidelizacion" data-stage="identificar conocer fidelizar">
+  <div class="container s-fidelizacion__inner">
+    <div class="s-fidelizacion__header"><div><div class="section-kicker">Conocer · fidelizar</div><h2>Haz que volver<br><em>tenga contexto.</em></h2></div><p>Una relación útil recuerda señales, reconoce visitas y abre una conversación nueva. Esta interfaz es una demostración.</p></div>
+    <div class="s-fidelizacion__tabs" role="tablist" aria-label="Ejemplos por tipo de negocio"><button type="button" role="tab" aria-selected="true" data-kind="restaurante">Restaurante</button><button type="button" role="tab" aria-selected="false" data-kind="clinica">Clínica</button><button type="button" role="tab" aria-selected="false" data-kind="comercio">Comercio</button></div>
+    <div class="s-fidelizacion__simulator"><div class="s-fidelizacion__phone-wrap"><span class="badge badge--ejemplo">Demo · cliente</span><div class="s-fidelizacion__phone"><div class="s-fidelizacion__phone-notch"></div><div class="s-fidelizacion__phone-top"><span>9:41</span><span>◉ ◉ ◉</span></div><div class="s-fidelizacion__phone-brand"><span data-brand>Tlatolli</span><i data-type-label>Restaurante</i></div><p class="s-fidelizacion__greeting">Hola, <strong>persona invitada.</strong></p><div class="s-fidelizacion__wallet-card"><div><span data-pass-label>Pase de visitas</span><strong data-tier>Comunidad</strong></div><span class="s-fidelizacion__wallet-mark">TL</span></div><div class="s-fidelizacion__metrics"><div><span>Visitas</span><strong data-visits>2</strong></div><div><span>Saldo demo</span><strong data-balance>2</strong></div></div><div class="s-fidelizacion__qr"><svg data-qr viewBox="0 0 210 210" role="img" aria-label="Ilustración de QR de demostración"></svg><span>Ilustración de QR<br>no valida compras</span></div><button type="button" class="s-fidelizacion__qr-refresh" data-qr-refresh>Regenerar ilustración</button><p class="s-fidelizacion__token" data-token>TL-DEMO-RESTAURANTE-01</p><div class="s-fidelizacion__wallet-actions"><button type="button" disabled>Apple Wallet · Próximamente</button><button type="button" disabled>Google Wallet · Próximamente</button></div></div></div>
+      <div class="s-fidelizacion__pos-wrap"><span class="badge badge--prototipo">Demo · POS</span><div class="s-fidelizacion__pos"><div class="s-fidelizacion__pos-bar"><span>tlatolli / panel</span><span>modo demostración</span></div><div class="s-fidelizacion__pos-head"><div><span class="s-fidelizacion__eyebrow">Simular visita</span><h3 data-pos-title>Registrar una visita</h3></div><span class="s-fidelizacion__pos-dot"></span></div><div class="s-fidelizacion__pos-customer"><span class="s-fidelizacion__avatar">P</span><div><strong>Persona invitada</strong><small data-pos-segment>Cliente frecuente · ejemplo</small></div><span class="s-fidelizacion__pos-status">Activo · demo</span></div><div class="s-fidelizacion__pos-event"><span data-pos-action>Una visita suma contexto</span><strong data-pos-reward>+1 visita</strong></div><button class="btn btn--primary" type="button" data-simulate>Simular visita en POS</button><p class="s-fidelizacion__pos-note" data-pos-status aria-live="polite">Sin movimientos todavía en esta demostración.</p><div class="s-fidelizacion__pos-history"><span>Última actividad</span><strong data-history>Esperando simulación</strong></div></div><p class="s-fidelizacion__consistency" aria-live="polite">El teléfono y el POS muestran el mismo estado de ejemplo.</p></div></div>
+    <div class="s-fidelizacion__today"><div><span class="section-kicker">Qué existe hoy</span><h3>Una ruta clara para<br><em>lo que sí está listo.</em></h3></div><div class="s-fidelizacion__today-grid"><article><span class="badge badge--beta">Beta</span><strong>Kóoben</strong><p>Login y QR están en prototipo.</p></article><article><span class="badge badge--prototipo">Prototipo</span><strong>Wallet</strong><p>Apple y Google Wallet sin configurar; próximamente.</p></article><article><span class="badge badge--ejemplo">Datos de ejemplo</span><strong>Panel</strong><p>La vista administrativa usa datos de demostración.</p></article></div></div>
+  </div>
+</section>
+
+        <section id="analitica" class="section section--paper s-analitica" data-stage="conocer medir">
+  <div class="container s-analitica__container">
+    <header class="s-analitica__header"><div><p class="s-analitica__eyebrow">conocer · medir</p><h2>Los datos<br><em>quieren decir algo.</em></h2></div><div class="s-analitica__header-copy"><p>Tu negocio ya genera señales. Tlatolli las ordena para que una observación pueda convertirse en un siguiente paso.</p><span class="badge badge--ejemplo">Datos de ejemplo</span></div></header>
+    <div class="s-analitica__story"><p>El dolor: mirar números sin saber qué hacer con ellos.</p><span aria-hidden="true">→</span><p>La oportunidad: encontrar un patrón, probar una decisión y aprender del siguiente dato.</p></div>
+    <div class="s-analitica__dashboard" data-dashboard>
+      <div class="s-analitica__dashboard-head"><div><p class="s-analitica__label">vista de actividad</p><h3>Tu negocio, en contexto.</h3></div><div class="s-analitica__periods" role="group" aria-label="Periodo de datos"><button type="button" class="is-active" data-period="day" aria-pressed="true">Día</button><button type="button" data-period="week" aria-pressed="false">Semana</button><button type="button" data-period="month" aria-pressed="false">Mes</button><button type="button" data-period="season" aria-pressed="false">Temporada</button></div></div>
+      <div class="s-analitica__kpis"><div class="s-analitica__kpi"><span>Personas que llegaron</span><b data-kpi="visitas">248</b><small>visitas de ejemplo</small></div><div class="s-analitica__kpi"><span>Señales registradas</span><b data-kpi="senales">74</b><small>interacciones de ejemplo</small></div><div class="s-analitica__kpi s-analitica__kpi--accent"><span>Acciones completadas</span><b data-kpi="acciones">31</b><small>compras de ejemplo</small></div><div class="s-analitica__kpi"><span>Relaciones nuevas</span><b data-kpi="relaciones">18</b><small>datos de ejemplo</small></div></div>
+      <div class="s-analitica__dashboard-grid">
+        <section class="s-analitica__chart-block" aria-labelledby="chart-title"><div class="s-analitica__block-head"><div><span class="badge badge--ejemplo">Ejemplo</span><h4 id="chart-title">Actividad que puedes leer</h4></div><span class="s-analitica__period-label" data-period-label>Día</span></div><div class="s-analitica__chart"><div class="s-analitica__axis" aria-hidden="true"><span>40</span><span>30</span><span>20</span><span>10</span><span>0</span></div><svg viewBox="0 0 700 250" role="img" aria-labelledby="chart-title chart-description"><desc id="chart-description" data-chart-description>Actividad de ejemplo durante un día.</desc><path class="s-analitica__gridline" d="M30 25H680M30 75H680M30 125H680M30 175H680M30 225H680"/><polyline class="s-analitica__chart-area" data-chart-area points="30,190 138,150 246,170 354,120 463,90 571,55 680,120"/><polyline class="s-analitica__chart-line" data-chart-line points="30,190 138,150 246,170 354,120 463,90 571,55 680,120"/><g class="s-analitica__chart-dots" data-chart-dots></g></svg><div class="s-analitica__chart-labels" data-chart-labels><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span></div></div><p class="s-analitica__chart-text" data-chart-text>En este periodo, el viernes concentra una señal más alta en el ejemplo.</p></section>
+        <section class="s-analitica__heat-block" aria-labelledby="heat-title"><div class="s-analitica__block-head"><div><span class="badge badge--capacidad">Capacidad</span><h4 id="heat-title">Cuándo se mueve</h4></div><span class="s-analitica__hint">día × hora</span></div><div class="s-analitica__heatmap" role="img" aria-label="Mapa de calor de actividad de ejemplo por día y hora"><div class="s-analitica__heat-hours"><span>09</span><span>12</span><span>15</span><span>18</span><span>21</span></div><div class="s-analitica__heat-rows" data-heatmap></div></div><p class="s-analitica__heat-note">Más color = más actividad en este escenario de ejemplo.</p></section>
+        <section class="s-analitica__products" aria-labelledby="products-title"><div class="s-analitica__block-head"><div><span class="badge badge--ejemplo">Ejemplo</span><h4 id="products-title">Lo que aparece en la conversación</h4></div></div><div class="s-analitica__product-columns"><div><small>más mencionado</small><ul><li><b>Producto de ejemplo A</b><span>12 señales</span></li><li><b>Producto de ejemplo B</b><span>9 señales</span></li><li><b>Producto de ejemplo C</b><span>6 señales</span></li></ul></div><div><small>menos mencionado</small><ul><li><b>Producto de ejemplo D</b><span>2 señales</span></li><li><b>Producto de ejemplo E</b><span>1 señal</span></li></ul></div></div></section>
+        <section class="s-analitica__mix" aria-labelledby="mix-title"><div class="s-analitica__block-head"><div><span class="badge badge--capacidad">Capacidad</span><h4 id="mix-title">Quién participa</h4></div></div><div class="s-analitica__mix-bars"><div><span>Nuevos</span><i><b style="width:64%"></b></i><strong>18</strong></div><div><span>Recurrentes</span><i><b style="width:42%"></b></i><strong>12</strong></div><div><span>Promociones activas</span><i><b style="width:27%"></b></i><strong>3</strong></div><div><span>Actividad en vivo</span><i><b style="width:50%"></b></i><strong>8</strong></div></div></section>
+      </div>
+      <p class="s-analitica__data-note"><span class="s-analitica__status-dot"></span> Todo lo que ves aquí son datos de ejemplo para mostrar la lectura del sistema.</p>
+    </div>
+    <section class="s-analitica__decision" aria-labelledby="decision-title"><div class="s-analitica__decision-copy"><p class="s-analitica__eyebrow">un patrón abre una pregunta</p><h3 id="decision-title">Los viernes aumenta<br>el consumo de un producto.</h3><p>¿Qué harías con esa señal? Elige una decisión para ver cómo podría continuar el flujo.</p></div><div class="s-analitica__flow"><ol><li class="is-done"><span>01</span><b>Datos</b></li><li class="is-active"><span>02</span><b>Patrón</b></li><li><span>03</span><b>Decisión</b></li><li><span>04</span><b>Campaña</b></li><li><span>05</span><b>Resultado</b></li><li><span>06</span><b>Nuevo dato</b></li></ol><div class="s-analitica__choices" role="group" aria-label="Decisión de ejemplo"><button type="button" data-choice="producto" class="is-selected" aria-pressed="true">Preparar el producto</button><button type="button" data-choice="promocion" aria-pressed="false">Probar una promoción</button><button type="button" data-choice="publicar" aria-pressed="false">Publicar el viernes</button></div><p class="s-analitica__choice-result" data-choice-result>Escenario de ejemplo: preparar el producto para ese momento y observar qué sucede en el siguiente dato.</p><span class="badge badge--ejemplo">Escenario de ejemplo</span></div></section>
+    <section id="panel" class="s-analitica__panel" aria-labelledby="panel-title"><div class="s-analitica__panel-head"><div><p class="s-analitica__eyebrow">panel / una vista</p><h3 id="panel-title">Todo tu negocio digital<br><em>en un mismo lugar.</em></h3></div><p>Una capacidad de sistema para reunir señales, no un endpoint ni una promesa de acceso.</p></div><div class="s-analitica__panel-body"><nav class="s-analitica__modules" aria-label="Módulos del panel"><button class="is-active" type="button" data-module="clientes" aria-pressed="true">Clientes</button><button type="button" data-module="ventas" aria-pressed="false">Ventas</button><button type="button" data-module="contenido" aria-pressed="false">Contenido</button><button type="button" data-module="promociones" aria-pressed="false">Promociones</button><button type="button" data-module="mapa" aria-pressed="false">Mapa</button><button type="button" data-module="actividad" aria-pressed="false">Actividad</button></nav><div class="s-analitica__module-view" data-module-view><span class="badge badge--capacidad" data-module-badge>Capacidad</span><h4 data-module-title>Clientes</h4><p data-module-copy>Reúne las señales de relación para reconocer nuevas conversaciones y próximos pasos.</p><div class="s-analitica__module-visual" data-module-visual><span></span><span></span><span></span></div></div></div></section>
+  </div>
+</section>
+
+        <section id="marketing" class="section section--olive s-marketing" data-stage="aprender atraer">
+  <div class="container s-marketing__inner">
+    <div class="s-marketing__header"><div><div class="section-kicker">Activar y aprender</div><h2>Publicar con<br><em>una razón.</em></h2></div><p>Cuando todo se siente urgente, una fecha clara ayuda a elegir el mensaje y observar qué conversación abre.</p></div>
+    <div class="s-marketing__story"><div><span class="badge badge--ejemplo">Ejemplo de calendario</span><h3>Una campaña,<br><em>muchos formatos.</em></h3><p>Partimos de una idea y la adaptamos a cada punto de contacto. Cada formato conserva la intención, cambia la forma.</p></div><div class="s-marketing__formats" role="tablist" aria-label="Formatos de una campaña"><button type="button" role="tab" tabindex="0" aria-selected="true" aria-controls="format-post" data-format="post">IG post</button><button type="button" role="tab" tabindex="-1" aria-selected="false" aria-controls="format-carousel" data-format="carousel">IG carrusel</button><button type="button" role="tab" tabindex="-1" aria-selected="false" aria-controls="format-story" data-format="story">IG story</button><button type="button" role="tab" tabindex="-1" aria-selected="false" aria-controls="format-reels" data-format="reels">Reels</button><button type="button" role="tab" tabindex="-1" aria-selected="false" aria-controls="format-tiktok" data-format="tiktok">TikTok</button><button type="button" role="tab" tabindex="-1" aria-selected="false" aria-controls="format-youtube" data-format="youtube">YouTube</button><button type="button" role="tab" tabindex="-1" aria-selected="false" aria-controls="format-web" data-format="web">Web</button><div class="s-marketing__mockups"><article id="format-post" role="tabpanel" data-format-panel="post"><div class="s-marketing__mockup s-marketing__mockup--post"><span>IDEA CENTRAL</span><strong>Una mesa<br>llena de señales.</strong><small>IG · post</small></div></article><article id="format-carousel" role="tabpanel" data-format-panel="carousel" hidden><div class="s-marketing__mockup s-marketing__mockup--carousel"><span>01 / 04</span><strong>Una idea<br>en partes.</strong><small>IG · carrusel</small></div></article><article id="format-story" role="tabpanel" data-format-panel="story" hidden><div class="s-marketing__mockup s-marketing__mockup--story"><span>HOY</span><strong>¿Qué se te antoja?</strong><i>Vota aquí</i><small>IG · story</small></div></article><article id="format-reels" role="tabpanel" data-format-panel="reels" hidden><div class="s-marketing__mockup s-marketing__mockup--video"><span>0:18</span><strong>Un detalle<br>hace la diferencia.</strong><small>Reels · ejemplo</small></div></article><article id="format-tiktok" role="tabpanel" data-format-panel="tiktok" hidden><div class="s-marketing__mockup s-marketing__mockup--tiktok"><span>PARA TI</span><strong>Ven a verlo<br>de cerca.</strong><small>TikTok · ejemplo</small></div></article><article id="format-youtube" role="tabpanel" data-format-panel="youtube" hidden><div class="s-marketing__mockup s-marketing__mockup--youtube"><span>▶ 08:42</span><strong>La historia<br>completa.</strong><small>YouTube · ejemplo</small></div></article><article id="format-web" role="tabpanel" data-format-panel="web" hidden><div class="s-marketing__mockup s-marketing__mockup--web"><span>LANDING</span><strong>Descubre<br>tu próxima visita.</strong><small>Web · disponible</small></div></article></div></div></div>
+    <div class="s-marketing__calendar"><div class="s-marketing__calendar-head"><div><span class="badge badge--disponible">Herramienta disponible</span><h3 data-calendar-title>Octubre 2026</h3></div><div class="s-marketing__calendar-nav"><button type="button" data-calendar-prev aria-label="Mes anterior">←</button><button type="button" data-calendar-next aria-label="Mes siguiente">→</button></div></div><p class="s-marketing__calendar-note">Elige un día para ver por qué puede ser una buena ocasión para publicar.</p><div class="s-marketing__weekdays" aria-hidden="true"><span>Dom</span><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span></div><div class="s-marketing__days" data-calendar-days role="grid" aria-label="Calendario editorial"></div><div class="s-marketing__day-detail" data-calendar-detail aria-live="polite"><strong>Selecciona una fecha</strong><span>Verás el contexto y una acción concreta para esa publicación.</span></div></div>
+  </div>
+</section>
+
+        <section id="live" class="section section--ink s-live" data-stage="atraer">
+  <div class="container s-live__inner">
+    <div class="s-live__header"><div><div class="section-kicker">Señal en vivo</div><h2>La conversación<br><em>también sucede ahora.</em></h2></div><p>Una transmisión puede acercar tu historia a más personas y llevar sus preguntas de vuelta a tu negocio.</p></div>
+    <div class="s-live__benefits"><article><strong>Más alcance</strong><span>Abre una puerta para quien aún no te conoce.</span></article><article><strong>Escala internacional</strong><span>Una señal puede cruzar fronteras y husos horarios.</span></article><article><strong>Conversación directa</strong><span>Responde dudas mientras la atención está presente.</span></article><article><strong>Integración web</strong><span>Lleva la audiencia a un siguiente paso claro.</span></article></div>
+    <div class="s-live__board"><div class="s-live__stream"><div class="s-live__stream-top"><span class="s-live__live-dot">EN VIVO · EJEMPLO</span><span>00:18:42</span></div><div class="s-live__scene"><span class="s-live__signal">señal</span><strong>Una charla<br>desde tu negocio.</strong><small>El contenido de esta transmisión es ilustrativo.</small></div><div class="s-live__destinations" aria-label="Destinos de la señal"><span>WEB</span><i>↗</i><span>YouTube</span><i>↗</i><span>Redes</span><i>↗</i><span>Plataformas</span></div></div><aside class="s-live__chat" aria-label="Chat sintético de ejemplo"><div class="s-live__chat-head"><span>Chat · ejemplo</span><span>4 mensajes</span></div><div class="s-live__messages"><p><b>Ana</b> ¿A qué hora empiezan?</p><p><b>Diego</b> ¿Se puede pedir para llevar?</p><p><b>Luz</b> Me interesa conocer el menú.</p><p><b>Rafa</b> ¡Qué buena idea!</p></div><p class="s-live__chat-note">Mensajes sintéticos para demostrar el análisis.</p></aside></div>
+    <div class="s-live__analysis"><div class="s-live__analysis-copy"><span class="badge badge--ejemplo">Analizador · ejemplo</span><h3>Escucha lo que se repite.</h3><p>Las preguntas del chat pueden convertirse en temas para tu siguiente contenido o mejora.</p><button type="button" class="btn btn--light" data-analyze>Analizar conversación</button></div><div class="s-live__insights" data-insights hidden><div><strong>Preguntas frecuentes</strong><span>horarios · menú · pedidos</span></div><div><strong>Temas</strong><span>experiencia · comunidad</span></div><div><strong>Productos</strong><span>menú · temporada</span></div><div><strong>Participación</strong><span>preguntas abiertas</span></div></div></div>
+    <div class="s-live__poll"><div><span class="badge badge--capacidad">Interacción · ejemplo</span><h3>¿Qué te gustaría ver en la próxima transmisión?</h3><p>Una respuesta por demo. Puedes cambiarla o reiniciar.</p></div><fieldset data-poll><legend class="sr-only">Elige una respuesta</legend><label><input type="radio" name="live-poll" value="detrás de cámaras"><span>Detrás de cámaras</span></label><label><input type="radio" name="live-poll" value="preguntas y respuestas"><span>Preguntas y respuestas</span></label><label><input type="radio" name="live-poll" value="demostración"><span>Demostración</span></label><p data-poll-status aria-live="polite"></p><button type="button" class="btn btn--ghost" data-poll-reset>Reiniciar respuesta</button></fieldset></div>
+    <p class="s-live__prototype"><span class="badge badge--prototipo">Kóoben · prototipo</span> El embed en vivo de Kóoben todavía es una prueba.</p>
+  </div>
+</section>
+
+        <section id="mapas" class="section section--ivory s-mapas" data-stage="convertir">
+  <div class="container">
+    <header class="section__intro s-mapas__intro">
+      <p class="eyebrow">Mapas · convertir</p>
+      <h2>No es poner Google Maps.</h2>
+      <p>Es leer el territorio donde tu negocio ya se mueve y convertir sus señales en decisiones más precisas.</p>
+    </header>
+    <div class="s-mapas__layout">
+      <div class="s-mapas__board" data-map-board>
+        <svg class="s-mapas__svg" viewBox="0 0 720 480" role="img" aria-label="Mapa conceptual de sucursales, rutas, eventos, campus y zonas">
+          <rect width="720" height="480" fill="#234536" />
+          <path class="s-mapas__contour" d="M-20 120C130 20 260 170 405 84S615 30 760 114M-40 270C118 178 232 350 380 250s230-47 390 18M-20 420c132-87 243 21 365-59s229-55 390 22" />
+          <path class="s-mapas__route" data-layer="rutas" d="M36 393C172 343 180 184 313 203s123 205 337 107" />
+          <path class="s-mapas__route s-mapas__route--two" data-layer="rutas" d="M90 60c111 78 183 62 244 145s152 63 292 103" />
+          <g class="s-mapas__grid" aria-hidden="true"><path d="M80 0v480M200 0v480M320 0v480M440 0v480M560 0v480M680 0v480M0 100h720M0 220h720M0 340h720" /></g>
+        </svg>
+        <div class="s-mapas__pin s-mapas__pin--one"><button type="button" data-map-pin="sucursales" aria-label="Ver capa Sucursales">01</button></div>
+        <div class="s-mapas__pin s-mapas__pin--two"><button type="button" data-map-pin="eventos" aria-label="Ver capa Eventos">02</button></div>
+        <div class="s-mapas__pin s-mapas__pin--three"><button type="button" data-map-pin="campus" aria-label="Ver capa Campus">03</button></div>
+        <div class="s-mapas__pin s-mapas__pin--four"><button type="button" data-map-pin="zonas" aria-label="Ver capa Zonas">04</button></div>
+        <p class="s-mapas__caption">lectura conceptual · sin geolocalización</p>
+      </div>
+      <aside class="s-mapas__layers" aria-label="Capas del mapa">
+        <p class="eyebrow">Capas de lectura</p>
+        <h3>Cada pin abre una pregunta distinta.</h3>
+        <button class="s-mapas__layer is-active" type="button" data-map-layer="sucursales"><span><b>Sucursales</b><small>¿Dónde ya te encuentran?</small></span><span class="badge badge--ejemplo">Ejemplo</span></button>
+        <button class="s-mapas__layer" type="button" data-map-layer="rutas"><span><b>Rutas</b><small>¿Qué camino repiten?</small></span><span class="badge badge--capacidad">Capacidad</span></button>
+        <button class="s-mapas__layer" type="button" data-map-layer="eventos"><span><b>Eventos</b><small>¿Qué activa una visita?</small></span><span class="badge badge--ejemplo">Ejemplo</span></button>
+        <button class="s-mapas__layer" type="button" data-map-layer="campus"><span><b>Campus</b><small>¿Dónde se concentra la relación?</small></span><span class="badge badge--capacidad">Capacidad</span></button>
+        <button class="s-mapas__layer" type="button" data-map-layer="zonas"><span><b>Zonas</b><small>¿Dónde vale la pena aprender?</small></span><span class="badge badge--capacidad">Capacidad</span></button>
+      </aside>
+    </div>
+  </div>
+  <div class="s-mapas__sheet" data-map-sheet hidden role="dialog" aria-modal="true" aria-labelledby="map-sheet-title"><button class="s-mapas__close" type="button" data-map-close aria-label="Cerrar detalle">×</button><p class="eyebrow">Señal del territorio</p><h3 id="map-sheet-title" data-map-sheet-title> Sucursales </h3><p data-map-sheet-copy>Una vista de ejemplo para comparar dónde llega la atención y dónde aún hay espacio para conectar.</p><span class="badge badge--ejemplo">Lectura conceptual</span></div>
+</section>
+
+        <section id="app" class="section section--terra s-app" data-nav-theme="dark" data-stage="convertir">
+  <div class="container">
+    <header class="section__intro s-app__intro">
+      <p class="eyebrow">App · convertir</p>
+      <h2>La herramienta sigue al negocio.</h2>
+      <p>No todo necesita una app desde el día uno. La ruta empieza donde la experiencia ya es útil y crece cuando el proyecto lo justifica.</p>
+    </header>
+    <div class="s-app__controls" aria-label="Explorar rutas de producto">
+      <div class="s-app__control-group"><span class="s-app__control-label">Etapa</span><div class="tabs s-app__tabs" role="tablist"><button type="button" role="tab" aria-selected="true" data-app-stage="web">Web responsive</button><button type="button" role="tab" aria-selected="false" data-app-stage="pwa">Instalable / PWA</button><button type="button" role="tab" aria-selected="false" data-app-stage="stores">App stores</button></div></div>
+      <div class="s-app__control-group"><span class="s-app__control-label">Necesidad</span><div class="tabs s-app__tabs" role="tablist"><button type="button" role="tab" aria-selected="true" data-app-need="entrada">Una entrada clara</button><button type="button" role="tab" aria-selected="false" data-app-need="operacion">Operación recurrente</button><button type="button" role="tab" aria-selected="false" data-app-need="comunidad">Comunidad propia</button></div></div>
+    </div>
+    <div class="s-app__route" data-app-route>
+      <article class="s-app__card is-active" data-route-card="web"><span class="badge badge--light">Disponible</span><div class="s-app__mock s-app__mock--web"><div class="s-app__mock-head"><i></i><i></i><i></i><strong>tlatolli.local</strong></div><div class="s-app__mock-body"><small>Tu siguiente movimiento</small><b>Conoce. Decide. Vuelve.</b><span></span><span></span></div></div><h3>Web responsive</h3><p>La base para ser encontrado, explicar el valor y hacer visible el siguiente paso.</p></article>
+      <article class="s-app__card" data-route-card="pwa"><span class="badge badge--light">Capacidad</span><div class="s-app__mock s-app__mock--pwa"><div class="s-app__mock-top"><i></i><strong>Mi negocio</strong><span>•••</span></div><div class="s-app__mock-body"><small>Señales de hoy</small><b>Señales con contexto.</b><span></span><span></span></div></div><h3>Instalable / PWA</h3><p>Una experiencia que puede acompañar una operación recurrente cuando ya existe un hábito que sostener.</p></article>
+      <article class="s-app__card" data-route-card="stores"><span class="badge badge--light">Próximamente</span><div class="s-app__mock s-app__mock--stores"><div class="s-app__store-mark">T</div><strong>Una app con razón de ser.</strong><span>App Store · Google Play</span></div><h3>App Store / Google Play</h3><p>Una posibilidad para comunidades propias y usos frecuentes, después de probar la necesidad real.</p></article>
+    </div>
+    <div class="s-app__answer" aria-live="polite"><span class="s-app__answer-kicker">Ruta sugerida</span><strong data-app-answer>Empieza por una web responsive que conecte la intención con una acción.</strong></div>
+  </div>
+</section>
+
+        <section id="proyectos" class="section section--ink s-proyectos" data-stage="">
+  <div class="container s-proyectos__container">
+    <header class="s-proyectos__header">
+      <div><p class="s-proyectos__eyebrow">proyectos / señales de trabajo</p><h2>Ideas que ya<br><em>tienen forma.</em></h2></div>
+      <p class="s-proyectos__intro">Cada proyecto empieza con una pregunta distinta. Elegimos la forma digital que ayuda a responderla.</p>
+    </header>
+    <div class="s-proyectos__work" data-projects-work>
+      <nav class="s-proyectos__index" aria-label="Elegir proyecto">
+        <button type="button" class="s-proyectos__item is-active" data-project="koben" aria-pressed="true"><span class="s-proyectos__item-no">01</span><span><b>KÓOBEN</b><small>beta</small></span><span class="s-proyectos__arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="s-proyectos__item" data-project="clinica" aria-pressed="false"><span class="s-proyectos__item-no">02</span><span><b>CLÍNICA SAN PEDRO</b><small>publicado</small></span><span class="s-proyectos__arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="s-proyectos__item" data-project="ollin" aria-pressed="false"><span class="s-proyectos__item-no">03</span><span><b>OLLIN</b><small>en desarrollo</small></span><span class="s-proyectos__arrow" aria-hidden="true">↗</span></button>
+        <button type="button" class="s-proyectos__item" data-project="calpulli" aria-pressed="false"><span class="s-proyectos__item-no">04</span><span><b>UPIICSA CALPULLI</b><small>en desarrollo</small></span><span class="s-proyectos__arrow" aria-hidden="true">↗</span></button>
+      </nav>
+      <div class="s-proyectos__feature" data-project-feature>
+        <div class="s-proyectos__feature-meta"><span class="badge badge--beta" data-project-badge>Beta</span><span class="s-proyectos__feature-count" data-project-count>01 / 04</span></div>
+        <div class="s-proyectos__image-wrap"><div class="s-proyectos__grain"></div><img data-project-image src="./frontend/src/assets/cases/koben-hero.jpg" alt="Vista de Kóoben" loading="lazy"></div>
+        <div class="s-proyectos__feature-copy"><p class="s-proyectos__type" data-project-type>ecosistema digital</p><h3 data-project-title>KÓOBEN</h3><p data-project-summary>Una experiencia beta para explorar una relación digital con clientes y negocios.</p><button class="s-proyectos__details" type="button" data-project-details>Conocer el proyecto <span aria-hidden="true">↗</span></button></div>
+      </div>
+    </div>
+  </div>
+  <dialog class="s-proyectos__dialog" data-project-dialog aria-labelledby="project-dialog-title">
+    <div class="s-proyectos__dialog-head"><span class="s-proyectos__dialog-kicker" data-dialog-kicker>Proyecto</span><button class="s-proyectos__dialog-close" type="button" data-dialog-close aria-label="Cerrar detalle">×</button></div>
+    <div class="s-proyectos__dialog-body"><p class="s-proyectos__dialog-state" data-dialog-state>Beta</p><h3 id="project-dialog-title" data-dialog-title>KÓOBEN</h3><p class="s-proyectos__dialog-problem" data-dialog-problem></p><div class="s-proyectos__functions"><p>Qué se construyó</p><ul data-dialog-functions></ul></div><div class="s-proyectos__dialog-actions"><a class="btn btn--primary" data-dialog-external href="https://fershopool.github.io/koooben-beta/#inicio" target="_blank" rel="noopener noreferrer">Abrir sitio <span aria-hidden="true">↗</span></a><button class="btn btn--ghost" type="button" data-dialog-live>Ver en vivo aquí <span aria-hidden="true">▶</span></button></div><p class="s-proyectos__dialog-note">El sitio se carga solo al elegir “Ver en vivo aquí”.</p><div class="s-proyectos__live" data-live-frame aria-live="polite"></div></div>
+  </dialog>
+</section>
+
+        <section id="diferencia" class="section section--ivory s-diferencia" data-stage="">
+  <div class="container s-diferencia__inner">
+    <div class="section-kicker">Dos maneras de avanzar</div>
+    <div class="s-diferencia__intro">
+      <div><h2>El enfoque cambia<br><em>lo que aprendes.</em></h2></div>
+      <p>Compara una ruta que entrega piezas sueltas con una ruta que conecta cada señal de tu negocio.</p>
+    </div>
+    <div class="s-diferencia__switch" role="group" aria-label="Comparar enfoques">
+      <button class="s-diferencia__tab is-active" type="button" aria-pressed="true" data-compare="siempre">El enfoque de siempre</button>
+      <button class="s-diferencia__tab" type="button" aria-pressed="false" data-compare="tlatolli">El enfoque Tlatolli</button>
+    </div>
+    <div class="s-diferencia__comparison" aria-live="polite">
+      <article class="s-diferencia__panel" data-panel="siempre">
+        <span class="badge badge--ejemplo">Ruta común</span>
+        <h3>Acciones que viven separadas</h3>
+        <p>Una página, una campaña y una promoción avanzan cada una por su lado. Cuesta saber qué movió a cada cliente.</p>
+        <ul><li><b>Publicar</b><span>sin una pregunta clara</span></li><li><b>Medir</b><span>con datos dispersos</span></li><li><b>Repetir</b><span>sin aprender del ciclo</span></li></ul>
+      </article>
+      <article class="s-diferencia__panel s-diferencia__panel--accent" data-panel="tlatolli" hidden>
+        <span class="badge badge--capacidad">Sistema Tlatolli</span>
+        <h3>Señales que se convierten en decisiones</h3>
+        <p>Entendemos tu negocio, activamos el punto de contacto adecuado y usamos cada respuesta para decidir el siguiente paso.</p>
+        <ul><li><b>Entender</b><span>el contexto de tu negocio</span></li><li><b>Conectar</b><span>presencia, clientes y datos</span></li><li><b>Aprender</b><span>para activar mejor</span></li></ul>
+      </article>
+    </div>
+    <div class="s-diferencia__process" aria-label="Proceso Tlatolli">
+      <div class="s-diferencia__process-head"><span class="section-kicker">Cómo trabajamos</span><p>Cuatro movimientos. Una conversación continua con tu negocio.</p></div>
+      <ol><li><span>01</span><strong>Entender</strong><p>Escuchamos el reto y el contexto.</p></li><li><span>02</span><strong>Diseñar</strong><p>Ordenamos una ruta útil y medible.</p></li><li><span>03</span><strong>Activar</strong><p>Ponemos las piezas en contacto.</p></li><li><span>04</span><strong>Aprender</strong><p>Leemos señales para el siguiente ciclo.</p></li></ol>
+    </div>
+  </div>
+</section>
+
+        <section id="diagnostico" class="section section--paper s-diagnostico" data-stage="">
+  <div class="container s-diagnostico__inner">
+    <div class="section-kicker">Diagnóstico Tlatolli</div>
+    <div class="s-diagnostico__intro"><h2>Encuentra tu<br><em>primera palanca.</em></h2><p>Responde tres preguntas. Recibe una ruta inicial para ordenar tu ecosistema digital.</p></div>
+    <form class="s-diagnostico__form" novalidate>
+      <fieldset class="s-diagnostico__step"><legend><span>01 / 03</span>¿Qué quieres resolver?</legend><p class="s-diagnostico__hint">Puedes elegir una o varias opciones.</p><div class="s-diagnostico__choices">
+        <label><input type="checkbox" name="problems" value="no consigo suficientes clientes"><span>No consigo suficientes clientes</span></label><label><input type="checkbox" name="problems" value="mis clientes no regresan"><span>Mis clientes no regresan</span></label><label><input type="checkbox" name="problems" value="publico pero no sé si funciona"><span>Publico pero no sé si funciona</span></label><label><input type="checkbox" name="problems" value="no conozco a mis clientes"><span>No conozco a mis clientes</span></label><label><input type="checkbox" name="problems" value="mis herramientas están separadas"><span>Mis herramientas están separadas</span></label><label><input type="checkbox" name="problems" value="mejorar mi presencia digital"><span>Quiero mejorar mi presencia digital</span></label><label><input type="checkbox" name="problems" value="digitalizar mi negocio"><span>Quiero digitalizar mi negocio</span></label><label><input type="checkbox" name="problems" value="conocer mejor mis ventas"><span>Quiero conocer mejor mis ventas</span></label>
+      </div><p class="s-diagnostico__error" data-error="problems" role="alert"></p></fieldset>
+      <fieldset class="s-diagnostico__step"><legend><span>02 / 03</span>¿Qué tipo de negocio tienes?</legend><p class="s-diagnostico__hint">Así ajustamos el lenguaje y la ruta.</p><div class="s-diagnostico__choices s-diagnostico__choices--single"><label><input type="radio" name="business" value="Restaurante o alimentos"><span>Restaurante o alimentos</span></label><label><input type="radio" name="business" value="Comercio"><span>Comercio</span></label><label><input type="radio" name="business" value="Servicios profesionales"><span>Servicios profesionales</span></label><label><input type="radio" name="business" value="Educación o cultura"><span>Educación o cultura</span></label><label><input type="radio" name="business" value="Otro tipo de negocio"><span>Otro tipo de negocio</span></label></div><p class="s-diagnostico__error" data-error="business" role="alert"></p></fieldset>
+      <fieldset class="s-diagnostico__step"><legend><span>03 / 03</span>¿Qué tan conectado está hoy?</legend><p class="s-diagnostico__hint">Elige el punto que más se parece a tu realidad.</p><div class="s-diagnostico__choices s-diagnostico__choices--single"><label><input type="radio" name="connection" value="Estoy empezando"><span>Estoy empezando</span></label><label><input type="radio" name="connection" value="Tengo presencia básica"><span>Tengo presencia básica</span></label><label><input type="radio" name="connection" value="Uso varias herramientas"><span>Uso varias herramientas</span></label><label><input type="radio" name="connection" value="Tengo un ecosistema conectado"><span>Tengo un ecosistema conectado</span></label></div><p class="s-diagnostico__error" data-error="connection" role="alert"></p></fieldset>
+      <div class="s-diagnostico__actions"><button class="btn btn--primary" type="submit">Ver mi diagnóstico</button><span class="s-diagnostico__progress" aria-live="polite">3 preguntas para tu ruta</span></div>
+    </form>
+    <div class="s-diagnostico__result" hidden tabindex="-1" aria-live="polite"><div><span class="badge badge--capacidad">Ruta inicial</span><h3><span data-result="title"></span></h3><p data-result="summary"></p><p class="s-diagnostico__lever"><strong>Primera palanca</strong><span data-result="lever"></span></p></div><div class="s-diagnostico__modules"><h4>Módulos que pueden ensamblarse</h4><div data-result="modules"></div></div><div class="s-diagnostico__result-actions"><a class="btn btn--primary" data-whatsapp href="https://wa.me/525539761846" target="_blank" rel="noopener noreferrer">Enviar mi diagnóstico por WhatsApp</a><button class="btn btn--ghost" type="button" data-reset>Editar respuestas</button><span class="s-diagnostico__fallback" data-fallback>Si WhatsApp no se abrió, usa este enlace.</span></div></div>
+  </div>
+</section>
+
+        <section id="contacto" class="section section--dark s-contacto" data-nav-theme="dark" data-stage="">
+  <div class="container s-contacto__inner">
+    <div class="s-contacto__copy"><div class="section-kicker">Siguiente paso</div><h2>Hablemos de<br><em>tu negocio.</em></h2><p>Cuéntanos qué quieres ordenar, conectar o aprender. Te leemos por WhatsApp.</p><a class="s-contacto__whatsapp btn btn--primary" data-contact-whatsapp href="https://wa.me/525539761846" target="_blank" rel="noopener noreferrer">Abrir WhatsApp <span aria-hidden="true">↗</span></a><small>+52 55 3976 1846</small></div>
+    <form id="contact-form" class="s-contacto__form" novalidate><div class="section-kicker">O deja tus datos</div><label for="contact-name">Tu nombre<input id="contact-name" name="name" type="text" autocomplete="name" required></label><label for="contact-business">Nombre de tu negocio<input id="contact-business" name="business" type="text" autocomplete="organization" required></label><label for="contact-need">¿Qué necesitas resolver?<textarea id="contact-need" name="need" rows="4" required></textarea></label><button class="btn btn--light" type="submit">Enviar por WhatsApp</button><p class="s-contacto__status" data-status role="status"></p></form>
+  </div>
+</section>
+
+      </main>
+      <footer class="site-footer section--dark">
+  <div class="container footer-grid">
+    <div>
+      <a class="brand brand--footer" href="#inicio">
+        <img class="brand-logo brand-logo--light" src="./frontend/src/assets/brand/logo-light.svg" alt="" width="40" height="40" />
+        <span>Tlatolli</span>
+      </a>
+      <p class="footer-note">Claridad para el siguiente paso de tu negocio.</p>
+    </div>
+    <nav aria-label="Navegación del pie">
+      <a href="#sistema">Sistema</a>
+      <a href="#proyectos">Casos reales</a>
+      <a href="#diagnostico">Analizar mi negocio</a>
+    </nav>
+  </div>
+  <div class="container footer-meta">
+    <span>© Tlatolli</span>
+    <span>Hecho para negocios que quieren entender y avanzar.</span>
+  </div>
+</footer>
+<nav class="mobile-tabbar" aria-label="Navegación rápida">
+  <a href="#inicio"><span aria-hidden="true">⌂</span><span>Inicio</span></a>
+  <a href="#sistema"><span aria-hidden="true">◌</span><span>Sistema</span></a>
+  <a href="#proyectos"><span aria-hidden="true">▧</span><span>Casos</span></a>
+  <a href="#diagnostico"><span aria-hidden="true">↗</span><span>Analizar</span></a>
+</nav>
+
+    </div>
+    <script src="./dist/tlatolli.js" defer></script>
   </body>
 </html>

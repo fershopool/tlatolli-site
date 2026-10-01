@@ -1,0 +1,52 @@
+.s-live { padding: clamp(80px, 10vw, 142px) 0; overflow: hidden; background: var(--ink, #1D2521); color: var(--ivory, #F7F5EF); }
+.s-live__inner { max-width: 1160px; }
+.s-live__header { display: flex; justify-content: space-between; gap: 45px; align-items: end; }
+.s-live h2 { margin: 14px 0 0; font-size: clamp(45px, 7vw, 84px); letter-spacing: -.07em; line-height: .9; }
+.s-live h2 em { color: var(--copper, #B4864A); font-family: var(--serif, Georgia, serif); font-weight: 600; }
+.s-live__header > p { max-width: 330px; margin: 0; color: rgba(247,245,239,.82); font-size: 16px; line-height: 1.6; }
+.s-live__benefits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 78px; border-top: 1px solid rgba(247,245,239,.2); border-bottom: 1px solid rgba(247,245,239,.2); }
+.s-live__benefits article { min-height: 150px; padding: 23px 20px 23px 0; border-right: 1px solid rgba(247,245,239,.2); }
+.s-live__benefits article:not(:first-child) { padding-left: 20px; }
+.s-live__benefits article:last-child { border-right: 0; }
+.s-live__benefits strong { display: block; color: var(--copper, #B4864A); font-size: 18px; letter-spacing: -.03em; }
+.s-live__benefits span { display: block; margin-top: 10px; color: rgba(247,245,239,.8); font-size: 13px; line-height: 1.5; }
+.s-live__board { display: grid; grid-template-columns: 1.5fr .7fr; gap: 12px; margin-top: clamp(65px, 9vw, 115px); }
+.s-live__stream, .s-live__chat { border: 1px solid rgba(247,245,239,.22); border-radius: 15px; background: #26322d; }
+.s-live__stream { overflow: hidden; }
+.s-live__stream-top, .s-live__chat-head { display: flex; justify-content: space-between; gap: 12px; padding: 14px 17px; color: rgba(247,245,239,.78); font: 10px var(--mono, monospace); }
+.s-live__live-dot { color: #ed9b8e; }
+.s-live__live-dot::before { content: ''; display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: #A8463F; }
+.s-live__scene { display: flex; min-height: 290px; flex-direction: column; justify-content: end; padding: 28px; background: radial-gradient(circle at 70% 22%, rgba(180,134,74,.42), transparent 20%), linear-gradient(135deg, #49614a, #1D2521 70%); }
+.s-live__signal { color: #e5c17a; font: 10px var(--mono, monospace); text-transform: uppercase; }
+.s-live__scene strong { margin-top: 12px; font-size: clamp(32px, 5vw, 63px); line-height: .9; letter-spacing: -.07em; }
+.s-live__scene small { margin-top: 22px; color: rgba(247,245,239,.8); font-size: 11px; }
+.s-live__destinations { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 15px 18px; color: rgba(247,245,239,.8); font: 10px var(--mono, monospace); text-transform: uppercase; }
+.s-live__destinations i { color: #E5C17A; font-style: normal; }
+.s-live__chat { padding-bottom: 15px; }
+.s-live__messages { display: grid; gap: 10px; padding: 18px 17px; }
+.s-live__messages p { margin: 0; padding: 10px; border-radius: 7px; background: rgba(247,245,239,.08); color: rgba(247,245,239,.75); font-size: 12px; line-height: 1.4; }
+.s-live__messages b { display: block; margin-bottom: 3px; color: #E5C17A; font-size: 10px; }
+.s-live__chat-note { margin: 0 17px; color: rgba(247,245,239,.78); font-size: 10px; line-height: 1.4; }
+.s-live__analysis { display: grid; grid-template-columns: .8fr 1.2fr; gap: 45px; margin-top: 80px; padding: 30px; border: 1px solid rgba(247,245,239,.18); border-radius: 16px; background: rgba(35,69,54,.43); }
+.s-live__analysis h3, .s-live__poll h3 { margin: 20px 0 10px; font-size: clamp(26px, 3vw, 39px); line-height: .98; letter-spacing: -.05em; }
+.s-live__analysis-copy p, .s-live__poll p { color: rgba(247,245,239,.82); font-size: 13px; line-height: 1.6; }
+.s-live__analysis-copy .btn { margin-top: 12px; }
+.s-live__insights { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; align-content: center; }
+.s-live__insights[hidden] { display: none; }
+.s-live__insights div { padding: 17px; border: 1px solid rgba(247,245,239,.17); border-radius: 9px; }
+.s-live__insights strong, .s-live__insights span { display: block; }
+.s-live__insights strong { color: var(--copper, #B4864A); font-size: 14px; }
+.s-live__insights span { margin-top: 8px; color: rgba(247,245,239,.8); font-size: 12px; }
+.s-live__poll { display: grid; grid-template-columns: .9fr 1.1fr; gap: 50px; align-items: center; margin-top: 80px; padding-top: 35px; border-top: 1px solid rgba(247,245,239,.19); }
+.s-live__poll fieldset { display: grid; gap: 9px; margin: 0; padding: 0; border: 0; }
+.s-live__poll label { display: block; cursor: pointer; }
+.s-live__poll input { position: absolute; opacity: 0; }
+.s-live__poll label span { display: block; padding: 14px 16px; border: 1px solid rgba(247,245,239,.25); border-radius: 8px; color: rgba(247,245,239,.74); font-size: 13px; }
+.s-live__poll label:hover span, .s-live__poll input:checked + span, .s-live__poll input:focus-visible + span { border-color: var(--copper, #B4864A); background: rgba(180,134,74,.15); color: #F7F5EF; }
+.s-live__poll [data-poll-status] { min-height: 20px; margin: 7px 0 0; color: #e5c17a; font-size: 12px; }
+.s-live__poll .btn--ghost { justify-self: start; border: 1px solid rgba(247,245,239,.3); background: transparent; color: var(--ivory, #F7F5EF); }
+.s-live__prototype { margin: 70px 0 0; color: rgba(247,245,239,.8); font-size: 12px; }
+.s-live__prototype .badge { margin-right: 8px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@media (max-width: 760px) { .s-live__header, .s-live__board, .s-live__analysis, .s-live__poll { display: block; } .s-live__header > p { margin-top: 23px; } .s-live__benefits { grid-template-columns: repeat(2, 1fr); } .s-live__benefits article:nth-child(2) { border-right: 0; } .s-live__benefits article:nth-child(3), .s-live__benefits article:nth-child(4) { border-top: 1px solid rgba(247,245,239,.2); } .s-live__board > * + * { margin-top: 12px; } .s-live__analysis, .s-live__poll { padding: 24px 0 0; border-right: 0; border-left: 0; border-radius: 0; } .s-live__insights { margin-top: 25px; } .s-live__poll fieldset { margin-top: 24px; } }
+@media (prefers-reduced-motion: reduce) { .s-live__live-dot::before { animation: none; } }

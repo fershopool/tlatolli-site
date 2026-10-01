@@ -1,0 +1,64 @@
+.s-fidelizacion { padding: clamp(82px, 10vw, 145px) 0; overflow: hidden; background: var(--forest, #234536); color: var(--ivory, #F7F5EF); }
+.s-fidelizacion__inner { max-width: 1160px; }
+.s-fidelizacion__header { display: flex; justify-content: space-between; gap: 45px; align-items: end; }
+.s-fidelizacion h2 { margin: 14px 0 0; font-size: clamp(46px, 7vw, 86px); line-height: .9; letter-spacing: -.07em; }
+.s-fidelizacion h2 em, .s-fidelizacion h3 em { color: var(--copper, #B4864A); font-family: var(--serif, Georgia, serif); font-weight: 600; }
+.s-fidelizacion__header > p { max-width: 340px; margin: 0; color: rgba(247,245,239,.86); font-size: 16px; line-height: 1.6; }
+.s-fidelizacion__tabs { display: inline-flex; gap: 5px; margin-top: 58px; padding: 5px; border: 1px solid rgba(247,245,239,.22); border-radius: 99px; }
+.s-fidelizacion__tabs button { padding: 11px 17px; border: 0; border-radius: 99px; background: transparent; color: rgba(247,245,239,.67); font-size: 12px; font-weight: 700; }
+.s-fidelizacion__tabs button[aria-selected="true"], .s-fidelizacion__tabs button:hover { background: var(--copper, #B4864A); color: var(--ink, #1D2521); }
+.s-fidelizacion__tabs button:focus-visible, .s-fidelizacion button:focus-visible { outline: 3px solid #e7c783; outline-offset: 3px; }
+.s-fidelizacion__simulator { display: grid; grid-template-columns: minmax(250px,.75fr) minmax(380px,1.25fr); gap: clamp(35px, 8vw, 110px); align-items: end; margin-top: 45px; }
+.s-fidelizacion__phone-wrap, .s-fidelizacion__pos-wrap { display: grid; gap: 14px; }
+.s-fidelizacion__phone { position: relative; width: min(100%, 310px); min-height: 570px; margin: auto; padding: 26px 19px 23px; border: 5px solid #101714; border-radius: 38px; background: var(--ivory, #F7F5EF); color: var(--forest, #234536); box-shadow: 18px 22px 0 rgba(15,22,18,.3); }
+.s-fidelizacion__phone-notch { position: absolute; top: 9px; left: 50%; width: 92px; height: 19px; border-radius: 99px; background: #101714; transform: translateX(-50%); }
+.s-fidelizacion__phone-top, .s-fidelizacion__phone-brand { display: flex; justify-content: space-between; font: 10px var(--mono, monospace); }
+.s-fidelizacion__phone-brand { align-items: end; margin-top: 32px; font-size: 13px; font-weight: 700; }
+.s-fidelizacion__phone-brand i { color: var(--terra, #A8463F); font-size: 9px; font-style: normal; text-transform: uppercase; }
+.s-fidelizacion__greeting { margin: 28px 0 14px; color: rgba(29,37,33,.78); font-size: 13px; }
+.s-fidelizacion__greeting strong { display: block; color: var(--forest, #234536); font-size: 23px; letter-spacing: -.05em; }
+.s-fidelizacion__wallet-card { display: flex; justify-content: space-between; align-items: center; min-height: 92px; padding: 18px; border-radius: 13px; background: var(--forest, #234536); color: var(--ivory, #F7F5EF); }
+.s-fidelizacion__wallet-card span:first-child, .s-fidelizacion__metrics span { display: block; color: rgba(247,245,239,.8); font: 9px var(--mono, monospace); text-transform: uppercase; }
+.s-fidelizacion__wallet-card strong { display: block; margin-top: 7px; color: var(--copper, #B4864A); font-size: 21px; }
+.s-fidelizacion__wallet-mark { display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid #E5C17A; border-radius: 50%; color: #E5C17A; font: 12px var(--mono, monospace); }
+.s-fidelizacion__metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 9px; }
+.s-fidelizacion__metrics div { padding: 12px; border-radius: 8px; background: rgba(35,69,54,.08); }
+.s-fidelizacion__metrics span { color: rgba(29,37,33,.76); }
+.s-fidelizacion__metrics strong { display: block; margin-top: 5px; color: var(--terra, #A8463F); font-size: 21px; }
+.s-fidelizacion__qr { display: grid; grid-template-columns: 95px 1fr; gap: 15px; align-items: center; margin-top: 17px; padding: 12px; border: 1px solid rgba(35,69,54,.17); border-radius: 10px; }
+.s-fidelizacion__qr svg { width: 95px; height: 95px; shape-rendering: crispEdges; }
+.s-fidelizacion__qr span { color: rgba(29,37,33,.78); font: 9px/1.45 var(--mono, monospace); }
+.s-fidelizacion__qr-refresh { justify-self: start; margin-top: 10px; padding: 0; border: 0; border-bottom: 1px solid rgba(35,69,54,.45); background: transparent; color: var(--forest, #234536); font-size: 11px; }
+.s-fidelizacion__token { margin: 8px 0 0; color: rgba(29,37,33,.72); font: 9px var(--mono, monospace); overflow-wrap: anywhere; }
+.s-fidelizacion__wallet-actions { display: grid; gap: 5px; margin-top: 15px; }
+.s-fidelizacion__wallet-actions button { padding: 8px; border: 1px solid rgba(35,69,54,.15); border-radius: 6px; background: transparent; color: rgba(29,37,33,.46); font-size: 9px; }
+.s-fidelizacion__pos-wrap { align-self: center; }
+.s-fidelizacion__pos { padding: clamp(24px, 4vw, 39px); border: 1px solid rgba(247,245,239,.23); border-radius: 17px; background: #1d2924; box-shadow: 18px 22px 0 rgba(15,22,18,.25); }
+.s-fidelizacion__pos-bar, .s-fidelizacion__pos-customer, .s-fidelizacion__pos-event { display: flex; justify-content: space-between; gap: 15px; align-items: center; }
+.s-fidelizacion__pos-bar { padding-bottom: 19px; border-bottom: 1px solid rgba(247,245,239,.16); color: rgba(247,245,239,.74); font: 10px var(--mono, monospace); }
+.s-fidelizacion__pos-head { display: flex; justify-content: space-between; align-items: end; margin: 37px 0 26px; }
+.s-fidelizacion__eyebrow { color: var(--copper, #B4864A); font: 10px var(--mono, monospace); text-transform: uppercase; }
+.s-fidelizacion__pos h3 { margin: 11px 0 0; font-size: clamp(28px, 4vw, 43px); line-height: .95; letter-spacing: -.06em; }
+.s-fidelizacion__pos-dot { width: 13px; height: 13px; border-radius: 50%; background: #7dba70; box-shadow: 0 0 0 7px rgba(125,186,112,.12); }
+.s-fidelizacion__pos-customer { padding: 15px 0; border-top: 1px solid rgba(247,245,239,.16); border-bottom: 1px solid rgba(247,245,239,.16); }
+.s-fidelizacion__avatar { display: grid; width: 38px; height: 38px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: var(--copper, #B4864A); color: var(--ink, #1D2521); font-weight: 700; }
+.s-fidelizacion__pos-customer > div { flex: 1; }
+.s-fidelizacion__pos-customer strong, .s-fidelizacion__pos-customer small { display: block; }
+.s-fidelizacion__pos-customer strong { font-size: 13px; }
+.s-fidelizacion__pos-customer small { margin-top: 4px; color: rgba(247,245,239,.78); font-size: 10px; }
+.s-fidelizacion__pos-status { color: #a9d19d; font: 9px var(--mono, monospace); text-transform: uppercase; }
+.s-fidelizacion__pos-event { margin: 28px 0; padding: 16px; border-radius: 9px; background: rgba(180,134,74,.11); color: rgba(247,245,239,.82); font-size: 13px; }
+.s-fidelizacion__pos-event strong { color: var(--copper, #B4864A); font-size: 20px; }
+.s-fidelizacion__pos .btn { width: 100%; }
+.s-fidelizacion__pos-note { min-height: 20px; margin: 15px 0 0; color: rgba(247,245,239,.8); font-size: 12px; }
+.s-fidelizacion__pos-history { display: flex; justify-content: space-between; gap: 18px; margin-top: 28px; padding-top: 17px; border-top: 1px solid rgba(247,245,239,.16); color: rgba(247,245,239,.78); font-size: 11px; }
+.s-fidelizacion__pos-history strong { color: var(--ivory, #F7F5EF); font-size: 11px; font-weight: 500; }
+.s-fidelizacion__consistency { margin: 1px 0 0; color: rgba(247,245,239,.78); font-size: 11px; }
+.s-fidelizacion__today { display: grid; grid-template-columns: .8fr 1.2fr; gap: 50px; margin-top: clamp(90px, 12vw, 160px); padding-top: 35px; border-top: 1px solid rgba(247,245,239,.2); }
+.s-fidelizacion__today h3 { margin: 17px 0 0; font-size: clamp(30px, 4vw, 48px); line-height: .95; letter-spacing: -.06em; }
+.s-fidelizacion__today-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 9px; }
+.s-fidelizacion__today-grid article { padding: 19px; border: 1px solid rgba(247,245,239,.2); border-radius: 10px; }
+.s-fidelizacion__today-grid strong { display: block; margin-top: 22px; font-size: 16px; }
+.s-fidelizacion__today-grid p { margin: 8px 0 0; color: rgba(247,245,239,.8); font-size: 12px; line-height: 1.5; }
+@media (max-width: 800px) { .s-fidelizacion__header, .s-fidelizacion__simulator, .s-fidelizacion__today { display: block; } .s-fidelizacion__header > p { margin-top: 23px; } .s-fidelizacion__tabs { margin-top: 38px; } .s-fidelizacion__phone-wrap { margin-bottom: 45px; } .s-fidelizacion__today-grid { grid-template-columns: 1fr; margin-top: 35px; } .s-fidelizacion__pos-wrap { margin-top: 45px; } }
+@media (prefers-reduced-motion: reduce) { .s-fidelizacion__phone, .s-fidelizacion__pos { box-shadow: none; } }

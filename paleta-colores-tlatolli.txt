@@ -1,0 +1,38 @@
+PALETA DE COLORES — TLATOLLI
+
+Concepto: naturaleza, conocimiento y tradición contemporánea.
+
+COLORES
+
+Fondo principal — Marfil suave
+HEX: #F7F5EF
+
+Fondo alterno — Blanco
+HEX: #FFFFFF
+
+Color principal — Verde bosque
+HEX: #234536
+
+Color secundario — Verde olivo
+HEX: #6F7D4F
+
+Acento del glifo — Rojo terracota
+HEX: #A8463F
+
+Texto principal — Carbón
+HEX: #1D2521
+
+Detalle premium — Cobre dorado
+HEX: #B4864A
+
+USO RECOMENDADO
+
+- 60% marfil y blanco.
+- 25% verde bosque.
+- 10% verde olivo.
+- 5% rojo terracota y cobre.
+- Botones principales: verde bosque.
+- Llamadas a la acción: rojo terracota.
+- Detalles, líneas y pequeños acentos: cobre dorado.
+
+La paleta conserva el carácter del glifo y comunica profesionalismo, cultura y confianza.

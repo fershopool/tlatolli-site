@@ -1,0 +1,16 @@
+.s-contacto { padding: clamp(82px, 11vw, 150px) 0 110px; background: var(--forest, #234536); color: var(--ivory, #F7F5EF); }
+.s-contacto__inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, .72fr); gap: clamp(44px, 10vw, 150px); align-items: center; max-width: 1120px; }
+.s-contacto h2 { margin: 16px 0 18px; color: var(--ivory, #F7F5EF); font-size: clamp(48px, 8vw, 100px); line-height: .89; letter-spacing: -.07em; }
+.s-contacto h2 em { color: var(--copper, #B4864A); font-family: var(--serif, Georgia, serif); font-weight: 600; }
+.s-contacto__copy > p { max-width: 390px; margin: 0; color: rgba(247,245,239,.82); font-size: 17px; line-height: 1.6; }
+.s-contacto__whatsapp { margin-top: 30px; }
+.s-contacto__copy small { display: block; margin-top: 14px; color: rgba(247,245,239,.8); font: 11px var(--mono, monospace); }
+.s-contacto__form { padding: clamp(24px, 4vw, 42px); border: 1px solid rgba(247,245,239,.22); border-radius: 18px; background: rgba(29,37,33,.28); }
+.s-contacto__form label { display: block; margin-top: 24px; color: rgba(247,245,239,.7); font: 11px var(--mono, monospace); text-transform: uppercase; letter-spacing: .05em; }
+.s-contacto__form input, .s-contacto__form textarea { display: block; width: 100%; box-sizing: border-box; margin-top: 8px; padding: 12px 0; border: 0; border-bottom: 1px solid rgba(247,245,239,.35); border-radius: 0; outline: 0; background: transparent; color: var(--ivory, #F7F5EF); font: 16px var(--sans, Arial, sans-serif); }
+.s-contacto__form input:focus, .s-contacto__form textarea:focus { border-color: var(--copper, #B4864A); box-shadow: 0 1px 0 var(--copper, #B4864A); }
+.s-contacto__form textarea { resize: vertical; }
+.s-contacto__form .btn { margin-top: 29px; }
+.s-contacto__status { min-height: 18px; margin: 16px 0 0; color: #E5C17A; font-size: 12px; }
+.s-contacto__status a { color: var(--ivory, #F7F5EF); text-decoration: underline; }
+@media (max-width: 720px) { .s-contacto__inner { grid-template-columns: 1fr; } .s-contacto__copy > p { font-size: 15px; } }

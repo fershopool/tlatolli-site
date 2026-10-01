@@ -1,0 +1,35 @@
+<section id="mapas" class="section section--ivory s-mapas" data-stage="convertir">
+  <div class="container">
+    <header class="section__intro s-mapas__intro">
+      <p class="eyebrow">Mapas · convertir</p>
+      <h2>No es poner Google Maps.</h2>
+      <p>Es leer el territorio donde tu negocio ya se mueve y convertir sus señales en decisiones más precisas.</p>
+    </header>
+    <div class="s-mapas__layout">
+      <div class="s-mapas__board" data-map-board>
+        <svg class="s-mapas__svg" viewBox="0 0 720 480" role="img" aria-label="Mapa conceptual de sucursales, rutas, eventos, campus y zonas">
+          <rect width="720" height="480" fill="#234536" />
+          <path class="s-mapas__contour" d="M-20 120C130 20 260 170 405 84S615 30 760 114M-40 270C118 178 232 350 380 250s230-47 390 18M-20 420c132-87 243 21 365-59s229-55 390 22" />
+          <path class="s-mapas__route" data-layer="rutas" d="M36 393C172 343 180 184 313 203s123 205 337 107" />
+          <path class="s-mapas__route s-mapas__route--two" data-layer="rutas" d="M90 60c111 78 183 62 244 145s152 63 292 103" />
+          <g class="s-mapas__grid" aria-hidden="true"><path d="M80 0v480M200 0v480M320 0v480M440 0v480M560 0v480M680 0v480M0 100h720M0 220h720M0 340h720" /></g>
+        </svg>
+        <div class="s-mapas__pin s-mapas__pin--one"><button type="button" data-map-pin="sucursales" aria-label="Ver capa Sucursales">01</button></div>
+        <div class="s-mapas__pin s-mapas__pin--two"><button type="button" data-map-pin="eventos" aria-label="Ver capa Eventos">02</button></div>
+        <div class="s-mapas__pin s-mapas__pin--three"><button type="button" data-map-pin="campus" aria-label="Ver capa Campus">03</button></div>
+        <div class="s-mapas__pin s-mapas__pin--four"><button type="button" data-map-pin="zonas" aria-label="Ver capa Zonas">04</button></div>
+        <p class="s-mapas__caption">lectura conceptual · sin geolocalización</p>
+      </div>
+      <aside class="s-mapas__layers" aria-label="Capas del mapa">
+        <p class="eyebrow">Capas de lectura</p>
+        <h3>Cada pin abre una pregunta distinta.</h3>
+        <button class="s-mapas__layer is-active" type="button" data-map-layer="sucursales"><span><b>Sucursales</b><small>¿Dónde ya te encuentran?</small></span><span class="badge badge--ejemplo">Ejemplo</span></button>
+        <button class="s-mapas__layer" type="button" data-map-layer="rutas"><span><b>Rutas</b><small>¿Qué camino repiten?</small></span><span class="badge badge--capacidad">Capacidad</span></button>
+        <button class="s-mapas__layer" type="button" data-map-layer="eventos"><span><b>Eventos</b><small>¿Qué activa una visita?</small></span><span class="badge badge--ejemplo">Ejemplo</span></button>
+        <button class="s-mapas__layer" type="button" data-map-layer="campus"><span><b>Campus</b><small>¿Dónde se concentra la relación?</small></span><span class="badge badge--capacidad">Capacidad</span></button>
+        <button class="s-mapas__layer" type="button" data-map-layer="zonas"><span><b>Zonas</b><small>¿Dónde vale la pena aprender?</small></span><span class="badge badge--capacidad">Capacidad</span></button>
+      </aside>
+    </div>
+  </div>
+  <div class="s-mapas__sheet" data-map-sheet hidden role="dialog" aria-modal="true" aria-labelledby="map-sheet-title"><button class="s-mapas__close" type="button" data-map-close aria-label="Cerrar detalle">×</button><p class="eyebrow">Señal del territorio</p><h3 id="map-sheet-title" data-map-sheet-title> Sucursales </h3><p data-map-sheet-copy>Una vista de ejemplo para comparar dónde llega la atención y dónde aún hay espacio para conectar.</p><span class="badge badge--ejemplo">Lectura conceptual</span></div>
+</section>

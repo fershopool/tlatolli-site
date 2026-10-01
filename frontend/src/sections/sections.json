@@ -1,0 +1,16 @@
+[
+  { "id": "hero", "label": "Inicio", "candidates": ["pages/inicio/inicio", "sections/hero/hero"] },
+  { "id": "problema", "label": "Problema", "candidates": ["sections/problema/problema"] },
+  { "id": "ciclo", "label": "Ciclo", "candidates": ["sections/sistema/sistema", "sections/ciclo/ciclo"] },
+  { "id": "presencia", "label": "Presencia", "candidates": ["sections/presencia/presencia"] },
+  { "id": "fidelizacion", "label": "Fidelización", "candidates": ["sections/fidelizacion/fidelizacion"] },
+  { "id": "analitica", "label": "Analítica", "candidates": ["sections/analitica/analitica"] },
+  { "id": "marketing", "label": "Marketing", "candidates": ["sections/marketing/marketing"] },
+  { "id": "live", "label": "Live", "candidates": ["sections/live/live"] },
+  { "id": "mapas", "label": "Mapas", "candidates": ["sections/mapas/mapas"] },
+  { "id": "app", "label": "App", "candidates": ["sections/app/app"] },
+  { "id": "proyectos", "label": "Proyectos", "candidates": ["sections/proyectos/proyectos"] },
+  { "id": "diferencia", "label": "Diferencia", "candidates": ["sections/diferencia/diferencia"] },
+  { "id": "diagnostico", "label": "Diagnóstico", "candidates": ["sections/diagnostico/diagnostico"] },
+  { "id": "contacto", "label": "Contacto", "candidates": ["sections/contacto/contacto"] }
+]

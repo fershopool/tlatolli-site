@@ -1,0 +1,46 @@
+.s-marketing { padding: clamp(80px, 10vw, 142px) 0; overflow: hidden; background: #596640; color: var(--ivory, #F7F5EF); }
+.s-marketing__inner { max-width: 1160px; }
+.s-marketing__header { display: flex; justify-content: space-between; gap: 45px; align-items: end; }
+.s-marketing h2 { margin: 14px 0 0; font-size: clamp(45px, 7vw, 84px); letter-spacing: -.07em; line-height: .9; }
+.s-marketing h2 em, .s-marketing h3 em { color: #F6DFA6; font-family: var(--serif, Georgia, serif); font-weight: 600; }
+.s-marketing__header > p { max-width: 330px; margin: 0; color: rgba(247,245,239,.88); font-size: 16px; line-height: 1.6; }
+.s-marketing__story { display: grid; grid-template-columns: .72fr 1.28fr; gap: clamp(35px, 8vw, 110px); align-items: center; margin-top: clamp(75px, 11vw, 150px); }
+.s-marketing h3 { margin: 22px 0 14px; font-size: clamp(32px, 4vw, 52px); line-height: .96; letter-spacing: -.06em; }
+.s-marketing__story > div:first-child p { max-width: 360px; margin: 0; color: rgba(247,245,239,.88); line-height: 1.65; }
+.s-marketing__formats { display: grid; grid-template-columns: repeat(4, auto); gap: 7px; }
+.s-marketing__formats > button { padding: 10px 12px; border: 1px solid rgba(247,245,239,.56); border-radius: 99px; background: transparent; color: rgba(247,245,239,.9); font: 11px var(--mono, monospace); }
+.s-marketing__formats > button[aria-selected="true"], .s-marketing__formats > button:hover { border-color: #F6DFA6; background: #F6DFA6; color: #234536; }
+.s-marketing__mockups { grid-column: 1 / -1; min-height: 310px; margin-top: 12px; padding: 26px; border-radius: 17px; background: rgba(29,37,33,.24); }
+.s-marketing__mockups article[hidden] { display: none; }
+.s-marketing__mockup { display: flex; min-height: 256px; flex-direction: column; justify-content: space-between; padding: 23px; border: 1px solid rgba(247,245,239,.4); border-radius: 13px; box-shadow: 14px 18px 0 rgba(29,37,33,.12); }
+.s-marketing__mockup span, .s-marketing__mockup small { font: 10px var(--mono, monospace); letter-spacing: .1em; }
+.s-marketing__mockup strong { max-width: 300px; font-size: clamp(29px, 4vw, 49px); line-height: .9; letter-spacing: -.07em; }
+.s-marketing__mockup--post { width: min(72%, 300px); background: #d8be82; color: #234536; }
+.s-marketing__mockup--carousel { width: min(82%, 360px); background: #b4c287; color: #234536; }
+.s-marketing__mockup--story { width: min(45%, 220px); min-height: 280px; margin: 0 auto; background: #A8463F; color: #F7F5EF; }
+.s-marketing__mockup--story i { align-self: center; padding: 9px 16px; border: 1px solid #F7F5EF; border-radius: 99px; font-size: 12px; }
+.s-marketing__mockup--video { background: #1D2521; color: #F7F5EF; }
+.s-marketing__mockup--tiktok { width: min(45%, 220px); min-height: 280px; margin: 0 auto; background: #d3a6a0; color: #234536; }
+.s-marketing__mockup--youtube { background: #2b3e36; color: #F7F5EF; }
+.s-marketing__mockup--web { background: #F7F5EF; color: #234536; }
+.s-marketing__calendar { margin-top: clamp(82px, 12vw, 165px); padding: clamp(23px, 4vw, 45px); border-radius: 18px; background: #F7F5EF; color: #234536; }
+.s-marketing__calendar .badge { color: #234536; }
+.s-marketing__calendar-head { display: flex; justify-content: space-between; gap: 25px; align-items: end; }
+.s-marketing__calendar h3 { margin: 17px 0 0; font-size: clamp(30px, 5vw, 54px); }
+.s-marketing__calendar-nav { display: flex; gap: 6px; }
+.s-marketing__calendar-nav button { width: 40px; height: 37px; border: 1px solid rgba(35,69,54,.3); background: transparent; color: #234536; }
+.s-marketing__calendar-nav button:hover, .s-marketing__calendar-nav button:focus-visible { border-color: #A8463F; color: #A8463F; }
+.s-marketing__calendar-note { margin: 10px 0 24px; color: rgba(29,37,33,.65); font-size: 13px; }
+.s-marketing__weekdays, .s-marketing__days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+.s-marketing__weekdays { color: rgba(29,37,33,.76); font: 10px var(--mono, monospace); text-transform: uppercase; }
+.s-marketing__days { margin-top: 8px; }
+.s-marketing__day { min-height: 65px; padding: 8px; border: 1px solid rgba(35,69,54,.12); border-radius: 6px; background: transparent; color: #234536; text-align: left; }
+.s-marketing__day:not(:disabled):hover, .s-marketing__day.is-selected { border-color: #A8463F; background: rgba(168,70,63,.1); }
+.s-marketing__day:disabled { border-color: transparent; background: transparent; cursor: default; }
+.s-marketing__day strong { display: block; font: 13px var(--mono, monospace); }
+.s-marketing__day small { display: block; margin-top: 7px; color: #A8463F; font-size: 9px; line-height: 1.1; }
+.s-marketing__day-detail { display: grid; gap: 5px; margin-top: 15px; padding: 17px; border-left: 3px solid #A8463F; background: rgba(35,69,54,.06); }
+.s-marketing__day-detail strong { font-size: 16px; }
+.s-marketing__day-detail span { color: rgba(29,37,33,.67); font-size: 13px; }
+@media (max-width: 700px) { .s-marketing__header, .s-marketing__story { display: block; } .s-marketing__header > p { margin-top: 22px; } .s-marketing__story > div:first-child { margin-bottom: 35px; } .s-marketing__mockups { min-height: 290px; } .s-marketing__mockup--post { width: 86%; } .s-marketing__mockup--story { width: 62%; } .s-marketing__day { min-height: 54px; padding: 6px; } .s-marketing__day small { display: none; } .s-marketing__weekdays span { font-size: 8px; } }
+@media (prefers-reduced-motion: reduce) { .s-marketing__mockup { box-shadow: none; } }
