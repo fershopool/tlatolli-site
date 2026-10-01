@@ -9,7 +9,18 @@
 .s-hero__note { margin-top: 22px; color: rgba(247, 245, 239, .8); font-size: .9375rem; }
 .s-hero__note a { text-decoration: underline; text-underline-offset: 3px; }
 .s-hero__visual { margin: 0; }
-.s-hero__visual .photo-slot { aspect-ratio: 4 / 5; max-height: 560px; width: 100%; border-radius: 220px 220px 18px 18px; }
+.s-hero__frame { position: relative; width: 100%; max-width: 448px; margin-inline: auto; border-radius: 224px 224px 18px 18px; overflow: hidden; box-shadow: var(--shadow); outline: 1px solid rgba(216, 176, 122, .5); outline-offset: 8px; }
+.s-hero__frame img { display: block; width: 100%; height: auto; }
+.s-hero__frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(23, 49, 38, 0) 55%, rgba(23, 49, 38, .55)); pointer-events: none; }
+.s-hero__greca { position: absolute; z-index: 2; inset: auto 0 0; height: 14px; background: var(--copper) var(--greca) 0 50% / 24px 12px repeat-x; }
+.s-hero__chip { position: absolute; z-index: 2; display: grid; gap: 2px; max-width: 78%; padding: 10px 14px; border-radius: 12px; background: rgba(247, 245, 239, .95); color: var(--ink); box-shadow: 0 10px 28px rgba(0, 0, 0, .25); font: 500 .8125rem/1.3 var(--sans); }
+.s-hero__chip b { color: var(--forest); font-weight: 700; letter-spacing: .02em; }
+.s-hero__chip b::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 7px; border-radius: 50%; background: var(--terra); }
+.s-hero__chip em { color: var(--copper-ink); font-style: normal; font-weight: 700; }
+.s-hero__chip--find { top: 14%; right: 6%; }
+.s-hero__chip--pick { top: 68%; left: 4%; }
+.s-hero__chip--back { bottom: 9%; right: 4%; }
+.s-hero__visual figcaption { margin-top: 14px; color: rgba(247, 245, 239, .6); font-size: .75rem; text-align: center; }
 .s-hero__who { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin-top: clamp(48px, 7vw, 88px); padding-block: 26px; border-top: 1px solid var(--dark-line); }
 .s-hero__who p { color: var(--copper-light); font: 600 .8125rem var(--sans); letter-spacing: .12em; text-transform: uppercase; }
 .s-hero__who ul { display: flex; flex-wrap: wrap; gap: 8px 22px; }
@@ -17,5 +28,6 @@
 @media (max-width: 860px) {
   .s-hero__inner { grid-template-columns: minmax(0, 1fr); }
   .s-hero h1 { max-width: 20ch; }
-  .s-hero__visual .photo-slot { aspect-ratio: 16 / 10; border-radius: 90px 90px 18px 18px; }
+  .s-hero__frame { max-width: 360px; border-radius: 180px 180px 18px 18px; }
+  .s-hero__chip--pick { top: 58%; }
 }
