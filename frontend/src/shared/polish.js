@@ -31,25 +31,8 @@
     section.before(band);
   });
 
-  // Marquesina infinita del hero (4 copias, se desplaza 25%)
-  const marquee = document.querySelector('.s-hero__marquee');
-  if (marquee) {
-    const set = document.createElement('div');
-    set.className = 'mq-set';
-    set.append(...marquee.children);
-    const track = document.createElement('div');
-    track.className = 'mq-track';
-    track.append(set);
-    for (let i = 0; i < 3; i += 1) {
-      const copy = set.cloneNode(true);
-      copy.setAttribute('aria-hidden', 'true');
-      track.append(copy);
-    }
-    marquee.append(track);
-  }
-
-  // Foco de luz que sigue al cursor en tarjetas y en el hero
-  const SPOT = '.s-problema__piece,.s-analitica__kpi,.s-analitica__panel,.s-diferencia__panel,.s-app__card,.s-presencia__panel,.s-live__benefits article,.s-marketing__calendar,.s-fidelizacion__pos';
+  // Foco de luz que sigue al cursor en las tarjetas de los simuladores
+  const SPOT = '.s-problema__piece,.s-analitica__kpi,.s-analitica__panel,.s-app__card,.s-presencia__panel,.s-live__benefits article,.s-marketing__calendar,.s-fidelizacion__pos';
   $$(SPOT).forEach((element) => element.setAttribute('data-spot', ''));
   if (fine) {
     document.addEventListener('pointermove', (event) => {
@@ -58,12 +41,6 @@
       const box = target.getBoundingClientRect();
       target.style.setProperty('--mx', `${event.clientX - box.left}px`);
       target.style.setProperty('--my', `${event.clientY - box.top}px`);
-    }, { passive: true });
-    const hero = document.querySelector('.s-hero');
-    hero?.addEventListener('pointermove', (event) => {
-      const box = hero.getBoundingClientRect();
-      hero.style.setProperty('--gx', `${event.clientX - box.left}px`);
-      hero.style.setProperty('--gy', `${event.clientY - box.top}px`);
     }, { passive: true });
   }
 

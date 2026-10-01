@@ -6,14 +6,17 @@
   --terra: #A8463F;
   --ink: #1D2521;
   --copper: #B4864A;
+  --copper-light: #D8B07A;
+  --olive-ink: #56633B;
+  --copper-ink: #84602B;
   --line: rgba(35, 69, 54, .16);
   --dark-line: rgba(247, 245, 239, .2);
   --shadow: 0 24px 70px rgba(29, 37, 33, .13);
   --sans: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
-  --display: 'Bricolage Grotesque', 'Arial Narrow', Arial, sans-serif;
-  --serif: 'Instrument Serif', Georgia, serif;
+  --serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --display: var(--serif);
   --mono: 'DM Mono', 'SFMono-Regular', Consolas, monospace;
   --container: 1180px;
   --gutter: clamp(20px, 5vw, 72px);
-  --header-height: 84px;
+  --header-height: 76px;
 }

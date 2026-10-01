@@ -1,0 +1,15 @@
+.s-nosotros__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: clamp(28px, 6vw, 80px); align-items: center; }
+.s-nosotros h1 { margin: 16px 0 24px; max-width: 12ch; text-wrap: balance; }
+.s-nosotros__lead { max-width: 46ch; color: rgba(247, 245, 239, .88); }
+.s-nosotros__team { margin: 0; }
+.s-nosotros__team .photo-slot { aspect-ratio: 3 / 2; width: 100%; }
+.s-nosotros__manifesto { display: grid; margin-top: clamp(40px, 7vw, 88px); border-top: 1px solid var(--dark-line); }
+.s-nosotros__manifesto li { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 12px clamp(24px, 6vw, 80px); align-items: baseline; padding: 24px 0; border-bottom: 1px solid var(--dark-line); }
+.s-nosotros__manifesto h2 { font-size: clamp(1.7rem, 3vw, 2.6rem); line-height: 1.1; }
+.s-nosotros__manifesto p { color: rgba(247, 245, 239, .84); }
+@media (max-width: 860px) { .s-nosotros__grid, .s-nosotros__manifesto li { grid-template-columns: minmax(0, 1fr); } }
+
+.s-nosotros__gallery { display: grid; grid-template-columns: .8fr 1.4fr .8fr; gap: 16px; align-items: stretch; margin-top: clamp(32px, 5vw, 64px); }
+.s-nosotros__gallery .photo-slot--tall { aspect-ratio: 3 / 4; }
+.s-nosotros__gallery .photo-slot--wide { aspect-ratio: 16 / 9; align-self: center; }
+@media (max-width: 860px) { .s-nosotros__gallery { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .s-nosotros__gallery .photo-slot--wide { grid-column: 1 / -1; order: -1; } }

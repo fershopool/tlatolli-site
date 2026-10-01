@@ -1,0 +1,79 @@
+[
+  {
+    "id": "estrategia", "name": "Estrategia y marca",
+    "resumen": "Ordenamos qué dices, a quién y con qué voz, antes de gastar en medios.",
+    "para": "Negocios que arrancan, cambian de rumbo o sienten que su mensaje no se entiende.",
+    "incluye": ["Diagnóstico del negocio y su mercado", "Posicionamiento y mensaje", "Identidad visual y tono de voz", "Guía de marca para tu equipo"],
+    "combina": "Es la base. Conviene antes de web, contenido y publicidad, y se afina con lo que aprendemos en cada ciclo."
+  },
+  {
+    "id": "web", "name": "Diseño web: desde cero o rediseño",
+    "resumen": "Sitios claros, rápidos y hechos para que el visitante dé el siguiente paso.",
+    "para": "Quien aún no tiene sitio o tiene uno que no comunica ni convierte.",
+    "incluye": ["Arquitectura y contenidos", "Diseño a la medida, adaptado a celular", "Formularios y botón de WhatsApp", "Base técnica de SEO y analítica"],
+    "combina": "Una web desde cero abarca más trabajo que mejorar una existente; lo vemos al cotizar. Se une con SEO, analítica y mensajería."
+  },
+  {
+    "id": "redes", "name": "Redes y contenido",
+    "resumen": "Una línea editorial con voz propia, no publicaciones sueltas.",
+    "para": "Negocios que publican sin constancia o sin saber qué funciona.",
+    "incluye": ["Línea editorial y calendario", "Textos, diseño y piezas gráficas", "Publicación y comunidad", "Lectura mensual de lo que respondió tu audiencia"],
+    "combina": "Se apoya en estrategia y marca, y se potencia con publicidad de pago y producción audiovisual."
+  },
+  {
+    "id": "publicidad", "name": "Publicidad de pago",
+    "resumen": "Campañas en buscadores y redes con una pregunta clara detrás de cada anuncio.",
+    "para": "Quien ya tiene algo que ofrecer y quiere llegar a más personas con intención de compra.",
+    "incluye": ["Estrategia y segmentación", "Anuncios y páginas de destino", "Pruebas y optimización", "Reportes comprensibles"],
+    "combina": "Rinde más con una web que convierta y con analítica bien medida. La inversión en medios se define contigo."
+  },
+  {
+    "id": "seo", "name": "SEO y búsqueda local",
+    "resumen": "Que te encuentren en Google y en el mapa cuando alguien busca lo que haces.",
+    "para": "Negocios con público local o servicios que la gente busca por internet.",
+    "incluye": ["Investigación de palabras clave", "Mejoras técnicas y de contenido", "Ficha de negocio en Google", "Seguimiento de posiciones y visitas"],
+    "combina": "Va de la mano del diseño web y del geomarketing; es un trabajo de constancia, no de un solo mes."
+  },
+  {
+    "id": "mensajeria", "name": "WhatsApp y correo",
+    "resumen": "Conversaciones ordenadas con quien ya te escribió, con permiso y sin spam.",
+    "para": "Negocios que venden o atienden por mensaje y se les pierde el seguimiento.",
+    "incluye": ["Flujos de atención y respuestas rápidas", "Catálogos y listas de difusión con consentimiento", "Campañas y secuencias de correo", "Medición de respuestas"],
+    "combina": "Se conecta con CRM y fidelización para recordar quién es cada cliente."
+  },
+  {
+    "id": "crm", "name": "CRM y fidelización",
+    "resumen": "Una memoria de tus clientes y una razón para que regresen.",
+    "para": "Negocios con clientes recurrentes que hoy no reconocen cuando vuelven.",
+    "incluye": ["Base de clientes ordenada", "Segmentos y recordatorios", "Programas de lealtad y beneficios", "Tarjetas digitales y QR"],
+    "combina": "Se alimenta de mensajería y analítica; da sentido a la publicidad al medir quién regresa."
+  },
+  {
+    "id": "analitica", "name": "Analítica y tableros",
+    "resumen": "Tus números en un solo lugar, explicados en lenguaje de negocio.",
+    "para": "Quien tiene datos dispersos y decide por intuición.",
+    "incluye": ["Plan de medición", "Tablero con lo que importa", "Eventos en web, WhatsApp y formularios", "Lectura y recomendaciones periódicas"],
+    "combina": "Acompaña a todos los demás servicios: es lo que permite mejorarlos mes a mes."
+  },
+  {
+    "id": "apps", "name": "Apps y PWA",
+    "resumen": "Experiencias móviles que se instalan, funcionan sin conexión y viven en el celular.",
+    "para": "Negocios o proyectos que necesitan algo más que un sitio: reservas, membresías, catálogos o comunidad.",
+    "incluye": ["Definición de la experiencia", "Diseño y desarrollo de la PWA", "Notificaciones y acceso móvil", "Mejora continua con uso real"],
+    "combina": "Se une con CRM, analítica y mensajería. Su alcance varía mucho, por eso se cotiza a la medida."
+  },
+  {
+    "id": "audiovisual", "name": "Producción audiovisual y transmisiones en vivo",
+    "resumen": "Video con intención y transmisiones que no terminan cuando apagas la cámara.",
+    "para": "Cultura, gastronomía, educación y eventos que necesitan contar lo que viven.",
+    "incluye": ["Guion y planeación", "Grabación y edición", "Transmisión en vivo con producción", "Recortes para redes y sitio"],
+    "combina": "Alimenta redes y publicidad; las transmisiones se enlazan con tu web y tu base de contactos."
+  },
+  {
+    "id": "geomarketing", "name": "Geomarketing",
+    "resumen": "Decisiones con mapa: dónde está tu gente y dónde te necesita.",
+    "para": "Negocios con una o varias sedes, o que quieren abrir en una zona nueva.",
+    "incluye": ["Análisis de zonas y cobertura", "Fichas y mapas de ubicaciones", "Campañas por zona", "Tablero geográfico"],
+    "combina": "Refuerza el SEO local y la publicidad segmentada por ubicación."
+  }
+]

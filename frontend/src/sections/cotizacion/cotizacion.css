@@ -1,0 +1,9 @@
+.s-cotizacion__grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+.s-cotizacion h2 { margin: 12px 0 22px; }
+.s-cotizacion .lead { max-width: 44ch; margin-bottom: 28px; color: rgba(247, 245, 239, .86); }
+.s-cotizacion__factors { display: grid; border-top: 1px solid var(--dark-line); counter-reset: factor; }
+.s-cotizacion__factors li { counter-increment: factor; position: relative; padding: 20px 0 20px 52px; border-bottom: 1px solid var(--dark-line); }
+.s-cotizacion__factors li::before { content: counter(factor, decimal-leading-zero); position: absolute; left: 0; top: 24px; color: var(--copper-light); font: 400 .875rem var(--mono); }
+.s-cotizacion__factors h3 { font-size: 1.7rem; margin-bottom: 4px; }
+.s-cotizacion__factors p { color: rgba(247, 245, 239, .82); }
+@media (max-width: 900px) { .s-cotizacion__grid { grid-template-columns: minmax(0, 1fr); } }

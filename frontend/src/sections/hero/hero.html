@@ -1,40 +1,28 @@
-<section id="inicio" class="section section--dark s-hero" data-nav-theme="dark" data-stage="atraer">
-  <div class="s-hero__aurora" aria-hidden="true"></div>
+<section id="inicio" class="section section--dark s-hero">
   <div class="s-hero__glyph" aria-hidden="true"></div>
   <div class="container s-hero__inner">
     <div class="s-hero__copy">
-      <p class="s-hero__eyebrow"><span class="s-hero__dot"></span> ecosistemas digitales para negocios vivos</p>
-      <h1>Marketing que <em>aprende</em> de tu negocio.</h1>
-      <p class="s-hero__intro">Conectamos clientes, datos y marketing para que cada acción te ayude a conocer mejor lo que haces.</p>
+      <p class="eyebrow">Agencia de marketing · hecha en México</p>
+      <h1>Tu negocio tiene palabra. Hagamos que <em>México la escuche.</em></h1>
+      <p class="s-hero__intro lead">Somos Tlatolli, «palabra». Estrategia, diseño, contenido, publicidad y datos, los servicios que necesites combinados a tu medida, para que más personas te encuentren, te elijan y regresen.</p>
       <div class="s-hero__actions">
-        <a class="btn btn--primary" href="#diagnostico">Analizar mi negocio <span aria-hidden="true">↗</span></a>
-        <a class="btn btn--ghost" href="#sistema">Explorar Tlatolli <span aria-hidden="true">↓</span></a>
+        <a class="btn btn--primary" href="#diagnostico" data-track="cta_diagnostico" data-track-label="hero">Agenda tu diagnóstico <span aria-hidden="true">↗</span></a>
+        <a class="btn btn--ghost" href="#ruta" data-track="cta_ruta" data-track-label="hero">Arma tu ruta</a>
       </div>
+      <p class="s-hero__note">Sin precios de lista: cotizamos según lo que tu negocio necesita. <a href="#cotizacion">Así cotizamos</a></p>
     </div>
-    <div class="s-hero__visual" data-hero-visual>
-      <div class="s-hero__halo" aria-hidden="true"></div>
-      <svg class="s-hero__orbit" viewBox="0 0 640 540" role="img" aria-label="Ciclo ilustrativo entre clientes, compras, datos y campañas">
-        <defs>
-          <linearGradient id="hero-route" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B4864A"/><stop offset=".5" stop-color="#D9A64C"/><stop offset="1" stop-color="#8EAC69"/></linearGradient>
-          <filter id="hero-glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-        </defs>
-        <path class="s-hero__route" d="M321 93C443 85 561 159 556 277c-5 120-105 196-228 194C205 468 85 394 86 273 87 160 184 95 321 93Z" fill="none" stroke="url(#hero-route)" stroke-width="2" stroke-dasharray="9 10" pathLength="1"/>
-        <path class="s-hero__route s-hero__route--inner" d="M321 126c103 0 179 60 179 148s-75 153-179 153-178-61-178-153 76-148 178-148Z" fill="none" stroke="rgba(247,245,239,.2)" stroke-width="1"/>
-        <g class="s-hero__core" transform="translate(321 270)"><circle r="80" fill="#234536" stroke="#B4864A" stroke-width="1.5"/><circle r="63" fill="none" stroke="rgba(247,245,239,.14)"/><image href="./frontend/src/assets/brand/favicon.svg" x="-43" y="-43" width="86" height="86"/><text x="0" y="57" fill="#D9A64C" text-anchor="middle" font-size="9" font-family="DM Mono, monospace">conecta</text></g>
-        <g class="s-hero__node" data-node="cliente" transform="translate(319 70)"><circle r="31" fill="#52613D"/><circle r="31" fill="none" stroke="#D9A64C" stroke-width="2"/><text y="4" fill="#F7F5EF" text-anchor="middle" font-size="12" font-family="DM Sans, sans-serif">cliente</text><circle class="s-hero__pulse" r="39" fill="none" stroke="#D9A64C" stroke-width="1"/></g>
-        <g class="s-hero__node" data-node="compra" transform="translate(558 179)"><circle r="31" fill="#A8463F"/><circle r="31" fill="none" stroke="#D9A64C" stroke-width="2"/><text y="4" fill="#F7F5EF" text-anchor="middle" font-size="12" font-family="DM Sans, sans-serif">compra</text></g>
-        <g class="s-hero__node" data-node="datos" transform="translate(543 376)"><circle r="31" fill="#234536" stroke="#8EAC69" stroke-width="2"/><text y="4" fill="#F7F5EF" text-anchor="middle" font-size="12" font-family="DM Sans, sans-serif">datos</text></g>
-        <g class="s-hero__node" data-node="campaña" transform="translate(321 478)"><circle r="31" fill="#B4864A"/><circle r="31" fill="none" stroke="#F7F5EF" stroke-opacity=".5"/><text y="4" fill="#1D2521" text-anchor="middle" font-size="12" font-family="DM Sans, sans-serif">campaña</text></g>
-        <g class="s-hero__node" data-node="retorno" transform="translate(95 376)"><circle r="31" fill="#52613D"/><circle r="31" fill="none" stroke="#D9A64C" stroke-width="2"/><text y="4" fill="#F7F5EF" text-anchor="middle" font-size="12" font-family="DM Sans, sans-serif">retorno</text></g>
-        <g class="s-hero__node" data-node="contenido" transform="translate(82 178)"><circle r="31" fill="#234536" stroke="#8EAC69" stroke-width="2"/><text y="4" fill="#F7F5EF" text-anchor="middle" font-size="12" font-family="DM Sans, sans-serif">contenido</text></g>
-        <circle class="s-hero__traveler" cx="321" cy="70" r="5" fill="#F7F5EF" filter="url(#hero-glow)"/>
-      </svg>
-      <div class="s-hero__cards" aria-label="Ejemplos de señales conectadas">
-        <div class="s-hero__card s-hero__card--one"><span class="badge badge--ejemplo">Ejemplo</span><b>Una compra</b><small>se vuelve una señal</small></div>
-        <div class="s-hero__card s-hero__card--two"><span class="s-hero__spark">✦</span><b>Una idea</b><small>encuentra a su cliente</small></div>
-        <div class="s-hero__card s-hero__card--three"><span class="s-hero__bars"><i></i><i></i><i></i></span><b>Un dato</b><small>orienta tu siguiente paso</small></div>
-      </div>
-    </div>
+    <figure class="s-hero__visual">
+      <div class="photo-slot"><span class="pending">[PENDIENTE: fotografía principal de personas y un negocio mexicano reales, formato 4:5]</span></div>
+    </figure>
   </div>
-  <div class="s-hero__marquee" aria-label="Capacidades de Tlatolli"><span>atraer</span><i>✦</i><span>conocer</span><i>✦</i><span>fidelizar</span><i>✦</i><span>medir</span><i>✦</i><span>aprender</span><i>✦</i><span>atraer</span></div>
+  <div class="container s-hero__who">
+    <p>A quién ayudamos</p>
+    <ul>
+      <li>Restaurantes y alimentos</li>
+      <li>Comercios</li>
+      <li>Clínicas y servicios profesionales</li>
+      <li>Educación y cultura</li>
+      <li>Proyectos y emprendimientos</li>
+    </ul>
+  </div>
 </section>

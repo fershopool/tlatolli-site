@@ -1,0 +1,8 @@
+.s-aviso__inner { max-width: 780px; }
+.s-aviso h1 { margin: 12px 0 8px; color: var(--forest); font-size: clamp(2.8rem, 6vw, 4.6rem); }
+.s-aviso__date { color: rgba(29, 37, 33, .72); font-size: .9375rem; }
+.s-aviso .lead { margin: 24px 0 8px; }
+.s-aviso h2 { margin: 40px 0 10px; color: var(--forest); font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+.s-aviso p, .s-aviso li { margin-top: 10px; }
+.s-aviso ul { padding-left: 1.2em; list-style: disc; }
+.s-aviso a:not(.btn) { text-decoration: underline; text-underline-offset: 3px; }

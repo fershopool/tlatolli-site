@@ -1,0 +1,11 @@
+.s-porque__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 7vw, 100px); align-items: start; }
+.s-porque h2 { margin: 12px 0 20px; }
+.s-porque .lead { max-width: 44ch; color: rgba(29, 37, 33, .8); }
+.s-porque__who { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.s-porque__who li { padding: 8px 16px; border: 1px solid var(--line); border-radius: 99px; background: var(--paper); color: var(--forest); font-weight: 500; }
+.s-porque__note { margin-top: 18px; color: rgba(29, 37, 33, .78); }
+.s-porque__reasons { display: grid; margin-top: 14px; border-top: 1px solid var(--line); }
+.s-porque__reasons li { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.s-porque__reasons h3 { margin-bottom: 4px; color: var(--forest); font-size: 1.7rem; }
+.s-porque__reasons p { color: rgba(29, 37, 33, .82); }
+@media (max-width: 900px) { .s-porque__grid { grid-template-columns: minmax(0, 1fr); } }

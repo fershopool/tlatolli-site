@@ -1,51 +1,77 @@
 import { mkdir, readFile, writeFile, access } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { analyticsTag, casoDetalle, casoHead, esc, jsonld, renderCasosCards, renderServicios, robots, serviciosJson, sitemap } from './tools/render.mjs';
 
 const root = dirname(fileURLToPath(import.meta.url));
 const source = (path) => join(root, 'frontend', 'src', path);
 const exists = async (path) => access(path).then(() => true).catch(() => false);
 const read = async (path) => (await exists(path) ? readFile(path, 'utf8') : '');
-const cssFiles = ['assets/fonts/fonts.css', 'styles/reset.css', 'styles/variables.css', 'styles/global.css', 'styles/components.css', 'pages/inicio/inicio.css'];
-const jsFiles = ['shared/shared.js', 'pages/inicio/inicio.js'];
+const json = async (path) => JSON.parse(await read(path));
+
+const cfg = await json(join(root, 'site.config.json'));
+const env = process.env;
+// La analítica queda apagada hasta que exista un ID (site.config.json o variables de entorno).
+const analytics = { provider: env.TLATOLLI_ANALYTICS_PROVIDER ?? cfg.analytics.provider, id: env.TLATOLLI_ANALYTICS_ID ?? cfg.analytics.id, src: env.TLATOLLI_ANALYTICS_SRC ?? cfg.analytics.src };
+const servicios = await json(source('content/servicios.json'));
+const casos = await json(source('content/casos.json'));
+const registry = new Map((await json(source('sections/sections.json'))).map((section) => [section.id, section]));
+const pages = [...await json(source('pages.json'))];
+casos.casos.forEach((caso) => pages.push({
+  file: `caso-${caso.slug}.html`, bundle: 'paginas', nav: 'casos', schema: 'webPage', caso,
+  title: `${caso.name} | Caso Tlatolli`, description: `${caso.resumen} Problema, qué se hizo, estado actual y bitácora de mejora continua.`,
+  sections: ['casohead', 'casodetalle', 'cta']
+}));
+
+const cssBase = ['assets/fonts/fonts.css', 'styles/reset.css', 'styles/variables.css', 'styles/global.css', 'styles/components.css', 'pages/inicio/inicio.css'];
+const jsBase = ['shared/shared.js', 'pages/inicio/inicio.js'];
 const readCss = async (file) => {
   const content = await read(source(file));
   return file === 'assets/fonts/fonts.css' ? content.replaceAll('url(./', 'url(../frontend/src/assets/fonts/') : content;
 };
-
-const sections = JSON.parse(await read(source('sections/sections.json')));
+const fragments = { servicios: () => renderServicios(servicios) + serviciosJson(servicios), casos: () => renderCasosCards(casos) };
 const template = await read(join(root, 'index.template.html'));
 const top = await read(source('pages/inicio/top.html'));
 const bottom = await read(source('pages/inicio/bottom.html'));
-let html = template.replace('<!-- TOP -->', top).replace('<!-- BOTTOM -->', bottom);
-const sectionCss = [];
-const sectionJs = [];
-const missing = [];
+const bundles = new Map();
+const problems = [];
 
-for (const section of sections) {
-  let candidate = '';
-  for (const base of section.candidates || []) {
-    if (await exists(source(`${base}.html`))) { candidate = base; break; }
+for (const page of pages) {
+  const parts = [];
+  for (const id of page.sections) {
+    const section = registry.get(id);
+    if (!section) { problems.push(`${page.file}: sección desconocida «${id}»`); continue; }
+    const b = bundles.get(page.bundle) ?? bundles.set(page.bundle, new Set()).get(page.bundle);
+    b.add(section.dir);
+    parts.push(section.render ? { casoHead, casoDetalle }[section.render]({ caso: page.caso, casos }) : await read(source(`sections/${section.dir}/${section.dir}.html`)));
   }
-  const marker = `<!-- SECTION:${section.id} -->`;
-  if (!candidate) {
-    missing.push(section.id);
-    html = html.replace(marker, `<!-- SECTION:${section.id} pendiente -->`);
-    continue;
-  }
-  html = html.replace(marker, await read(source(`${candidate}.html`)));
-  const cssPath = source(`${candidate}.css`);
-  const jsPath = source(`${candidate}.js`);
-  if (await exists(cssPath)) sectionCss.push(`\n/* ${section.id} */\n${await read(cssPath)}`);
-  if (await exists(jsPath)) sectionJs.push(`\n/* ${section.id} */\n${await read(jsPath)}`);
+  const main = parts.join('\n').replace(/<!--FRAGMENT:(\w+)-->/g, (_, name) => fragments[name]());
+  const url = cfg.url + (page.file === 'index.html' ? '' : page.file);
+  const html = template
+    .replace('<!-- TOP -->', top).replace('<!-- MAIN -->', main).replace('<!-- BOTTOM -->', bottom)
+    .replaceAll('{{title}}', esc(page.title)).replaceAll('{{description}}', esc(page.description)).replaceAll('{{canonical}}', url)
+    .replaceAll('{{ogimage}}', `${cfg.url}frontend/src/assets/brand/og.png`).replaceAll('{{bundle}}', page.bundle)
+    .replace('{{jsonld}}', jsonld(page.schema, { cfg, page, servicios, casos })).replace('{{analytics}}', analyticsTag(analytics))
+    .replace(/\{\{cur:(\w+)\}\}/g, (_, nav) => (nav === page.nav ? 'aria-current="page"' : ''))
+    .replaceAll('{{h}}', page.file === 'index.html' ? '' : 'index.html');
+  await writeFile(join(root, page.file), html);
 }
 
 await mkdir(join(root, 'dist'), { recursive: true });
 const polishCss = await read(source('styles/polish.css'));
 const polishJs = await read(source('shared/polish.js'));
-await writeFile(join(root, 'dist/tlatolli.css'), `${(await Promise.all(cssFiles.map(readCss))).join('\n')}${sectionCss.join('\n')}\n${polishCss}`);
-await writeFile(join(root, 'dist/tlatolli.js'), `${(await Promise.all(jsFiles.map((file) => read(source(file))))).join('\n')}${sectionJs.join('\n')}\n${polishJs}`);
-await writeFile(join(root, 'index.html'), html);
+for (const [name, dirs] of bundles) {
+  const css = [], js = [];
+  for (const dir of dirs) {
+    const stylesheet = await read(source(`sections/${dir}/${dir}.css`)), script = await read(source(`sections/${dir}/${dir}.js`));
+    if (stylesheet) css.push(`\n/* ${dir} */\n${stylesheet}`);
+    if (script) js.push(`\n/* ${dir} */\n${script}`);
+  }
+  await writeFile(join(root, `dist/${name}.css`), `${(await Promise.all(cssBase.map(readCss))).join('\n')}${css.join('\n')}\n${polishCss}`);
+  await writeFile(join(root, `dist/${name}.js`), `${(await Promise.all(jsBase.map((file) => read(source(file))))).join('\n')}${js.join('\n')}\n${polishJs}`);
+}
+await writeFile(join(root, 'sitemap.xml'), sitemap(cfg, pages));
+await writeFile(join(root, 'robots.txt'), robots(cfg));
 
-if (missing.length) console.warn(`Tlatolli: secciones pendientes (${missing.join(', ')}); se ensambló lo disponible.`);
-console.log(`Tlatolli: index.html + dist/tlatolli.css + dist/tlatolli.js (${sections.length - missing.length}/${sections.length} secciones).`);
+if (problems.length) { console.error(problems.join('\n')); process.exit(1); }
+console.log(`Tlatolli: ${pages.length} páginas, ${bundles.size} bundles, sitemap.xml y robots.txt${analytics.id ? ` (analítica ${analytics.provider})` : ' (analítica apagada)'}.`);

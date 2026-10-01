@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fershopool.github.io/tlatolli-site/sitemap.xml

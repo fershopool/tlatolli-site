@@ -59,7 +59,19 @@
     return () => frame && cancelAnimationFrame(frame);
   }
 
-  const TL = { $, $$, reduced, whatsapp, inView, progress, countUp, lerp, clamp };
+  // Analítica sin cookies: solo actúa si el build inyectó Plausible o Umami.
+  const track = (name, props = {}) => {
+    try {
+      if (typeof window.plausible === 'function') window.plausible(name, { props });
+      else window.umami?.track?.(name, props);
+    } catch (error) { /* la analítica nunca debe romper el sitio */ }
+  };
+  document.addEventListener('click', (event) => {
+    const target = event.target.closest?.('[data-track]');
+    if (target) track(target.dataset.track, target.dataset.trackLabel ? { label: target.dataset.trackLabel } : {});
+  });
+
+  const TL = { $, $$, reduced, whatsapp, inView, progress, countUp, lerp, clamp, track };
   window.Tlatolli = TL;
   Object.assign(window, { TL, $, $$, reduced, whatsapp, inView, progress, countUp, lerp, clamp });
 })();

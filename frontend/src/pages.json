@@ -1,0 +1,30 @@
+[
+  {
+    "file": "index.html", "bundle": "tlatolli", "nav": "inicio",
+    "title": "Tlatolli | Agencia de marketing mexicana",
+    "description": "Agencia de marketing mexicana. Estrategia, diseño web, redes, publicidad, SEO, WhatsApp, CRM, analítica y video, combinados a la medida de tu negocio.",
+    "sections": ["hero", "servicios", "ruta", "casos", "proceso", "cotizacion", "diagnostico", "contacto"],
+    "schema": "professionalService"
+  },
+  {
+    "file": "ecosistema.html", "bundle": "ecosistema", "nav": "ecosistema",
+    "title": "Ecosistema Tlatolli | Cómo se conectan tus clientes, tus datos y tu marketing",
+    "description": "Recorre el ciclo Tlatolli y prueba simuladores con datos ficticios: presencia, fidelización, analítica, marketing, transmisiones, mapas y app.",
+    "sections": ["ecosistemahead", "problema", "ciclo", "presencia", "fidelizacion", "analitica", "marketing", "mapas", "live", "app", "cta"],
+    "schema": "webPage"
+  },
+  {
+    "file": "nosotros.html", "bundle": "paginas", "nav": "nosotros",
+    "title": "Nosotros | Tlatolli, la palabra de tu negocio",
+    "description": "Tlatolli significa «palabra». Somos una agencia de marketing mexicana que combina servicios a la medida y aprende de tu negocio en cada ciclo.",
+    "sections": ["nosotros", "porque", "faq", "cta"],
+    "schema": "organization"
+  },
+  {
+    "file": "privacidad.html", "bundle": "paginas", "nav": "privacidad",
+    "title": "Aviso de privacidad | Tlatolli",
+    "description": "Aviso de privacidad de Tlatolli conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP).",
+    "sections": ["privacidad"],
+    "schema": "webPage"
+  }
+]

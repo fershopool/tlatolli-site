@@ -1,0 +1,92 @@
+{
+  "estado": "Publicado · en mejora continua",
+  "casos": [
+    {
+      "slug": "kooben", "name": "KÓOBEN", "tipo": "Ecosistema digital",
+      "imagen": "koben-hero", "alt": "Vista del sitio de Kóoben",
+      "resumen": "Una experiencia digital para acercar a un negocio con sus clientes.",
+      "url": "https://fershopool.github.io/koooben-beta/#inicio",
+      "repo": "fershopool/koooben-beta",
+      "servicios": ["Apps y PWA", "CRM y fidelización", "Producción audiovisual y transmisiones en vivo"],
+      "problema": "Kóoben explora cómo una experiencia digital puede acercar a un negocio y a sus clientes en un mismo lugar.",
+      "hecho": ["Sitio con inicio de sesión y código QR en versión de prototipo.", "Wallet y panel para el negocio, todavía sin configurar y con datos de ejemplo.", "Verificación pública Tlatolli y transmisión en vivo."],
+      "hoy": [["Sitio público", "publicado"], ["Verificación pública Tlatolli", "publicado"], ["Inicio de sesión", "prototipo"], ["Código QR", "prototipo"], ["Wallet", "sin configurar"], ["Panel", "con datos de ejemplo"]],
+      "ultima": "2026-09-26",
+      "bitacora": [
+        ["2026-09-26", "Se integró un panel de administración para clientes."],
+        ["2026-09-26", "Se mejoró la accesibilidad de la verificación pública."],
+        ["2026-09-26", "Se agregó la verificación pública Tlatolli."],
+        ["2026-09-24", "Publicación en GitHub Pages y reconexión de la transmisión en vivo."]
+      ]
+    },
+    {
+      "slug": "clinica-san-pedro", "name": "CLÍNICA SAN PEDRO", "tipo": "Sitio institucional",
+      "imagen": "clinica-hero", "alt": "Vista del sitio de Clínica San Pedro de los Pinos",
+      "resumen": "Un sitio claro y confiable para presentar la clínica y orientar a sus visitantes.",
+      "url": "https://fershopool.github.io/clinica-san-pedro-de-los-pinos/",
+      "repo": "fershopool/clinica-san-pedro-de-los-pinos",
+      "servicios": ["Diseño web: desde cero o rediseño", "SEO y búsqueda local"],
+      "problema": "La información de una clínica necesita un lugar claro, confiable y fácil de recorrer, también desde el celular.",
+      "hecho": ["Sitio institucional de Clínica San Pedro de los Pinos.", "Información de la clínica y navegación sencilla.", "Mapa de ubicación y redes sociales."],
+      "hoy": [["Sitio institucional", "publicado"], ["Información de la clínica", "publicado"], ["Mapa y redes sociales", "publicado"]],
+      "ultima": "2026-09-19",
+      "bitacora": [
+        ["2026-09-19", "Se documentaron el mapa y las redes sociales."],
+        ["2026-09-19", "Se agregaron las redes sociales y el mapa de la clínica."],
+        ["2026-09-19", "Primera publicación del sitio."]
+      ]
+    },
+    {
+      "slug": "ollin", "name": "OLLIN", "tipo": "Ecosistema digital",
+      "imagen": "ollin-hero", "alt": "Vista del sitio de Ollin",
+      "resumen": "Un ecosistema para ordenar y hacer crecer una experiencia digital propia.",
+      "url": "https://fershopool.github.io/ollin-site/",
+      "repo": "fershopool/ollin-site",
+      "servicios": ["Estrategia y marca", "Diseño web: desde cero o rediseño"],
+      "problema": "Ollin parte de una idea amplia; el reto es convertirla en una experiencia que pueda crecer sin perder claridad.",
+      "hecho": ["Sitio publicado con la presentación del ecosistema.", "Diagrama interactivo del ecosistema y escena con desplazamiento.", "Diseño adaptado a pantallas de distintos tamaños."],
+      "hoy": [["Sitio y presentación del ecosistema", "publicado"], ["Ecosistema conceptual", "en evolución"], ["Módulos adicionales", "por definir"]],
+      "ultima": "2026-09-21",
+      "bitacora": [
+        ["2026-09-21", "Se reemplazó el diagrama del ecosistema por una ilustración más cuidada."],
+        ["2026-09-21", "Se pulió la composición del ecosistema en distintas pantallas."],
+        ["2026-09-21", "Se refinó la presentación interactiva del ecosistema."]
+      ]
+    },
+    {
+      "slug": "upiicsa-calpulli", "name": "UPIICSA CALPULLI", "tipo": "Ecosistema académico",
+      "imagen": "calpulli-hero", "alt": "Vista del sitio de UPIICSA Calpulli",
+      "resumen": "Una experiencia académica donde funciones y territorio se leen como una sola.",
+      "url": "https://fershopool.github.io/upiicsa-calpulli-site/",
+      "repo": "fershopool/upiicsa-calpulli-site",
+      "servicios": ["Diseño web: desde cero o rediseño", "Geomarketing"],
+      "problema": "Calpulli necesita que sus funciones y su territorio puedan leerse como una sola experiencia.",
+      "hecho": ["Sitio estático publicado.", "Contraste y cambio de tema mejorados.", "Logotipo de Calpulli como ícono del sitio."],
+      "hoy": [["Sitio publicado", "publicado"], ["Funciones", "previstas"], ["Mapa", "previsto"]],
+      "ultima": "2026-09-20",
+      "bitacora": [
+        ["2026-09-20", "Se actualizó la ruta del ícono para Safari."],
+        ["2026-09-20", "Se usó el logotipo de Calpulli como ícono."],
+        ["2026-09-20", "Se mejoraron el contraste y el cambio de tema."],
+        ["2026-09-17", "Se corrigió la carga de estilos y se publicó el sitio compilado."]
+      ]
+    },
+    {
+      "slug": "cuicoyan", "name": "CUICOYAN", "tipo": "Plataforma cultural",
+      "imagen": "cuicoyan-hero", "alt": "Vista del sitio de Cuicoyan",
+      "resumen": "Eventos, artistas, foros y experiencias culturales de la CDMX en un solo lugar.",
+      "url": "https://fershopool.github.io/cuicoyan-site/",
+      "repo": "fershopool/cuicoyan-site",
+      "servicios": ["Apps y PWA", "Geomarketing", "Diseño web: desde cero o rediseño"],
+      "problema": "La oferta cultural de una ciudad está dispersa; Cuicoyan la reúne para que cada persona encuentre su próximo plan.",
+      "hecho": ["Plataforma con eventos, artistas y foros.", "Búsqueda de planes, mapa y exploración.", "Navegación pensada para el celular, con perfiles e invitaciones."],
+      "hoy": [["Eventos, artistas y foros", "publicado"], ["Búsqueda de planes", "publicado"], ["Mapa y exploración", "publicado"], ["Navegación móvil", "publicado"], ["Perfiles e invitaciones", "publicado"]],
+      "ultima": "2026-10-01",
+      "bitacora": [
+        ["2026-10-01", "Se actualizaron los flujos de perfil e invitación."],
+        ["2026-09-26", "Se rediseñó la navegación responsive y el dock móvil."],
+        ["2026-09-21", "Se refinó el patrón visual en ambos temas."]
+      ]
+    }
+  ]
+}

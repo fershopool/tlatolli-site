@@ -22,7 +22,7 @@
   if (productLabels[0]) productLabels[0].textContent = 'más vendidos';
   if (productLabels[1]) productLabels[1].textContent = 'menos vendidos';
   const heatNote = q('.s-analitica__heat-note');
-  if (heatNote) heatNote.textContent = 'Semana de ejemplo: más color = más actividad en ese escenario.';
+  if (heatNote) heatNote.textContent = 'Más color = más actividad.';
   const panelNote = q('.s-analitica__panel-head>p');
   if (panelNote) panelNote.textContent = 'Vista conceptual del panel. Los módulos se adaptan al proyecto.';
 
@@ -45,14 +45,14 @@
   buttons.forEach((button) => button.addEventListener('click', () => render(button.dataset.period)));
   render('day');
 
-  const choices = { producto: 'Escenario de ejemplo: preparar el producto para ese momento y observar qué sucede en el siguiente dato.', promocion: 'Escenario de ejemplo: probar una promoción y comparar las señales que aparezcan después.', publicar: 'Escenario de ejemplo: publicar el viernes y registrar si cambia la conversación.' };
+  const choices = { producto: 'preparar el producto para ese momento y observar qué sucede en el siguiente dato.', promocion: 'probar una promoción y comparar las señales que aparezcan después.', publicar: 'publicar el viernes y registrar si cambia la conversación.' };
   const choiceButtons = [...root.querySelectorAll('[data-choice]')], choiceResult = q('[data-choice-result]');
   choiceButtons.forEach((button) => button.addEventListener('click', () => { choiceButtons.forEach((item) => { const active = item === button; item.classList.toggle('is-selected', active); item.setAttribute('aria-pressed', String(active)); }); choiceResult.textContent = choices[button.dataset.choice]; }));
 
   const modules = { clientes: ['Clientes', 'capacidad', 'Reúne las señales de relación para reconocer nuevas conversaciones y próximos pasos.'], ventas: ['Ventas', 'capacidad', 'Ordena acciones de compra de ejemplo para observar qué momentos merecen atención.'], contenido: ['Contenido', 'prototipo', 'Relaciona piezas de contenido con las señales que despiertan en el ecosistema.'], promociones: ['Promociones', 'prototipo', 'Permite comparar escenarios de activación sin prometer una venta.'], mapa: ['Mapa', 'capacidad', 'Ubica zonas, rutas o lugares como una capa contextual del negocio.'], actividad: ['Actividad', 'capacidad', 'Muestra una lectura conjunta de las señales que ocurren en distintos momentos.'] };
   const bars = { clientes: [45, 75, 58], ventas: [22, 90, 64, 42], contenido: [70, 35, 56], promociones: [28, 52, 80], mapa: [60, 40, 70], actividad: [38, 82, 51] };
   const moduleButtons = [...root.querySelectorAll('[data-module]')], moduleView = q('[data-module-visual]');
-  const renderModule = (key) => { const [name, state, copy] = modules[key]; moduleButtons.forEach((button) => { const active = button.dataset.module === key; button.classList.toggle('is-active', active); button.setAttribute('aria-pressed', String(active)); }); q('[data-module-title]').textContent = name; q('[data-module-copy]').textContent = copy; const badge = q('[data-module-badge]'); badge.textContent = state === 'prototipo' ? 'Prototipo' : 'Capacidad'; badge.className = `badge badge--${state}`; moduleView.replaceChildren(...bars[key].map((height, index) => { const bar = document.createElement('span'); bar.style.height = `${height}%`; bar.setAttribute('aria-label', `Señal ${index + 1} de ejemplo`); return bar; })); moduleView.dataset.module = key; };
+  const renderModule = (key) => { const [name, state, copy] = modules[key]; moduleButtons.forEach((button) => { const active = button.dataset.module === key; button.classList.toggle('is-active', active); button.setAttribute('aria-pressed', String(active)); }); q('[data-module-title]').textContent = name; q('[data-module-copy]').textContent = copy; moduleView.replaceChildren(...bars[key].map((height, index) => { const bar = document.createElement('span'); bar.style.height = `${height}%`; bar.setAttribute('aria-label', `Señal ${index + 1} de ejemplo`); return bar; })); moduleView.dataset.module = key; };
   moduleButtons.forEach((button) => button.addEventListener('click', () => renderModule(button.dataset.module)));
   renderModule('clientes');
   const heat = q('[data-heatmap]'), heatValues = [[1, 2, 0, 3, 2], [0, 1, 2, 3, 4], [1, 0, 2, 2, 3], [2, 1, 3, 3, 4], [1, 2, 3, 4, 4], [0, 1, 2, 4, 3], [0, 0, 1, 2, 2]];

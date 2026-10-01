@@ -1,0 +1,7 @@
+.s-ecohead { padding-block: clamp(48px, 7vw, 96px); }
+.s-ecohead h1 { max-width: 18ch; margin: 16px 0 24px; font-size: clamp(2.8rem, 6vw, 5.2rem); text-wrap: balance; }
+.s-ecohead .lead { max-width: 62ch; color: rgba(247, 245, 239, .88); }
+.s-ecohead .link { color: var(--copper-light); }
+.s-ecohead__nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+.s-ecohead__nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border: 1px solid var(--dark-line); border-radius: 99px; font-size: .9375rem; transition: background-color .2s ease, border-color .2s ease; }
+.s-ecohead__nav a:hover { border-color: var(--copper-light); background: rgba(247, 245, 239, .08); }

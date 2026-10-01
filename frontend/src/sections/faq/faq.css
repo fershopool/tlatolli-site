@@ -1,0 +1,10 @@
+.s-faq__grid { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 6vw, 80px); align-items: start; }
+.s-faq .section-head { margin-bottom: 0; }
+.s-faq__list { border-top: 1px solid var(--dark-line); }
+.s-faq details { border-bottom: 1px solid var(--dark-line); }
+.s-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; padding-block: 12px; font: 400 1.5rem/1.2 var(--serif); cursor: pointer; list-style: none; }
+.s-faq summary::-webkit-details-marker { display: none; }
+.s-faq summary::after { content: "+"; flex: none; display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid var(--dark-line); border-radius: 50%; font: 400 1.2rem/1 var(--sans); }
+.s-faq details[open] summary::after { content: "−"; }
+.s-faq details p { max-width: 62ch; padding-bottom: 20px; color: rgba(247, 245, 239, .84); }
+@media (max-width: 860px) { .s-faq__grid { grid-template-columns: minmax(0, 1fr); } .s-faq .section-head { margin-bottom: 8px; } }

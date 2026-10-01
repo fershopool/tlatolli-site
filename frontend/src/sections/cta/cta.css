@@ -1,0 +1,4 @@
+.s-cta { padding-block: clamp(56px, 8vw, 96px); }
+.s-cta__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px 48px; }
+.s-cta h2 { font-size: clamp(2.2rem, 4.4vw, 3.8rem); }
+.s-cta__actions { display: flex; flex-wrap: wrap; gap: 12px; }
