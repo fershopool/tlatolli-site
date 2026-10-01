@@ -393,10 +393,11 @@ document.querySelectorAll('[data-hero-visual]').forEach((visual) => {
     koben:{name:'KÓOBEN',badge:'Beta',badgeClass:'badge--beta',type:'ecosistema digital',image:'./frontend/src/assets/cases/koben-hero.jpg',alt:'Vista de Kóoben',summary:'Una experiencia beta para explorar una relación digital con clientes y negocios.',problem:'Kóoben explora cómo una experiencia digital puede acercar a un negocio y a sus clientes.',url:'https://fershopool.github.io/koooben-beta/#inicio',functions:[['Login','prototipo'],['Código QR','prototipo'],['Wallet','sin configurar'],['Panel','datos de ejemplo']]},
     clinica:{name:'CLÍNICA SAN PEDRO',badge:'Publicado',badgeClass:'badge--disponible',type:'sitio institucional',image:'./frontend/src/assets/cases/clinica-hero.jpg',alt:'Vista de Clínica San Pedro',summary:'Un sitio institucional publicado para presentar la clínica y orientar a sus visitantes.',problem:'La información de una clínica necesita un lugar claro, confiable y fácil de recorrer.',url:'https://fershopool.github.io/clinica-san-pedro-de-los-pinos/',functions:[['Sitio institucional','disponible'],['Información de la clínica','disponible'],['Navegación web','disponible']]},
     ollin:{name:'OLLIN',badge:'En desarrollo',badgeClass:'badge--capacidad',type:'ecosistema conceptual',image:'./frontend/src/assets/cases/ollin-hero.jpg',alt:'Vista de Ollin',summary:'Un ecosistema conceptual en desarrollo para ordenar una experiencia digital propia.',problem:'OLLIN está tomando forma: el reto es convertir una idea amplia en una experiencia que pueda crecer.',url:'https://fershopool.github.io/ollin-site/',functions:[['Experiencia web','en desarrollo'],['Ecosistema digital','capacidad'],['Módulos futuros','próximamente']]},
-    calpulli:{name:'UPIICSA CALPULLI',badge:'En desarrollo',badgeClass:'badge--capacidad',type:'ecosistema académico',image:'./frontend/src/assets/cases/calpulli-hero.jpg',alt:'Vista de UPIICSA Calpulli',summary:'Una propuesta en desarrollo para reunir funciones y mapa dentro de una experiencia académica.',problem:'Calpulli necesita que sus funciones y su territorio puedan leerse como una sola experiencia.',url:'https://fershopool.github.io/upiicsa-calpulli-site/',functions:[['Funciones','en desarrollo'],['Mapa','próximamente'],['Experiencia académica','capacidad']]}
+    calpulli:{name:'UPIICSA CALPULLI',badge:'En desarrollo',badgeClass:'badge--capacidad',type:'ecosistema académico',image:'./frontend/src/assets/cases/calpulli-hero.jpg',alt:'Vista de UPIICSA Calpulli',summary:'Una propuesta en desarrollo para reunir funciones y mapa dentro de una experiencia académica.',problem:'Calpulli necesita que sus funciones y su territorio puedan leerse como una sola experiencia.',url:'https://fershopool.github.io/upiicsa-calpulli-site/',functions:[['Funciones','en desarrollo'],['Mapa','próximamente'],['Experiencia académica','capacidad']]},
+    cuicoyan:{name:'CUICOYAN',badge:'Publicado',badgeClass:'badge--disponible',type:'plataforma cultural',image:'./frontend/src/assets/cases/cuicoyan-hero.jpg',alt:'Vista de Cuicoyan',summary:'Una plataforma publicada para descubrir eventos, artistas, foros y experiencias culturales en CDMX.',problem:'La oferta cultural de una ciudad está dispersa; Cuicoyan la reúne para que cada persona encuentre su próximo plan.',url:'https://fershopool.github.io/cuicoyan-site/',functions:[['Eventos, artistas y foros','disponible'],['Búsqueda de planes','disponible'],['Mapa y exploración','disponible'],['Navegación móvil','disponible']]}
   };
   const items=[...root.querySelectorAll('[data-project]')], feature=root.querySelector('[data-project-feature]'), badge=root.querySelector('[data-project-badge]'), count=root.querySelector('[data-project-count]'), image=root.querySelector('[data-project-image]'), type=root.querySelector('[data-project-type]'), title=root.querySelector('[data-project-title]'), summary=root.querySelector('[data-project-summary]'), dialog=root.querySelector('[data-project-dialog]'), dialogTitle=root.querySelector('[data-dialog-title]'), dialogState=root.querySelector('[data-dialog-state]'), dialogProblem=root.querySelector('[data-dialog-problem]'), dialogFunctions=root.querySelector('[data-dialog-functions]'), external=root.querySelector('[data-dialog-external]'), liveButton=root.querySelector('[data-dialog-live]'), live=root.querySelector('[data-live-frame]'); let active='koben', lastTrigger;
-  const paint=(key)=>{const item=data[key];if(!item)return;active=key;items.forEach((button,index)=>{const on=button.dataset.project===key;button.classList.toggle('is-active',on);button.setAttribute('aria-pressed',String(on));if(on)count.textContent=`${String(index+1).padStart(2,'0')} / 04`;});badge.className=`badge ${item.badgeClass}`;badge.textContent=item.badge;image.src=item.image;image.alt=item.alt;type.textContent=item.type;title.textContent=item.name;summary.textContent=item.summary;root.style.setProperty('--project-accent',key==='clinica'?'#8EAC69':key==='ollin'?'#D9A64C':key==='calpulli'?'#E2A263':'#D9A64C');};
+  const paint=(key)=>{const item=data[key];if(!item)return;active=key;items.forEach((button,index)=>{const on=button.dataset.project===key;button.classList.toggle('is-active',on);button.setAttribute('aria-pressed',String(on));if(on)count.textContent=`${String(index+1).padStart(2,'0')} / ${String(items.length).padStart(2,'0')}`;});badge.className=`badge ${item.badgeClass}`;badge.textContent=item.badge;image.src=item.image;image.alt=item.alt;type.textContent=item.type;title.textContent=item.name;summary.textContent=item.summary;root.style.setProperty('--project-accent',key==='clinica'?'#8EAC69':key==='ollin'?'#D9A64C':key==='calpulli'?'#E2A263':key==='cuicoyan'?'#FF5CA8':'#D9A64C');};
   const showDetails=(trigger)=>{const item=data[active];lastTrigger=trigger;dialogTitle.textContent=item.name;dialogState.textContent=item.badge;dialogProblem.textContent=item.problem;external.href=item.url;dialogFunctions.replaceChildren(...item.functions.map(([label,state])=>{const li=document.createElement('li');li.textContent=label;const small=document.createElement('small');small.textContent=state;li.append(small);return li;}));live.replaceChildren();if(dialog.showModal)dialog.showModal();else{dialog.setAttribute('open','');dialog.classList.add('is-open');}root.querySelector('[data-dialog-close]')?.focus();};
   const hideDetails=()=>{if(dialog.open&&dialog.close)dialog.close();else{dialog.removeAttribute('open');dialog.classList.remove('is-open');}lastTrigger?.focus();};
   items.forEach((button)=>button.addEventListener('click',()=>paint(button.dataset.project)));root.querySelector('[data-project-details]')?.addEventListener('click',(event)=>showDetails(event.currentTarget));root.querySelector('[data-dialog-close]')?.addEventListener('click',hideDetails);dialog?.addEventListener('click',(event)=>{if(event.target===dialog)hideDetails();});dialog?.addEventListener('cancel',(event)=>{event.preventDefault();hideDetails();});
@@ -522,3 +523,80 @@ document.querySelectorAll('[data-hero-visual]').forEach((visual) => {
   root.document.addEventListener('tl:diagnostic', updateMainLink);
   form.addEventListener('submit', function (event) { event.preventDefault(); var data = new FormData(form), name = String(data.get('name') || '').trim(), business = String(data.get('business') || '').trim(), need = String(data.get('need') || '').trim(); if (!name || !business || !need) { status.textContent = 'Completa nombre, negocio y necesidad.'; return; } open(['Hola Tlatolli, quiero conversar sobre mi negocio.', 'Nombre: ' + name, 'Negocio: ' + business, 'Necesidad: ' + need].join('\n') + diagnosticText()); });
 })(typeof window !== 'undefined' ? window : globalThis);
+
+(function () {
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  // Progreso de lectura + sombra de cabecera
+  const bar = document.createElement('div');
+  bar.className = 'scroll-progress';
+  bar.setAttribute('aria-hidden', 'true');
+  document.body.prepend(bar);
+  const header = document.querySelector('.site-header');
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.setProperty('--p', max > 0 ? Math.min(1, scrollY / max).toFixed(4) : 0);
+      header?.classList.toggle('is-scrolled', scrollY > 12);
+      ticking = false;
+    });
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll, { passive: true });
+  onScroll();
+
+  // Greca decorativa entre secciones
+  $$('main > section').slice(1).forEach((section) => {
+    const band = document.createElement('div');
+    band.className = 'greca';
+    band.setAttribute('aria-hidden', 'true');
+    section.before(band);
+  });
+
+  // Marquesina infinita del hero (4 copias, se desplaza 25%)
+  const marquee = document.querySelector('.s-hero__marquee');
+  if (marquee) {
+    const set = document.createElement('div');
+    set.className = 'mq-set';
+    set.append(...marquee.children);
+    const track = document.createElement('div');
+    track.className = 'mq-track';
+    track.append(set);
+    for (let i = 0; i < 3; i += 1) {
+      const copy = set.cloneNode(true);
+      copy.setAttribute('aria-hidden', 'true');
+      track.append(copy);
+    }
+    marquee.append(track);
+  }
+
+  // Foco de luz que sigue al cursor en tarjetas y en el hero
+  const SPOT = '.s-problema__piece,.s-analitica__kpi,.s-analitica__panel,.s-diferencia__panel,.s-app__card,.s-presencia__panel,.s-live__benefits article,.s-marketing__calendar,.s-fidelizacion__pos';
+  $$(SPOT).forEach((element) => element.setAttribute('data-spot', ''));
+  if (fine) {
+    document.addEventListener('pointermove', (event) => {
+      const target = event.target.closest?.('[data-spot]');
+      if (!target) return;
+      const box = target.getBoundingClientRect();
+      target.style.setProperty('--mx', `${event.clientX - box.left}px`);
+      target.style.setProperty('--my', `${event.clientY - box.top}px`);
+    }, { passive: true });
+    const hero = document.querySelector('.s-hero');
+    hero?.addEventListener('pointermove', (event) => {
+      const box = hero.getBoundingClientRect();
+      hero.style.setProperty('--gx', `${event.clientX - box.left}px`);
+      hero.style.setProperty('--gy', `${event.clientY - box.top}px`);
+    }, { passive: true });
+  }
+
+  // Revelado escalonado: el retraso solo cuenta para la entrada
+  $$('.reveal').forEach((element) => {
+    const index = $$('.reveal', element.parentElement).indexOf(element);
+    element.style.setProperty('--i', Math.min(Math.max(index, 0), 5));
+    element.addEventListener('transitionend', () => element.style.setProperty('--i', 0), { once: true });
+  });
+}());

@@ -18,6 +18,7 @@ La interfaz se construye como HTML, CSS y JavaScript vanilla. Las insignias de e
 | CLÍNICA SAN PEDRO | Publicado | Sitio institucional publicado. | https://fershopool.github.io/clinica-san-pedro-de-los-pinos/ |
 | OLLIN | En desarrollo | El sitio está en desarrollo y se trata como ecosistema conceptual. | https://fershopool.github.io/ollin-site/ |
 | UPIICSA CALPULLI | En desarrollo | Funciones y mapa están previstos; se presenta como trabajo en desarrollo. | https://fershopool.github.io/upiicsa-calpulli-site/ |
+| CUICOYAN | Publicado | Plataforma cultural publicada: eventos, artistas, foros y experiencias en CDMX (descripción del propio sitio). | https://fershopool.github.io/cuicoyan-site/ |
 
 No se atribuyen clientes, resultados, porcentajes de crecimiento ni tecnologías desplegadas fuera de estos hechos.
 

@@ -10,6 +10,7 @@ Las cuatro capturas se recibieron como archivos locales de trabajo en `/tmp/tlat
 - `clinica-hero.jpg`
 - `ollin-hero.jpg`
 - `calpulli-hero.jpg`
+- `cuicoyan-hero.jpg` (captura 785 × 971 de https://fershopool.github.io/cuicoyan-site/ tomada con Chrome headless el 2026-10-01 y recomprimida a JPEG)
 
 No contienen métricas añadidas por el sitio.
 

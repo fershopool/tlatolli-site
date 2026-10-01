@@ -41,8 +41,10 @@ for (const section of sections) {
 }
 
 await mkdir(join(root, 'dist'), { recursive: true });
-await writeFile(join(root, 'dist/tlatolli.css'), `${(await Promise.all(cssFiles.map(readCss))).join('\n')}${sectionCss.join('\n')}`);
-await writeFile(join(root, 'dist/tlatolli.js'), `${(await Promise.all(jsFiles.map((file) => read(source(file))))).join('\n')}${sectionJs.join('\n')}`);
+const polishCss = await read(source('styles/polish.css'));
+const polishJs = await read(source('shared/polish.js'));
+await writeFile(join(root, 'dist/tlatolli.css'), `${(await Promise.all(cssFiles.map(readCss))).join('\n')}${sectionCss.join('\n')}\n${polishCss}`);
+await writeFile(join(root, 'dist/tlatolli.js'), `${(await Promise.all(jsFiles.map((file) => read(source(file))))).join('\n')}${sectionJs.join('\n')}\n${polishJs}`);
 await writeFile(join(root, 'index.html'), html);
 
 if (missing.length) console.warn(`Tlatolli: secciones pendientes (${missing.join(', ')}); se ensambló lo disponible.`);
