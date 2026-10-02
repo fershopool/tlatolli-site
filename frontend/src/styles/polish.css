@@ -7,6 +7,9 @@
   --grain: url(../frontend/src/assets/brand/grain.svg);
 }
 @media (min-width: 1600px) { :root { --container: 1360px; } }
+/* Emblema fijo en el viewport: siempre en el mismo lugar mientras la página se desplaza */
+.brand-watermark { position: fixed; z-index: 2; top: 50%; right: 1vw; width: min(52vw, 720px); aspect-ratio: 1; translate: 0 -50%; background: var(--copper); opacity: .08; -webkit-mask: var(--glyph) center / contain no-repeat; mask: var(--glyph) center / contain no-repeat; pointer-events: none; }
+@media print { .brand-watermark { display: none; } }
 ::selection { background: var(--copper-light); color: var(--ink); }
 html { -webkit-text-size-adjust: 100%; }
 img, svg, video { max-width: 100%; }
