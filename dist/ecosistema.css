@@ -129,7 +129,9 @@ h2 em, h1 em { font-style: italic; color: var(--olive-ink); }
 
 .site-footer { padding: clamp(48px, 8vw, 96px) 0 28px; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: clamp(32px, 6vw, 72px); }
-.brand--footer { color: var(--ivory); }
+.brand--footer { gap: 1rem; color: var(--ivory); }
+.brand--footer .brand-logo { width: 56px; height: 56px; }
+.brand--footer .brand-word { width: auto; height: 30px; }
 .footer-note { max-width: 28ch; margin-top: 18px; color: rgba(247, 245, 239, .78); }
 .footer-wa { display: inline-flex; align-items: center; min-height: 44px; margin-top: 8px; color: var(--copper-light); font-weight: 600; }
 .footer-h { margin-bottom: 8px; color: var(--copper-light); font: 600 .8125rem/1.2 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
@@ -533,7 +535,6 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { border-color
 
 /* Pie con la marca grande */
 .site-footer { position: relative; overflow: hidden; }
-.site-footer::before { content: "Tlatolli"; position: absolute; left: 50%; bottom: -.22em; translate: -50% 0; font: 400 clamp(5rem, 26vw, 24rem) / 1 var(--serif); color: transparent; -webkit-text-stroke: 1px rgba(247, 245, 239, .1); white-space: nowrap; pointer-events: none; user-select: none; }
 .site-footer .container { position: relative; z-index: 1; }
 
 /* Táctil */
@@ -541,7 +542,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { border-color
   .btn, .tabs button, .tabs a, [role="tab"], .s-fidelizacion__qr-refresh, .s-ciclo__nav button, .s-marketing__calendar-nav button, form button { min-height: 44px; }
   .tabs button, .tabs a { padding-inline: 1rem; }
 }
-@media (max-width: 760px) { input:not([type="checkbox"]):not([type="radio"]), textarea, select { font-size: 16px; } .site-footer::before { bottom: -.1em; } }
+@media (max-width: 760px) { input:not([type="checkbox"]):not([type="radio"]), textarea, select { font-size: 16px; } }
 @media (max-width: 380px) { h1 { font-size: clamp(2.5rem, 13vw, 3rem); } .btn { white-space: normal; text-align: center; } }
 
 @media (prefers-reduced-motion: reduce) {

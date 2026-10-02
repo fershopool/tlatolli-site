@@ -13,7 +13,9 @@
 
 .site-footer { padding: clamp(48px, 8vw, 96px) 0 28px; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: clamp(32px, 6vw, 72px); }
-.brand--footer { color: var(--ivory); }
+.brand--footer { gap: 1rem; color: var(--ivory); }
+.brand--footer .brand-logo { width: 56px; height: 56px; }
+.brand--footer .brand-word { width: auto; height: 30px; }
 .footer-note { max-width: 28ch; margin-top: 18px; color: rgba(247, 245, 239, .78); }
 .footer-wa { display: inline-flex; align-items: center; min-height: 44px; margin-top: 8px; color: var(--copper-light); font-weight: 600; }
 .footer-h { margin-bottom: 8px; color: var(--copper-light); font: 600 .8125rem/1.2 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
