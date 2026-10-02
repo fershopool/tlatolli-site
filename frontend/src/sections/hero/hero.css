@@ -1,5 +1,5 @@
 .s-hero { position: relative; isolation: isolate; overflow: hidden; padding-block: clamp(48px, 7vw, 96px) 0; }
-.s-hero__glyph { position: absolute; z-index: -1; right: -10vw; top: 42%; width: min(60vw, 760px); aspect-ratio: 1; translate: 0 -50%; background: var(--copper-light); opacity: .05; -webkit-mask: var(--glyph) center / contain no-repeat; mask: var(--glyph) center / contain no-repeat; pointer-events: none; }
+.s-hero__glyph { position: absolute; z-index: -1; right: 1vw; top: 50%; width: min(52vw, 720px); aspect-ratio: 1; translate: 0 -50%; background: var(--copper-light); opacity: .09; -webkit-mask: var(--glyph) center / contain no-repeat; mask: var(--glyph) center / contain no-repeat; pointer-events: none; }
 .s-hero__inner { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(32px, 6vw, 88px); align-items: center; }
 .s-hero__copy .eyebrow { margin-bottom: 22px; }
 .s-hero h1 { max-width: 14ch; text-wrap: balance; }
