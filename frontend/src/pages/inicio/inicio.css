@@ -1,7 +1,7 @@
 .site-header { position: sticky; top: 0; z-index: 30; color: var(--forest); background: color-mix(in srgb, var(--ivory) 92%, transparent); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px) saturate(1.4); }
 .header-main { display: flex; align-items: center; gap: clamp(16px, 3vw, 40px); min-height: var(--header-height); }
 .brand { display: inline-flex; align-items: center; gap: .6rem; min-height: 44px; margin-right: auto; color: var(--forest); font: 400 1.7rem/1 var(--serif); letter-spacing: -.01em; }
-.brand img { width: 40px; height: 40px; object-fit: contain; border-radius: 50%; }
+.brand img { width: 44px; height: 44px; object-fit: contain; }
 .site-nav { display: flex; align-items: center; gap: clamp(18px, 2.6vw, 38px); font: 500 .95rem/1 var(--sans); }
 .site-nav a { position: relative; display: inline-flex; align-items: center; min-height: 44px; }
 .site-nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 8px; height: 2px; background: var(--copper); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease, ease); }
