@@ -93,6 +93,15 @@ document.querySelectorAll('.reveal').forEach((element) => {
   window.inView?.(element, { once: true, enter: (node) => node.classList.add('is-visible') });
 });
 
+// Resalta en la barra móvil la sección visible
+const spy = [...document.querySelectorAll('.mobile-nav [data-spy]')];
+if (spy.length && 'IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => entries.forEach((entry) => {
+    if (entry.isIntersecting) spy.forEach((a) => a.classList.toggle('is-active', a.dataset.spy === entry.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  spy.forEach((a) => { const section = document.getElementById(a.dataset.spy); if (section) io.observe(section); });
+}
+
 /* problema */
 (function () { const root=(window.TL&&window.TL.$?window.TL.$('#problema'):document.querySelector('#problema')); if(!root)return; const board=root.querySelector('[data-problem-board]'),connect=root.querySelector('[data-connect]'); connect?.addEventListener('click',()=>{const on=board.classList.toggle('is-connected');connect.setAttribute('aria-pressed',String(on));}); }());
 
