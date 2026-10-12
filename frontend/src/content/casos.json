@@ -87,6 +87,21 @@
         ["2026-09-26", "Se rediseñó la navegación responsive y el dock móvil."],
         ["2026-09-21", "Se refinó el patrón visual en ambos temas."]
       ]
+    },
+    {
+      "slug": "quetzalito", "name": "QUETZALITOS", "tipo": "Programa de lealtad",
+      "resumen": "Una tarjeta de sellos para postres en cafeterías escolares: sin app y sin pedir datos.",
+      "servicios": ["CRM y fidelización", "Tarjeta de lealtad en wallet", "Analítica y tableros"],
+      "problema": "Quetzalitos entrega postres a cafeterías y hoy solo conoce lo que entrega, no lo que se vende ni quién regresa.",
+      "estado": "Piloto en preparación",
+      "hecho": [
+        "El motor es el módulo de lealtad de Ollin; Quetzalitos es su primer programa.",
+        "Flujo diseñado: la cajera genera un QR por venta, el cliente lo escanea y, a los 6 sellos, el séptimo postre es gratis.",
+        "Web de tarjeta y panel de métricas construidos y en prueba."
+      ],
+      "hoy": [["Tarjeta web con sellos y canje", "en prueba"], ["Panel de métricas por cafetería", "en prueba"], ["Wallet de Apple y Google", "sin configurar"], ["Aviso de cercanía en el celular", "previsto"]],
+      "ultima": "2026-10-11",
+      "bitacora": [["2026-10-11", "Se definió el piloto de tarjeta de lealtad de un solo producto, con QR generado en caja."]]
     }
   ]
 }

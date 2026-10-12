@@ -18,6 +18,7 @@ export function renderServicios(servicios) {
           <dt>Cómo se combina</dt><dd>${esc(s.combina)}</dd>
         </dl>
       </details>
+      ${s.caso ? `<a class="svc__caso" href="caso-${esc(s.caso)}.html">Ver el caso</a>` : ''}
     </article></li>`).join('')}</ul>`;
 }
 
@@ -26,9 +27,9 @@ export const serviciosJson = (servicios) => `<script type="application/json" id=
 export function renderCasosCards({ estado, casos }) {
   return `<ul class="s-casos__grid">${casos.map((c) => `
     <li><article class="caso-card">
-      <div class="caso-card__media">${img(c, '(min-width: 1024px) 380px, (min-width: 640px) 45vw, 92vw')}</div>
+      ${c.imagen ? `<div class="caso-card__media">${img(c, '(min-width: 1024px) 380px, (min-width: 640px) 45vw, 92vw')}</div>` : ''}
       <div class="caso-card__body">
-        <p class="caso-card__status"><span aria-hidden="true"></span>${esc(estado)}</p>
+        <p class="caso-card__status"><span aria-hidden="true"></span>${esc(c.estado ?? estado)}</p>
         <p class="caso-card__type">${esc(c.tipo)}</p>
         <h3><a href="caso-${c.slug}.html" data-track="caso_abrir" data-track-label="${c.slug}">${esc(c.name)}</a></h3>
         <p>${esc(c.resumen)}</p>
@@ -44,7 +45,7 @@ export function casoHead({ caso: c, casos }) {
   <div class="container s-caso__inner">
     <div class="s-caso__copy">
       <nav class="s-caso__crumbs" aria-label="Ruta de navegación"><a href="{{h}}#casos">Casos</a><span aria-hidden="true">/</span><span aria-current="page">${esc(c.name)}</span></nav>
-      <p class="s-caso__status"><span aria-hidden="true"></span>${esc(casos.estado)}</p>
+      <p class="s-caso__status"><span aria-hidden="true"></span>${esc(c.estado ?? casos.estado)}</p>
       <h1>${esc(c.name)}</h1>
       <p class="s-caso__lead">${esc(c.resumen)}</p>
       <dl class="s-caso__meta">
@@ -52,12 +53,12 @@ export function casoHead({ caso: c, casos }) {
         <div><dt>Última mejora</dt><dd><time datetime="${c.ultima}">${fecha(c.ultima)}</time></dd></div>
         <div><dt>Servicios</dt><dd>${c.servicios.map(esc).join(' · ')}</dd></div>
       </dl>
-      <div class="s-caso__actions">
+      ${c.url ? `<div class="s-caso__actions">
         <a class="btn btn--primary" href="${esc(c.url)}" target="_blank" rel="noopener noreferrer" data-track="caso_sitio" data-track-label="${c.slug}">Abrir el sitio <span aria-hidden="true">↗</span></a>
         <button class="btn btn--ghost" type="button" data-live-open data-url="${esc(c.url)}" data-name="${esc(c.name)}">Verlo aquí <span aria-hidden="true">▶</span></button>
-      </div>
+      </div>` : ''}
     </div>
-    <figure class="s-caso__media">${img(c, '(min-width: 900px) 440px, 90vw', true)}</figure>
+    ${c.imagen ? `<figure class="s-caso__media">${img(c, '(min-width: 900px) 440px, 90vw', true)}</figure>` : ''}
   </div>
   <div class="container"><div class="s-caso__live" data-live aria-live="polite"></div></div>
 </section>`;

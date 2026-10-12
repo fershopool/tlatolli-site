@@ -49,6 +49,14 @@
     "combina": "Se alimenta de mensajería y analítica; da sentido a la publicidad al medir quién regresa."
   },
   {
+    "id": "lealtad-wallet", "name": "Tarjeta de lealtad en wallet",
+    "resumen": "Una tarjeta de sellos en el celular de tu cliente, sin instalar una app.",
+    "para": "Negocios de compra frecuente que hoy no saben quién regresa ni en qué punto de venta compra.",
+    "incluye": ["Tarjeta web con sellos y premio, activada con un QR por venta", "Tarjeta en Apple Wallet y Google Wallet, como segunda etapa", "Candados contra abuso: códigos de un solo uso y límites por hora", "Reporte de ventas, tarjetas nuevas y canjes por punto de venta"],
+    "combina": "Se apoya en CRM y fidelización y en analítica. El caso Quetzalitos muestra el piloto.",
+    "caso": "quetzalito"
+  },
+  {
     "id": "analitica", "name": "Analítica y tableros",
     "resumen": "Tus números en un solo lugar, explicados en lenguaje de negocio.",
     "para": "Quien tiene datos dispersos y decide por intuición.",
