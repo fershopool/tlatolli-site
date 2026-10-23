@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f2219" />
+  <title>Casa Copal | Menú en realidad aumentada</title>
+  <meta name="description" content="Menú digital con realidad aumentada: elige un platillo y míralo en tu mesa antes de ordenar." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f2219'/%3E%3Cpath d='M6 21h6v-7h6v7h8' fill='none' stroke='%23d3ab72' stroke-width='2.4'/%3E%3C/svg%3E" />
+  <link rel="preload" href="./fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin />
+  <style>
+    @font-face { font-family: 'DM Sans'; font-weight: 400 700; font-display: swap; src: url(./fonts/dm-sans.woff2) format('woff2'); }
+    @font-face { font-family: 'Instrument Serif'; font-style: normal; font-weight: 400; font-display: swap; src: url(./fonts/instrument-serif.woff2) format('woff2'); }
+    @font-face { font-family: 'Instrument Serif'; font-style: italic; font-weight: 400; font-display: swap; src: url(./fonts/instrument-serif-italic.woff2) format('woff2'); }
+
+    :root {
+      --bg: #0f2219;
+      --bg-2: #173126;
+      --panel: #14291f;
+      --ivory: #f7f5ef;
+      --ivory-dim: rgba(247, 245, 239, .68);
+      --ivory-faint: rgba(247, 245, 239, .12);
+      --cobre: #b4864a;
+      --cobre-claro: #d3ab72;
+      --terracota: #a8463f;
+      --serif: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
+      --sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --greca: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12' viewBox='0 0 24 12'%3E%3Cpath d='M0 10h6V4h6v6h6V4h6' fill='none' stroke='black' stroke-width='2'/%3E%3C/svg%3E");
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; min-height: 100vh; color: var(--ivory); font: 400 16px/1.6 var(--sans);
+      background:
+        radial-gradient(1100px 560px at 50% -120px, rgba(180, 134, 74, .16), transparent 70%),
+        radial-gradient(900px 600px at 100% 100%, rgba(111, 125, 79, .14), transparent 70%),
+        var(--bg);
+      background-attachment: fixed;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; color: inherit; cursor: pointer; }
+    :focus-visible { outline: 2px solid var(--cobre-claro); outline-offset: 3px; border-radius: 6px; }
+    .wrap { width: min(1080px, 100% - 40px); margin-inline: auto; }
+
+    /* ---------- Encabezado ---------- */
+    .masthead { text-align: center; padding: clamp(40px, 8vw, 84px) 0 clamp(28px, 5vw, 48px); }
+    .brand { display: inline-flex; align-items: center; gap: 14px; font: 400 .78rem/1 var(--sans); letter-spacing: .42em; text-transform: uppercase; color: var(--cobre-claro); }
+    .brand::before, .brand::after { content: ''; width: 34px; height: 1px; background: linear-gradient(90deg, transparent, var(--cobre)); }
+    .brand::after { transform: scaleX(-1); }
+    h1 {
+      margin: 22px auto 0; max-width: 14ch; font: 400 clamp(2.6rem, 8vw, 5.2rem)/.98 var(--serif); letter-spacing: -.015em; text-wrap: balance;
+    }
+    h1 em { color: var(--cobre-claro); }
+    .lede { margin: 20px auto 0; max-width: 46ch; color: var(--ivory-dim); font-size: clamp(.98rem, 2.4vw, 1.08rem); text-wrap: balance; }
+    .greca { display: block; height: 12px; width: min(220px, 60%); margin: 30px auto 0; background: var(--cobre); opacity: .85;
+      -webkit-mask: var(--greca) repeat-x center / 24px 12px; mask: var(--greca) repeat-x center / 24px 12px; }
+    .how { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 26px; margin: 26px 0 0; padding: 0; list-style: none; color: var(--ivory-dim); font-size: .86rem; }
+    .how li { display: inline-flex; align-items: center; gap: 9px; }
+    .how b { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--cobre); color: var(--cobre-claro); font: 500 .72rem/1 var(--sans); }
+
+    /* ---------- Carta ---------- */
+    .seccion { padding: clamp(20px, 4vw, 40px) 0 clamp(56px, 9vw, 110px); }
+    .seccion__titulo { display: flex; align-items: baseline; gap: 18px; margin: 0 0 clamp(20px, 3vw, 34px); }
+    .seccion__titulo h2 { margin: 0; font: 400 clamp(1.7rem, 4vw, 2.3rem)/1 var(--serif); }
+    .seccion__titulo span { flex: 1; height: 1px; background: linear-gradient(90deg, var(--cobre), transparent); opacity: .7; align-self: center; }
+    .seccion__titulo small { color: var(--ivory-dim); letter-spacing: .2em; text-transform: uppercase; font-size: .7rem; }
+
+    .carta > li { display: flex; }
+    .carta { display: grid; gap: clamp(18px, 3vw, 30px); grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); margin: 0; padding: 0; list-style: none; }
+    .plato {
+      height: 100%; position: relative; display: grid; grid-template-columns: minmax(132px, 42%) 1fr; align-items: center; gap: clamp(16px, 3vw, 28px);
+      width: 100%; text-align: left; padding: clamp(14px, 2.4vw, 22px);
+      border: 1px solid var(--ivory-faint); border-radius: 26px;
+      background: linear-gradient(160deg, rgba(247, 245, 239, .07), rgba(247, 245, 239, .015));
+      transition: transform .35s cubic-bezier(.2, .7, .2, 1), border-color .35s, box-shadow .35s, background .35s;
+    }
+    .plato:hover { transform: translateY(-4px); border-color: rgba(211, 171, 114, .55); box-shadow: 0 26px 60px -28px rgba(0, 0, 0, .7); background: linear-gradient(160deg, rgba(247, 245, 239, .1), rgba(247, 245, 239, .02)); }
+    .plato__foto { position: relative; aspect-ratio: 1; border-radius: 20px; overflow: hidden;
+      background: radial-gradient(circle at 50% 42%, #24493a, #10261c 78%); }
+    .plato__foto img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2, .7, .2, 1); }
+    .plato:hover .plato__foto img { transform: scale(1.07) rotate(-2deg); }
+    .chip-ar { position: absolute; left: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px 6px 9px;
+      border-radius: 99px; font: 500 .68rem/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ivory);
+      background: rgba(15, 34, 25, .78); border: 1px solid rgba(211, 171, 114, .5); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .chip-ar svg { width: 15px; height: 15px; }
+    .plato__eyebrow { margin: 0 0 8px; color: var(--cobre-claro); font-size: .7rem; letter-spacing: .26em; text-transform: uppercase; }
+    .plato h3 { margin: 0; font: 400 clamp(1.5rem, 3.4vw, 2rem)/1.08 var(--serif); text-wrap: balance; }
+    .plato__desc { margin: 10px 0 16px; color: var(--ivory-dim); font-size: .93rem; line-height: 1.55; }
+    .plato__pie { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .precio { font: 400 1.6rem/1 var(--serif); color: var(--ivory); }
+    .precio small { font: 400 .7rem/1 var(--sans); color: var(--ivory-dim); letter-spacing: .1em; margin-left: 4px; }
+    .ver { display: inline-flex; align-items: center; gap: 8px; color: var(--cobre-claro); font-size: .84rem; font-weight: 500; letter-spacing: .04em; }
+    .ver svg { width: 16px; height: 16px; transition: transform .3s; }
+    .plato:hover .ver svg { transform: translateX(4px); }
+
+    footer { border-top: 1px solid var(--ivory-faint); padding: 28px 0 40px; text-align: center; color: var(--ivory-dim); font-size: .8rem; }
+    footer p { margin: 4px 0; }
+
+    @media (max-width: 520px) {
+      .plato { grid-template-columns: 1fr; }
+      .plato__foto { aspect-ratio: 4 / 3.2; }
+    }
+
+    /* ---------- Visor (diálogo) ---------- */
+    dialog.visor { padding: 0; border: 0; background: transparent; color: inherit; width: min(1040px, 100vw - 32px); max-width: none; max-height: calc(100dvh - 32px); margin: auto; overflow: visible; }
+    dialog.visor::backdrop { background: rgba(6, 15, 10, .82); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+    dialog.visor[open] { animation: entra .45s cubic-bezier(.2, .8, .2, 1); }
+    dialog.visor[open]::backdrop { animation: fundido .4s ease; }
+    @keyframes entra { from { opacity: 0; transform: translateY(24px) scale(.97); } }
+    @keyframes fundido { from { opacity: 0; } }
+    .visor__caja { position: relative; display: grid; grid-template-columns: 1.15fr 1fr; border-radius: 30px; overflow: hidden; background: var(--panel);
+      border: 1px solid rgba(211, 171, 114, .35); box-shadow: 0 50px 120px -30px #000; max-height: calc(100dvh - 32px); }
+    .visor__modelo { position: relative; min-height: 440px; background: radial-gradient(circle at 50% 38%, #2b5645 0%, #14291f 72%); }
+    model-viewer { width: 100%; height: 100%; min-height: 440px; --poster-color: transparent; --progress-bar-color: var(--cobre-claro); --progress-mask: transparent; display: block; }
+    .visor__ayuda { position: absolute; left: 50%; top: 16px; transform: translateX(-50%); display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 99px; white-space: nowrap;
+      font-size: .74rem; letter-spacing: .06em; color: var(--ivory-dim); background: rgba(15, 34, 25, .6); border: 1px solid var(--ivory-faint); pointer-events: none; }
+    .visor__info { position: relative; padding: clamp(24px, 4vw, 44px); overflow-y: auto; display: flex; flex-direction: column; }
+    .cerrar { position: absolute; top: 14px; right: 14px; z-index: 3; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%;
+      background: rgba(15, 34, 25, .7); border: 1px solid var(--ivory-faint); transition: background .2s, border-color .2s; }
+    .cerrar:hover { background: var(--terracota); border-color: var(--terracota); }
+    .cerrar svg { width: 18px; height: 18px; }
+    .visor__info .plato__eyebrow { margin-top: 6px; }
+    .visor__info h2 { margin: 0; font: 400 clamp(2rem, 4.4vw, 2.9rem)/1.02 var(--serif); padding-right: 36px; text-wrap: balance; }
+    .visor__info .precio { margin: 14px 0 0; font-size: 2rem; }
+    .visor__info p.desc { margin: 18px 0 0; color: var(--ivory-dim); }
+    .grupo { margin-top: 22px; }
+    .grupo h4 { margin: 0 0 10px; font: 500 .68rem/1 var(--sans); letter-spacing: .26em; text-transform: uppercase; color: var(--cobre-claro); }
+    .etiquetas { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .etiquetas li { padding: 6px 13px; border-radius: 99px; border: 1px solid var(--ivory-faint); font-size: .82rem; color: var(--ivory); background: rgba(247, 245, 239, .04); }
+    .etiquetas.alergenos li { border-color: rgba(168, 70, 63, .6); color: #f0c9c5; }
+    .acciones { margin-top: auto; padding-top: 28px; display: grid; gap: 10px; }
+    .btn-ar[hidden] { display: none; }
+    .btn-ar { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 16px 22px; border: 0; border-radius: 99px;
+      font-weight: 600; font-size: 1rem; letter-spacing: .02em; color: #fff; background: var(--terracota);
+      box-shadow: 0 16px 34px -14px rgba(168, 70, 63, .9), inset 0 1px 0 rgba(255, 255, 255, .22); transition: transform .2s, filter .2s; }
+    .btn-ar:hover { transform: translateY(-2px); filter: brightness(1.08); }
+    .btn-ar svg { width: 22px; height: 22px; }
+    .nota-ar { margin: 0; font-size: .8rem; color: var(--ivory-dim); text-align: center; text-wrap: balance; }
+    .nota-ar[hidden] { display: none; }
+
+    @media (max-width: 760px) {
+      dialog.visor { width: 100vw; max-height: 100dvh; height: 100dvh; }
+      .visor__caja { grid-template-columns: 1fr; grid-template-rows: minmax(260px, 44dvh) 1fr; border-radius: 0; height: 100dvh; max-height: none; border: 0; }
+      .visor__modelo, model-viewer { min-height: 0; }
+      .visor__info { padding: 22px 20px calc(22px + env(safe-area-inset-bottom)); }
+      .acciones { position: sticky; bottom: 0; margin: auto -20px calc(-22px - env(safe-area-inset-bottom)); padding: 14px 20px calc(14px + env(safe-area-inset-bottom)); background: var(--panel); border-top: 1px solid var(--ivory-faint); box-shadow: 0 -16px 24px -12px var(--panel); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead wrap">
+    <div class="brand">Casa Copal</div>
+    <h1>La carta, <em>sobre tu mesa</em></h1>
+    <p class="lede">Elige un platillo y míralo en tamaño real, frente a ti, antes de ordenar.</p>
+    <span class="greca" aria-hidden="true"></span>
+    <ol class="how" aria-label="Cómo funciona">
+      <li><b>1</b> Toca un platillo</li>
+      <li><b>2</b> Gíralo y acércalo</li>
+      <li><b>3</b> Míralo en tu mesa</li>
+    </ol>
+  </header>
+
+  <main class="wrap">
+    <section class="seccion" aria-labelledby="t-fuertes">
+      <div class="seccion__titulo">
+        <h2 id="t-fuertes">Platos fuertes</h2><span aria-hidden="true"></span><small>Cocina mexicana de autor</small>
+      </div>
+      <ul class="carta" id="carta"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Precios en pesos mexicanos, IVA incluido. Avisa a tu mesero si tienes alguna alergia.</p>
+      <p>Imágenes ilustrativas; el platillo servido puede variar ligeramente.</p>
+    </div>
+  </footer>
+
+  <dialog class="visor" id="visor" aria-labelledby="v-nombre">
+    <div class="visor__caja">
+      <button class="cerrar" type="button" id="cerrar" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg>
+      </button>
+      <div class="visor__modelo">
+        <model-viewer id="mv" alt="Modelo 3D del platillo"
+          camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="1500" rotation-per-second="14deg"
+          camera-orbit="35deg 62deg auto" min-camera-orbit="auto 15deg auto" max-camera-orbit="auto 88deg auto"
+          field-of-view="28deg" interpolation-decay="90" exposure="1.08" shadow-intensity="1.1" shadow-softness=".9"
+          environment-image="neutral" loading="eager" reveal="auto"
+          ar ar-modes="webxr scene-viewer quick-look" ar-scale="fixed" ar-placement="floor">
+        </model-viewer>
+        <div class="visor__ayuda" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
+          Arrastra para girar
+        </div>
+      </div>
+      <div class="visor__info">
+        <p class="plato__eyebrow" id="v-region"></p>
+        <h2 id="v-nombre"></h2>
+        <p class="precio" id="v-precio"></p>
+        <p class="desc" id="v-desc"></p>
+        <div class="grupo"><h4>Ingredientes</h4><ul class="etiquetas" id="v-ingredientes"></ul></div>
+        <div class="grupo"><h4>Contiene</h4><ul class="etiquetas alergenos" id="v-alergenos"></ul></div>
+        <div class="acciones">
+          <button class="btn-ar" id="btn-ar" type="button" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 3.5 7v10L12 21.5 20.5 17V7z"/><path d="M3.5 7 12 11.5 20.5 7M12 11.5v10"/></svg>
+            Ver en mi mesa
+          </button>
+          <p class="nota-ar" id="nota-ar" hidden>La realidad aumentada funciona desde un celular o tableta. Abre este menú en tu teléfono para ver el platillo en tu mesa.</p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <noscript><p style="text-align:center;padding:24px">Activa JavaScript para ver el menú interactivo.</p></noscript>
+
+  <script type="module" src="./vendor/model-viewer.min.js"></script>
+  <script type="module">
+    // Para agregar o cambiar platillos basta con editar esta lista.
+    // `modelo` es un archivo .glb (idealmente un escaneo del platillo real) y `foto` su imagen de portada.
+    const PLATILLOS = [
+      {
+        id: 'tacos-cochinita',
+        region: 'Yucatán',
+        nombre: 'Tacos de cochinita pibil',
+        precio: 185,
+        porcion: '3 piezas',
+        corta: 'Cerdo marinado en achiote y naranja agria, cocido lento y servido en tortilla de maíz hecha a mano.',
+        descripcion: 'Cerdo marinado en achiote y naranja agria, cocido lentamente hasta deshacerse. Lo servimos en tortilla de maíz hecha a mano, con cebolla morada encurtida, cilantro y limón.',
+        ingredientes: ['Cerdo', 'Achiote', 'Naranja agria', 'Cebolla morada', 'Cilantro', 'Tortilla de maíz', 'Limón'],
+        alergenos: ['Cítricos'],
+        modelo: './modelos/tacos-cochinita.glb',
+        foto: './modelos/tacos-cochinita.webp',
+      },
+      {
+        id: 'mole-poblano',
+        region: 'Puebla',
+        nombre: 'Mole poblano con pollo',
+        precio: 265,
+        porcion: '1 pieza',
+        corta: 'Muslo de pollo bañado en mole poblano de más de veinte ingredientes, con arroz y ajonjolí tostado.',
+        descripcion: 'Muslo de pollo bañado en mole poblano de chiles secos, especias, chocolate y frutos secos, molido y cocinado por horas. Lo acompañamos con arroz blanco y ajonjolí tostado.',
+        ingredientes: ['Pollo', 'Chile ancho', 'Chile mulato', 'Chocolate', 'Almendra', 'Cacahuate', 'Ajonjolí', 'Arroz'],
+        alergenos: ['Ajonjolí', 'Cacahuate', 'Almendra'],
+        modelo: './modelos/mole-poblano.glb',
+        foto: './modelos/mole-poblano.webp',
+      },
+    ];
+
+    const $ = (id) => document.getElementById(id);
+    const mxn = (n) => new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(n);
+    const cubo = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 3.5 7v10L12 21.5 20.5 17V7z"/><path d="M3.5 7 12 11.5 20.5 7M12 11.5v10"/></svg>';
+    const flecha = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+    const visor = $('visor');
+    const mv = $('mv');
+    let disparador = null;
+
+    // ----- Carta -----
+    $('carta').innerHTML = PLATILLOS.map((p) => `
+      <li>
+        <button class="plato" type="button" data-id="${p.id}" aria-label="${p.nombre}, ${mxn(p.precio)}. Ver en 3D y realidad aumentada">
+          <span class="plato__foto">
+            <img src="${p.foto}" alt="" width="520" height="520" loading="lazy" decoding="async" />
+            <span class="chip-ar">${cubo}AR</span>
+          </span>
+          <span>
+            <p class="plato__eyebrow">${p.region}</p>
+            <h3>${p.nombre}</h3>
+            <p class="plato__desc">${p.corta}</p>
+            <span class="plato__pie">
+              <span class="precio">${mxn(p.precio)}<small>${p.porcion}</small></span>
+              <span class="ver">Verlo en 3D ${flecha}</span>
+            </span>
+          </span>
+        </button>
+      </li>`).join('');
+
+    // Precarga el modelo al acercarse, para que abra al instante.
+    const precargados = new Set();
+    const precargar = (id) => {
+      const p = PLATILLOS.find((x) => x.id === id);
+      if (!p || precargados.has(id)) return;
+      precargados.add(id);
+      const l = document.createElement('link');
+      l.rel = 'prefetch'; l.href = p.modelo; l.as = 'fetch'; l.crossOrigin = '';
+      document.head.append(l);
+    };
+
+    $('carta').addEventListener('pointerover', (e) => { const b = e.target.closest('.plato'); if (b) precargar(b.dataset.id); });
+    $('carta').addEventListener('focusin', (e) => { const b = e.target.closest('.plato'); if (b) precargar(b.dataset.id); });
+    $('carta').addEventListener('click', (e) => {
+      const b = e.target.closest('.plato');
+      if (b) abrir(b.dataset.id, b);
+    });
+
+    // ----- Visor -----
+    const reducir = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducir) mv.removeAttribute('auto-rotate');
+
+    function abrir(id, origen) {
+      const p = PLATILLOS.find((x) => x.id === id);
+      if (!p) return;
+      disparador = origen;
+      $('v-region').textContent = p.region;
+      $('v-nombre').textContent = p.nombre;
+      $('v-precio').innerHTML = `${mxn(p.precio)}<small>${p.porcion}</small>`;
+      $('v-desc').textContent = p.descripcion;
+      $('v-ingredientes').innerHTML = p.ingredientes.map((i) => `<li>${i}</li>`).join('');
+      $('v-alergenos').innerHTML = p.alergenos.map((i) => `<li>${i}</li>`).join('');
+      $('nota-ar').hidden = true;
+      $('btn-ar').hidden = true;
+      mv.alt = `Modelo 3D de ${p.nombre}`;
+      mv.setAttribute('poster', p.foto);
+      mv.src = p.modelo;
+      mv.cameraOrbit = '35deg 62deg auto';
+      if (!reducir) mv.setAttribute('auto-rotate', '');
+      document.documentElement.style.overflow = 'hidden';
+      visor.showModal();
+      history.replaceState(null, '', `#${p.id}`);
+    }
+
+    function cerrar() { visor.close(); }
+    $('cerrar').addEventListener('click', cerrar);
+    visor.addEventListener('click', (e) => { if (e.target === visor) cerrar(); });
+    visor.addEventListener('close', () => {
+      document.documentElement.style.overflow = '';
+      history.replaceState(null, '', location.pathname + location.search);
+      disparador?.focus();
+    });
+
+    // El botón AR vive dentro del visor; si el dispositivo no soporta AR, explicamos por qué.
+    mv.addEventListener('load', () => {
+      $('btn-ar').hidden = !mv.canActivateAR;
+      $('nota-ar').hidden = mv.canActivateAR;
+    });
+    $('btn-ar').addEventListener('click', () => mv.activateAR());
+    mv.addEventListener('ar-status', (e) => {
+      if (e.detail.status === 'session-started') mv.removeAttribute('auto-rotate');
+    });
+
+    // Enlace directo a un platillo: menu/#mole-poblano (útil para códigos QR por platillo).
+    const directo = PLATILLOS.find((p) => `#${p.id}` === location.hash);
+    if (directo) abrir(directo.id, document.querySelector(`.plato[data-id="${directo.id}"]`));
+  </script>
+</body>
+</html>
